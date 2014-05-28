@@ -8,419 +8,188 @@
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 </head>
 <body>
-<div>
-    <iframe src='views/simulate-game-iframe.html' frameborder="0" scrolling="no" allowTransparency="true" width="100%" height="600" id="game-iframe"></iframe><!--
+<div class="game-iframe-container">
+    <iframe src='http://quwan.me/quwan/views/simulate-game-iframe.html' frameborder="0" scrolling="no" allowTransparency="true" width="100%" height="600" id="game-iframe"></iframe><!--
     <iframe src='images/blank.gif' frameborder="0" scrolling="no" allowTransparency="true" width="100%" height="600" id="game-iframe"></iframe>-->
 </div>
 
-<div class="toolbar">
-    <div class="toolbar_bg"></div>
-    <div class="toolbar_cont clearfix">
-        <a class="logo" href="">
-            <img src="images/game_iframe_logo.png" width="117" height="28"/>
-        </a>
-        <ul class="nav" id="nav">
-            <li class="nav_list">
-                <a class="pop_link nav_link" href="javascript:;" pop="pop1">我的趣玩</a>
-                <div class="popbox" id="pop1" style="display: none;">
-                    <div class="popbox_title">
-                        <strong>个人中心</strong>
-                        <a class="close" href="javascript:;">
-                            <em></em>
-                            <span>◇</span>
-                        </a>
-                    </div>
-                    <div class="popbox_cont">
-                        <div class="popbox_main">
-                            <div class="my7w">
-                                <ul class="my7w_info clearfix ">
-                                    <li><span>昵称：</span><span>叫啥都行</span></li>
-                                    <li><span>最近游戏：</span><span>叫啥都行</span></li>
-                                </ul>
+<!--<div class="toolbar-container" id="toolbar-container">-->
+    <div class="toolbar" id="toolbar">
+        <div class="toolbar-inner" id="toolbar-inner">
+            <a class="toolbar_handle" href="javascript:;" id="toolbar_handle"></a>
+
+            <div class="toolbar_cont clearfix">
+                <a class="logo" href="">
+                    <img src="images/game_iframe_logo.png" width="117" height="28"/>
+                </a>
+                <ul class="nav" id="nav">
+                    <li class="nav_list">
+                        <a class="pop_link nav_link nav_link1" href="javascript:;" pop="pop1">个人中心</a>
+
+                        <div class="popbox popbox_ucenter" id="pop1" style="display: none;">
+                            <!--<div class="popbox_bg"></div>-->
+                            <div class="popbox_main">
+                                <div class="popbox_title">
+                                    <!--<div class="popbox_title_bg"></div>-->
+                                    <div class="popbox_title_inner">
+                                        <h6>个人中心</h6>
+                                        <a class="close" href="javascript:;">
+                                            <em>收起</em>
+                                            <span><i>◇</i></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="popbox_cont">
+                                    <div class="popbox_cont_up">
+                                        <div class="popbox_up_u">
+                                            <div class="popbox_up_u_img"><img src="" alt="勋章"/></div>
+                                            <div class="popbox_up_u_cont">
+                                                <div class="popbox_up_u_title vip">
+                                                    <span>一二三四五六七八</span>
+                                                </div>
+                                                <div class="popbox_up_u_sign">
+                                                    <em>2/21 周三</em>
+                                                    <a href="javascript:;" id="signIn">今日签到</a>
+                                                    <span id="jftips" class="pngfix">+2</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="popbox_up_u_desc">
+                                            <div><span>积分：</span><em id="jifen">1000</em></div>
+                                            <div><span>成就值：</span><em>1000</em></div>
+                                            <div><span>趣币：</span><em>未开放</em></div>
+                                            <div><span>勋章数：</span><em>1000</em></div>
+                                        </div>
+                                    </div>
+                                    <div class="popbox_cont_down">
+                                        <h6>最近游戏：</h6>
+                                        <ul class="game_list clearfix" id="game_list">
+                                            <li data-id="1">
+                                                <img src="" width="14" height="14"/>
+                                                <a href="#" class="game_link"><i title="萌兽世界">萌兽世界</i><em
+                                                        title="七雄争霸(209服)">七雄争霸(209服)</em></a>
+                                                <a class="remove" href="javascript:;">×</a>
+                                            </li>
+                                            <li data-id="1">
+                                                <img src="" width="14" height="14"/>
+                                                <a href="#" class="game_link"><i title="萌兽世界">萌兽世界</i><em
+                                                        title="七雄争霸(209服)">七雄争霸(209服)</em></a>
+                                                <a class="remove" href="javascript:;">×</a>
+                                            </li>
+                                            <li data-id="1">
+                                                <img src="" width="14" height="14"/>
+                                                <a href="#" class="game_link"><i title="萌兽世界">萌兽世界</i><em
+                                                        title="七雄争霸(209服)">七雄争霸(209服)</em></a>
+                                                <a class="remove" href="javascript:;">×</a>
+                                            </li>
+                                            <li data-id="1">
+                                                <img src="" width="14" height="14"/>
+                                                <a href="#" class="game_link"><i title="萌兽世界">萌兽世界</i><em
+                                                        title="七雄争霸(209服)">七雄争霸(209服)</em></a>
+                                                <a class="remove" href="javascript:;">×</a>
+                                            </li>
+                                            <li data-id="1">
+                                                <img src="" width="14" height="14"/>
+                                                <a href="#" class="game_link"><i title="萌兽世界">萌兽世界</i><em
+                                                        title="七雄争霸(209服)">七雄争霸(209服)</em></a>
+                                                <a class="remove" href="javascript:;">×</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
                             </div>
-                            <ul class="game_list clearfix" id="game_list">
-                                <li data-id="xx">
-                                    <img src="" width="14" height="14"/>
-                                    <span><a href="" title="七雄争霸">七雄争霸</a></span>
-                                    <span><a href="" title="珠光宝气201区">珠光宝气201区</a></span>
-                                    <a class="remove" href="javascript:;">×</a>
-                                </li>
-                                <li data-id="xx">
-                                    <img src="" width="14" height="14"/>
-                                    <span><a href="" title="七雄争霸">七雄争霸</a></span>
-                                    <span><a href="" title="珠光宝气201区">珠光宝气201区</a></span>
-                                    <a class="remove" href="javascript:;">×</a>
-                                </li>
-                                <li data-id="xx">
-                                    <img src="" width="14" height="14"/>
-                                    <span><a href="" title="七雄争霸">七雄争霸</a></span>
-                                    <span><a href="" title="珠光宝气201区">珠光宝气201区</a></span>
-                                    <a class="remove" href="javascript:;">×</a>
-                                </li>
-                            </ul>
                         </div>
-                        <div class="popbox_bg"></div>
-                    </div>
-                </div>
-            </li>
-            <li class="nav_list"><a class="nav_link" href="javascript:;">我的客服</a></li>
-            <li class="nav_list nav_last">
-                <a class="pop_link nav_link" href="javascript:;" pop="pop2">我的攻略</a>
-                <div class="popbox" id="pop2" style="display: none;">
-                    <div class="popbox_title">
-                        <strong>攻略</strong>
-                        <a class="close" href="javascript:;">
-                            <em></em>
-                            <span>◇</span>
-                        </a>
-                    </div>
-                    <div class="popbox_cont">
-                        <div class="popbox_main">
-                            <ul class="news_list">
-                                <li>
-                                    <a href="" target="_blank">腾讯屯月之狼无法登录怎么办？</a>
-                                </li>
-                                <li>
-                                    <a href="" target="_blank">腾讯屯月之狼无法登录怎么办？</a>
-                                </li>
-                                <li>
-                                    <a href="" target="_blank">腾讯屯月之狼无法登录怎么办？</a>
-                                </li>
-                                <li>
-                                    <a href="" target="_blank">腾讯屯月之狼无法登录怎么办？</a>
-                                </li>
-                                <li>
-                                    <a href="" target="_blank">腾讯屯月之狼无法登录怎么办？</a>
-                                </li>
-                            </ul>
+                    </li>
+
+                    <!--<li class="nav_list"><a class="nav_link nav_link2" href="javascript:;" pop="pop2">平台聊天</a></li>-->
+                    <li class="nav_list nav_last">
+                        <a class="nav_link nav_link3" href="javascript:;" pop="pop3">游戏充值</a>
+
+                    </li>
+                    <li class="nav_list nav_last">
+                        <a class="pop_link nav_link nav_link4" id="nav_link_gift" href="javascript:;" pop="pop4">游戏礼包</a>
+
+                        <div class="popbox popbox_gift" id="pop4" style="display: none;">
+                            <div class="popbox_bg"></div>
+                            <div class="popbox_main">
+                                <div class="popbox_title">
+                                    <div class="popbox_title_bg"></div>
+                                    <div class="popbox_title_inner">
+                                        <h6>游戏礼包</h6>
+                                        <a class="close" href="javascript:;">
+                                            <em>收起</em>
+                                            <span><i>◇</i></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="popbox_cont">
+                                    <div class="popbox_cont_up">
+                                        <div class="popbox_up_g">
+                                            <p>
+                                                <span>新手卡号：</span><br/><span id="cardNum">W9ASD0FA9S0DF9023W9ASD0FA9S0DF90</span>
+                                                <a href="javascript:;" data-clipboard-target="cardNum"
+                                                   class="copy">复制</a>
+                                            </p>
+
+                                            <p>
+                                                <span class="copy-success r">复制成功!</span>
+                                                <span>服&nbsp;务&nbsp;器：</span><span>女神个鬼</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="popbox_cont_down">
+                                        <div class="popbox_down_g">卡号可以在<a href="#">系统通知</a>中再次查看</div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="popbox_bg"></div>
-                    </div>
+                    </li>
+                    <li class="nav_list nav_last">
+                        <a class="nav_link nav_link5" href="javascript:;" pop="pop5">游戏客服</a>
+
+                    </li>
+                </ul>
+                <div class="about">
+                    <ul class="slide clearfix" id="slide">
+                        <li>
+                            <a href="" target="_blank">1
+                                由网易代理灵游坊倾情打造的雨血影之刃，虽然已经向玩家公开了介绍视频和下载地址，不过因为游戏目前处于测试时期，所以需要激活码才能激活账号进入游戏。</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">2
+                                由网易代理灵游坊倾情打造的雨血影之刃，虽然已经向玩家公开了介绍视频和下载地址，不过因为游戏目前处于测试时期，所以需要激活码才能激活账号进入游戏。</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">3
+                                由网易代理灵游坊倾情打造的雨血影之刃，虽然已经向玩家公开了介绍视频和下载地址，不过因为游戏目前处于测试时期，所以需要激活码才能激活账号进入游戏。</a>
+                        </li>
+                    </ul>
                 </div>
-            </li>
-        </ul>
-        <div class="about">
-            <ul class="slide clearfix" id="slide">
-                <li>
-                    <a href="" target="_blank">1 由网易代理灵游坊倾情打造的雨血影之刃，虽然已经向玩家公开了介绍视频和下载地址，不过因为游戏目前处于测试时期，所以需要激活码才能激活账号进入游戏。</a>
-                </li>
-                <li>
-                    <a href="" target="_blank">2 由网易代理灵游坊倾情打造的雨血影之刃，虽然已经向玩家公开了介绍视频和下载地址，不过因为游戏目前处于测试时期，所以需要激活码才能激活账号进入游戏。</a>
-                </li>
-                <li>
-                    <a href="" target="_blank">3 由网易代理灵游坊倾情打造的雨血影之刃，虽然已经向玩家公开了介绍视频和下载地址，不过因为游戏目前处于测试时期，所以需要激活码才能激活账号进入游戏。</a>
-                </li>
-            </ul>
+            </div>
 
         </div>
+        <iframe src="" frameborder="0" class="iframe-toolbar" id="iframe-toolbar"></iframe>
     </div>
+<!--
 </div>
-<script type="text/javascript">
-$(function () {
-    //Objectify
-    var Nav = function (pSelector, cSelector) {
-        var that = this;
+-->
 
-        this.$parent = $(pSelector);
-
-        this.$parent.on("click", cSelector, function () {
-           that.openList.call(this, that);
-        });
-        this.$parent.on("click", ".close", function () {
-           that.closeList.call(this, that);
-        });
-    };
-    Nav.prototype.openList = function (that) {
-        var $this = $(this),
-            popId = $this.attr("pop"),
-            $Pop = $("#" + popId);
-        if ($Pop.is(":visible")) {
-            $Pop.find(".close").trigger("click");
-            return;
-        }
-        $(".popbox").hide();
-        $Pop.show();
-
-        //create iframe layout
-        var position = {
-            width: $Pop.width(),
-            height: $Pop.height(),
-            left: $Pop.offset().left
-        };
-        that._openRelMask.call(this, position);
-    };
-    Nav.prototype._openRelMask = function (position) {
-        var iF = document.createElement("iframe");
-        iF.scrolling = "no";
-        iF.frameborder = "0";
-        iF.className = "iframe-layout";
-        iF.style.cssText = "position:absolute;z-index:-1;left:0px;bottom:29px;border:none;background:#fff;zoom:1;";
-        for (var name in position) {
-            if (name !== "left") {
-                iF.style[name] = position[name] + "px";
-            }
-        }
-        $(".iframe-layout").remove();
-        $(this).after(iF);
-
-        //iframe里面的layout
-        //W.layout.create(position);
-    };
-    Nav.prototype.closeList = function () {
-        $(this).closest(".popbox").hide();
-        $(".iframe-layout").remove();
-        //W.layout.remove();
-    };
-
-    $(window).resize(function () {
-        var wWidth = this.offsetWidth;
-        if (wWidth > 1000) {
-            $("#slide-hor").show(); $("#slide-fixed").hide();
-        } else {
-            $("#slide-hor").hide(); $("#slide-fixed").show();
-        }
-    });
-
-    //nav 菜单
-    var cF = document.getElementById("game-iframe"),
-            W = cF.contentWindow;
-    if (!W) throw new Error("找不到document.default");
-
-    new Nav("#nav", ".pop_link");
-   /* $("#nav").on("click", ".pop_link", function () {
-        var $this = $(this),
-            popId  = $this.attr("pop"),
-            $Pop = $("#" + popId);
-        if ($Pop.is(":visible")) {
-            $this.closest("#nav").find(".close").trigger("click");
-            return;
-        }
-        $(".popbox").hide();
-        $Pop.show();
-
-        //create iframe layout
-        var position = {
-            width: $Pop.width(),
-            height: $Pop.height()
-        };
-
-        var iF = document.createElement("iframe");
-        iF.scrolling = "no";
-        iF.frameborder = "0";
-        iF.className = "iframe-layout";
-        iF.style.cssText = "position:absolute;z-index:-1;left:0px;bottom:29px;border:none;background:#fff;zoom:1;";
-        for (var name in position) {
-            iF.style[name] = position[name] + "px";
-        }
-        $(".iframe-layout").remove();
-        $this.after(iF);
-
-        //iframe里面的layout
-        position.left = parseInt($Pop.offset().left);
-        //W.layout.create(position);
-    });
-    $("#nav").on("click", ".close", function () {
-        $(this).closest(".popbox").hide();
-        $(".iframe-layout").remove();
-        //W.layout.remove();
-    });
-*/
-    /**
-     * adder: wang yao
-     * time: 03-10-2014
-     */
-        //describe: 个人中心-最近游戏-删除最近游戏
-    $("#game_list").on("mouseenter", "li",function () {
-        $(this).find(".remove").show();
-    }).on("mouseleave", "li",function () {
-                $(this).find(".remove").hide();
-            }).on("click", ".remove", function () {
-                var $li = $(this).closest("li"),
-                        id = $li.data("id");
-                $li.remove();
-                $.post("http://quwna.com", {id: id});
-            });
-
-    //iframe load
-    !function () {
-        var oIframe = document.getElementById("game-iframe");
-        oIframe.resize = function () {
-            $(this).css("height", $(window).height() - $(".toolbar").outerHeight());
-        };
-        oIframe.src = 'http://localhost/quwan/views/simulate-game-iframe.html';
-        //oIframe.src = 'http://dock.wan.360.cn/game_login.php?server_id=S474&src=loginhistory&gamekey=nsol';
-        $(oIframe).load(function () {
-            oIframe.resize();
-        });
-        //window resize
-        $(window).resize(function () {
-            oIframe.resize();
-        });
-    }();
-
-    //文字滚动
-    var textSlide = function ($cont, setting) {
-        this.$cont = $cont;
-        this.$li = this.$cont.getElementsByTagName('li');
-        this.length = this.$li.length + 1;
-        this.index = 0;
-        this._initStatus = false;
-        this.opt = {
-            time: 3000,
-            auto: true,
-            diff: this.$li[0].offsetHeight || 39,
-            direction: 'top'
-        };
-        this._extend(setting);
-        this._timer = '';
-        this._eventTime = '';
-        this.timer = '';
-        this.$cont.style[this.opt.direction] = '0px';
-    };
-
-    textSlide.prototype = {
-        _extend: function (obj1, obj2) {
-            if (arguments.length === 1) {
-                obj2 = obj1;
-                obj1 = this.opt;
-            }
-            for (var key in obj2) {
-                obj1[key] = obj2[key];
-            }
-        },
-        _tween: function (t, b, c, d) {
-            return -c * ((t = t / d - 1) * t * t * t - 1) + b;
-        },
-        _init: function (callbak) {
-            if (!this._initStatus) {
-                var $new = this.$li[0].cloneNode(true),
-                        me = this;
-                this.$cont.appendChild($new);
-                this.$cont.onmouseover = function () {
-                    me.stop();
-                    clearTimeout(me._eventTime);
-                };
-                this.$cont.onmouseout = function () {
-                    me._eventTime = setTimeout(function () {
-                        me.start();
-                    }, 200);
-                };
-                this._initStatus = true;
-            }
-            setTimeout(function () {
-                callbak.call(me);
-            }, 0);
-        },
-        _animate: function (i) {
-            var direction = this.opt.direction,
-                    me = this,
-                    diff = this.opt.diff;
-            clearTimeout(this._timer);
-            this._timer = null;
-            if (i < 0) {
-                i = this.length - 1;
-            }
-            if (i > this.length - 1) {
-                i = 1;
-            }
-            if (i === this.index) {
-                return false;
-            }
-            if (typeof this.opt.startCallbak === 'function') {
-                this.opt.startCallbak.call(this, this.index, i);
-            }
-            if (this.index >= this.length - 1) {
-                this.$cont.style[direction] = '0px';
-                this.index = 0;
-            }
-            var t = 0,
-                    b = parseInt(this.$cont.style[direction]),
-                    c = -(i - this.index) * diff,
-                    d = 20;
-            this.index = i;
-            (function () {
-                if (t < d) {
-                    t++;
-                    me.$cont.style[direction] = Math.ceil(me._tween(t, b, c, d)) + "px";
-                    me._timer = setTimeout(arguments.callee, 1000 / 30);
-                } else {
-                    me.$cont.style[direction] = b + c + "px";
-                    clearTimeout(me._timer);
-                    me._timer = null;
-                    if (typeof me.opt.endCallbak === 'function') {
-                        me.opt.endCallbak.call(this);
-                    }
-                }
-            })();
-        },
-        next: function () {
-            this._animate(this.index + 1);
-        },
-        prev: function () {
-            this._animate(this.index - 1);
-        },
-        auto: function () {
-            var me = this;
-            this.timer = setTimeout(function () {
-                me._animate(me.index + 1);
-                me.timer = setTimeout(arguments.callee, me.opt.time);
-            }, this.opt.time);
-        },
-        start: function () {
-            var me = this;
-            this._init(function () {
-                if (me.opt.auto) {
-                    me.auto();
-                }
-            });
-        },
-        stop: function () {
-            this.mouseover = true;
-            clearTimeout(this.timer);
-        }
-    };
-
-    var slide = new textSlide(document.getElementById('slide'));
-    slide.start();
-});
-
-//半小时请求接口
-$(function(){
-    var url = '', //接口地址
-        delayTime = 1, //间隔时间，单位分钟
-        nowTime = new Date().getTime(),//服务器给我的当前时间
-        setT=null;
-
-    //n分钟后的毫秒数; n当时日期日时，d间隔分钟
-    function laterTime(n,d){
-        var m;
-        d = parseInt(d);
-        m = d*60*1000;
-        return  n + m;
-    }
-
-    //到时计器
-    function timeing(){
-        nowTime+=1000;
-        //console.log(delayTime);
-        setT=setTimeout(timeing,1000);
-        if(nowTime>=delayTime){
-    //              sendMessage();
-            //console.log('success');
-            clearTimeout(setT);
-        }
-    }
-
-    //发送ajax请求
-    function sendMessage(){
-        $.get(url,function(){})
-    }
-
-    delayTime = laterTime(nowTime,delayTime);
-
-    timeing();
-
-});
+<script>
+    window.ZM || (window.ZM = {});
+    ZM.gameIframeURL = "http://" + location.hostname + '/quwan/views/simulate-game-iframe.html';
+    ZM.JSURL = "http://" + location.hostname + '/quwan/js/';
+    ZM.removeNewestGameURL = "http://" + location.hostname + '/quwan/js/';
+    ZM.qdChargeURL = "http://" + location.hostname + '/quwan/ajax/qd.json';
+    ZM.honorBoxCallbackURL = "http://" + location.hostname + '/quwan/ajax/qd.json';
+    ZM.gameWindowsendGiftURL = "http://" + location.hostname + '/quwan/ajax/qd.json';  //点击游戏礼包
+    ZM.domain = window.location.hostname;
 </script>
+<script src="js/ZeroClipboard.min.js"></script>
+<script src="js/game_window_helpers.js"></script>
+<script src="js/honorBox/jquery.honorBox.js" id="honorBoxJS-node"></script>
+
+<script src="js/game_window.js"></script>
 </body>
 </html>
