@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="styles/chat.css" />
+    <script type="text/javascript" src="scripts/sea.js"></script>
+    <script type="text/javascript" src="scripts/config.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+//        var socket = io.connect();
+//        var socAllId = null;
+//        var socMyId = null
+//        socket.on('mysocId', function (data) {
+//            console.log(data);
+//        });
+//        socket.on('allId', function (data) {
+//            socAllId = data;
+//            console.log(data);
+//        });
+//        window.onload = function(){
+//            $(window).trigger('socAll',[socAllId]);
+//        }
+    </script>
+    <script>
+        window.ZM = {};
+        ZM.AJAX = {};
+        ZM.AJAX.postMessageURL = "ajax/postMessageURL.json"; //向服务器发消息
+        ZM.AJAX.pullpostMessageURL = "ajax/postMessageURL.json"; //接收服务器消息
+    </script>
+    <title></title>
+</head>
+<body>
+    <div class="person_info" style="display: none;">
+
+    </div>
+    <div id="chat" class="chatbox clearfix">
+            <div class="chatheader clearfix">
+                <div class="l usermainnifno">
+                    <div class="selfimg l"><img src="images/tit_world.jpg" alt=""/></div>
+                    <div class="seftinfo l">
+                        <span class="titlename">世界频道</span>
+                    </div>
+                </div>
+                <div class="packup close r">收起</div>
+            </div>
+        <div class="clearfix">
+            <div class="chatmain l">
+                <div class="screen-container">
+                    <div class="screen scroll-pane" id="chatroom-scroll-pane">
+                        <script type="text/template" id="chatContList">
+                            <li>
+                                <div class="name">
+                                    <img class="xunz" src="<%= imgXunz %>" alt="">
+                                    <img class="vip" src="<%= imgVip %>" alt="">
+                                    <img class="chenj" src="<%= imgChenj %>" alt="">
+                                    <a data-info='{"isVip":"<%= isVip %>","uname":"<%= uname %>","unum":"<%= unum %>","cjznum":"<%= cjznum %>","newcj":"<%= newcj %>","imgXunz":"<%= imgXunz %>"}' href="javascript:;" class="nameid me"><%= uname %>:</a>
+                                </div>
+                                <p class="cont"><%= msg %><span class="<%= vipIsShow %>">（<%= vipMsg %>）</span></p>
+                            </li>
+                        </script>
+                        <ul class="screenul">
+
+                        </ul>
+                        <script type="text/template" id="infoLay">
+                            <em class="arrow"></em>
+                            <h3 class="tit <%= isVip %>"><span class="uname"><%= uname %></span><span class="unum">(<%= unum %>)</span></h3>
+                            <div class="permain clearfix">
+                                <div class="left l"><img src="<%= imgXunz %>" alt=""/></div>
+                                <div class="right l">
+                                    <ul>
+                                        <li>
+                                            <span class="ln cjz">成就值：</span><p><span class="cjznum"><%= cjznum %></span></p>
+                                        </li>
+                                        <li>
+                                            <span class="ln ncj">新成就：</span>
+                                            <p><span class="newcj"><%= newcj %></span></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bottom clearfix"><span class="pbs">-屏蔽</span></div>
+                        </script>
+                    </div>
+
+                </div>
+                <div class="sendbox">
+                    <div class="emoticons">
+                        <ul class="clearfix l">
+                            <li class="emoWrap emoji" data-emo="emoji">
+                                <img src="images/emojitip.jpg" alt=""/>
+                                <div class="tsj emoWrapper" style="display: none;">
+                                    <img src="images/emoji/40.gif" title="40">
+                                    <img src="images/emoji/39.gif" title="39">
+                                    <img src="images/emoji/38.gif" title="38">
+                                    <img src="images/emoji/37.gif" title="37">
+                                    <img src="images/emoji/36.gif" title="36">
+                                    <img src="images/emoji/35.gif" title="35">
+                                    <img src="images/emoji/34.gif" title="34">
+                                    <img src="images/emoji/33.gif" title="33">
+                                    <img src="images/emoji/32.gif" title="32">
+                                    <img src="images/emoji/31.gif" title="31">
+                                    <img src="images/emoji/30.gif" title="30">
+                                    <img src="images/emoji/29.gif" title="29">
+                                    <img src="images/emoji/28.gif" title="28">
+                                    <img src="images/emoji/27.gif" title="27">
+                                    <img src="images/emoji/26.gif" title="26">
+                                    <img src="images/emoji/25.gif" title="25">
+                                    <img src="images/emoji/24.gif" title="24">
+                                    <img src="images/emoji/23.gif" title="23">
+                                    <img src="images/emoji/22.gif" title="22">
+                                    <img src="images/emoji/21.gif" title="21">
+                                    <img src="images/emoji/20.gif" title="20">
+                                    <img src="images/emoji/19.gif" title="19">
+                                    <img src="images/emoji/18.gif" title="18">
+                                    <img src="images/emoji/17.gif" title="17">
+                                    <img src="images/emoji/16.gif" title="16">
+                                    <img src="images/emoji/15.gif" title="15">
+                                    <img src="images/emoji/14.gif" title="14">
+                                    <img src="images/emoji/13.gif" title="13">
+                                    <img src="images/emoji/12.gif" title="12">
+                                    <img src="images/emoji/11.gif" title="11">
+                                    <img src="images/emoji/10.gif" title="10">
+                                    <img src="images/emoji/9.gif" title="9">
+                                    <img src="images/emoji/8.gif" title="8">
+                                    <img src="images/emoji/7.gif" title="7">
+                                    <img src="images/emoji/6.gif" title="6">
+                                    <img src="images/emoji/5.gif" title="5">
+                                    <img src="images/emoji/4.gif" title="4">
+                                    <img src="images/emoji/3.gif" title="3">
+                                    <img src="images/emoji/2.gif" title="2">
+                                    <img src="images/emoji/1.gif" title="1">
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="javascript:;" class="sendbtn r" data-channel="worldchannel">发送消息</a>
+                    </div>
+                    <div class="enterbox">
+                        <textarea name="" id="entercont"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="chatsidebar l">
+                <div class="channel" id="channel">
+                    <h2>聊天频道</h2>
+                    <ul class="channelList">
+                        <li class="current" data-channelname = "worldchannel"><p class="l">世界频道</p><span class="onlinenum l">（<em>3000</em>人在线）</span></li>
+                        <!--<script type="text/template" id="friendsList">-->
+                            <!--<li data-channelname = <%= socId %>><p><%= name %></p><span class="close">X</span></li>-->
+                        <!--</script>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        seajs.use('./scripts/chat/job/friendsChat',function(fc){
+            var obj = {
+                uname:'zj',                         //登录的用户名
+                imgVip:'images/vip.jpg',            //vip图标
+                imgXunz:'images/xunz.jpg',          //勋章图标
+                imgChenj:'images/chenjiu.jpg',      //成就图标
+                vipMsg:'该条信息来自vip用户！',        //vip提示信息
+                isVip:0,                            //是否是VIP用户
+                unum:95687852,                      //用户ID
+                cjznum:5000,                        //成就值
+                newcj:"不作死就不会死",               //成就名
+                "mySeeMyName":"我"                  //自己聊天窗口看到自己的名字显示
+            }
+            fc(obj);
+        });
+    </script>
+</body>
+</html>
