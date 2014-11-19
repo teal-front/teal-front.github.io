@@ -1,0 +1,14 @@
+* {maring:0;padding:0;}
+.tab {height:40px;line-height: 40px;border-bottom:1px solid #000;}
+.tab ul:after {content: "";display:table;}
+.tab li {float:left;width:158px;text-align:center;cursor:pointer;border-left:1px solid #ccc;margin-left:-1px;}
+.tab li.selected {background:#ff8800;}
+
+.content {}
+.content > ul li {display:block;}
+.num-wrap {margin:20px 0;}
+.num-wrap .num {
+    cursor: pointer;display:inline-block;border:2px solid #ccc;padding:8px;text-align:center;margin-right:10px;}
+.num-wrap .selected {border-color:#ff8800;}
+.money span {color:#ff0000;}
+.xuanhao button {display:inline-block;width:200px;height:30px;line-height:30px;text-align:center;color:#000;}

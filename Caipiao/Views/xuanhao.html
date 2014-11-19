@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<!--
+    /**
+    * @author: yaowang
+    * @time: 2014/10/17
+    * @description: http://caipiao.163.com/order/preBet_hbkuai3.html
+    */
+-->
+<html>
+
+<head>
+    <title>选号</title>
+    <link rel="stylesheet" href="../Css/base.css" />
+    <link rel="stylesheet" href="../Css/common.css" />
+    <link rel="stylesheet" href="../Css/core.css" />
+    <link rel="stylesheet" href="../Css/kuai3.css" />
+    <script src="../Js/libs/angular.js"></script>
+    <script src="../Js/libs/jquery-1.8.2.min.js"></script>
+    <script src="../Js/libs/underscore.js"></script>
+    <!-- <script src="../Js/modules/core.js"></script> -->
+</head>
+
+<body ng-app="hbk3">
+
+    <article class="docBody clearfix" id="docBody" ng-controller="Xuanhao">
+        
+        <section class="main clearfix">
+            <div class="clearfix menuBox">
+                <ul class="gameMenu">
+                    <li class="active"><a hidefocus="true" href="http://caipiao.163.com/order/hbkuai3/">选号投注</a>
+                    </li>
+                </ul>
+                <ul class="moreLink">
+                    <li><a id="gamePlayUrl" target="_blank" href="#awardTableInfo"><i class="gameIntru_icon"></i>玩法说明</a>
+                    </li>
+                </ul>
+                <p>销售时间：每天9:00~22:00销售</p>
+            </div>
+            <section class="bettingBox">
+                <nav class="gameMenus">
+                    <ul id="k3_tab" my-delegate-object='{"events":["click"],"selectors":["li"],"handlers":["menuChange"]}'>
+                        <li name="hezhi">
+                            <strong>和值</strong>
+                            <em>奖金：￥9-240</em>
+                        </li>
+                        <li name="3ttx" class="">
+                            <strong>三同号通选</strong>
+                            <em data-plus-game="3tx">奖金：￥40</em>
+                        </li>
+                        <li name="3tdx" class="">
+                            <strong>三同号单选</strong>
+                            <em data-plus-game="3dx">奖金：￥240</em>
+                            <span class="tipPop"><i></i>奖金高</span>
+                        </li>
+                        <li name="3bt" class="">
+                            <strong>三不同号</strong>
+                            <em data-plus-game="3bt">奖金：￥40</em>
+                            <span class="tipPop"><i></i>选4个号易中奖</span>
+                        </li>
+                        <li name="3ltx" class="">
+                            <strong>三连号通选</strong>
+                            <em data-plus-game="3lt">奖金：￥10</em>
+                        </li>
+                        <li name="2tfx" class="">
+                            <strong>二同号复选</strong>
+                            <em data-plus-game="2fx">奖金：￥15</em>
+                        </li>
+                        <li name="2tdx" class="">
+                            <strong>二同号单选</strong>
+                            <em data-plus-game="2dx">奖金：￥80</em>
+                        </li>
+                        <li name="2tb" class="">
+                            <strong>二不同号</strong>
+                            <em data-plus-game="2bt">奖金：￥8</em>
+                            <span class="tipPop"><i></i>易中奖</span>
+                        </li>
+                        <li name="ryx" class="end kuai3_rand">
+                            <strong>猜1个号就中奖</strong>
+                            <span></span>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="mainPanels"
+                        my-delegate-object='{"events":["click","click","click"],"selectors":[".betbtn",".clearBalls",".js_ball"],"handlers":["confirmChoose","clearBalls","chooseNum"]}'
+                >
+
+                    <div class="betBox hezhi" ng-show="navIndex==0" id="panl_hz">
+                        <div class="title">
+                            <h3>玩法提示：</h3>
+                            至少选择1个和值（3个号码之和）进行投注，所选和值与开奖的3个号码的和值相同即中奖，最高可中
+                            <em>240</em>元。
+                            <i class="jtip questionMark" tip="#tip_hz"></i>
+                        </div>
+                        <div class="chartWrap hide ">
+                            <div class="ctrl">
+                                <strong>期次选择：</strong>
+                                <select>
+                                    <option value="10">最新10期</option>
+                                    <option value="20">最新20期</option>
+                                </select>
+                                <label>
+                                    <input type="checkbox" name="showLine" checked="">折线</label>
+                            </div>
+                            <div class="chartBody ">
+                                <div class="chartLoading">
+                                    <span>数据加载中，请稍候…</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="select_num">
+                            <p class="assistBox">
+                                <strong class="">选号区：&nbsp;&nbsp;</strong>
+                                <em class="assistBtn" data-xt="小">小
+                                    <span>(3-10)</span>
+                                </em>
+                                <em class="assistBtn" style=" margin-right:20px" data-xt="奇">单
+                                    <span>(全部奇数)</span>
+                                </em>
+                                <em class="assistBtn" data-xt="偶">双
+                                    <span>(全部偶数)</span>
+                                </em>
+                                <em class="assistBtn" data-xt="大">大
+                                    <span>(11-18)</span>
+                                </em>
+                            </p>
+                            <ul class="Blocksballs OneNum clearfix">
+                                <li class="js_ball" data-value="3">
+                                    <em>3</em>
+                                    <span>奖金240</span>
+                                    <span class="tipPop"><i></i>奖金高</span>
+                                </li>
+                                <li class="js_ball" data-value="4">
+                                    <em>4</em>
+                                    <span>奖金80</span>
+                                </li>
+                                <li class="js_ball" data-value="5">
+                                    <em>5</em>
+                                    <span>奖金40</span>
+                                </li>
+                                <li class="js_ball" data-value="6">
+                                    <em>6</em>
+                                    <span>奖金25</span>
+                                </li>
+                                <li class="js_ball" data-value="7">
+                                    <em>7</em>
+                                    <span>奖金16</span>
+                                </li>
+                                <li class="js_ball" data-value="8">
+                                    <em>8</em>
+                                    <span>奖金12</span>
+                                </li>
+                                <li class="js_ball" data-value="9">
+                                    <em>9</em>
+                                    <span>奖金10</span>
+                                </li>
+                                <li class="js_ball" data-value="10">
+                                    <em>10</em>
+                                    <span>奖金9</span>
+                                </li>
+                                <li class="js_ball" data-value="11">
+                                    <em>11</em>
+                                    <span>奖金9</span>
+                                </li>
+                                <li class="js_ball" data-value="12">
+                                    <em>12</em>
+                                    <span>奖金10</span>
+                                </li>
+                                <li class="js_ball" data-value="13">
+                                    <em>13</em>
+                                    <span>奖金12</span>
+                                </li>
+                                <li class="js_ball" data-value="14">
+                                    <em>14</em>
+                                    <span>奖金16</span>
+                                </li>
+                                <li class="js_ball" data-value="15">
+                                    <em>15</em>
+                                    <span>奖金25</span>
+                                </li>
+                                <li class="js_ball" data-value="16">
+                                    <em>16</em>
+                                    <span>奖金40</span>
+                                </li>
+                                <li class="js_ball" data-value="17">
+                                    <em>17</em>
+                                    <span>奖金80</span>
+                                </li>
+                                <li class="js_ball" data-value="18">
+                                    <em>18</em>
+                                    <span>奖金240</span>
+                                    <span class="tipPop"><i></i>奖金高</span>
+                                </li>
+                                <li class="clear clearBalls" data-action="clear">清空</li>
+                            </ul>
+
+                            <div class="jiangBox jiajiangBox clearfix hide">
+                                <span>加奖金额</span>
+                                <ul></ul>
+                            </div>
+                            <div class="OptimizeBox js-datas-con clearfix">
+                                <div class="Optimize hide" data-miss-navIndex="period">
+                                    <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li class="c_1e50a2">0</li>
+                                        <li class="c_1e50a2">0</li>
+                                        <li>2</li>
+                                        <li>2</li>
+                                        <li>1</li>
+                                        <li>9</li>
+                                        <li>12</li>
+                                        <li class="c_ba2636">15</li>
+                                        <li>9</li>
+                                        <li>9</li>
+                                        <li>9</li>
+                                        <li>1</li>
+                                        <li>4</li>
+                                        <li>3</li>
+                                        <li>2</li>
+                                        <li class="c_1e50a2">0</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="curr">
+                                    <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li class="c_ba2636">190</li>
+                                        <li>91</li>
+                                        <li>40</li>
+                                        <li>35</li>
+                                        <li>25</li>
+                                        <li>4</li>
+                                        <li>1</li>
+                                        <li>0</li>
+                                        <li>20</li>
+                                        <li>16</li>
+                                        <li>2</li>
+                                        <li>41</li>
+                                        <li>11</li>
+                                        <li>5</li>
+                                        <li>29</li>
+                                        <li>110</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="max">
+                                    <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>1463</li>
+                                        <li>507</li>
+                                        <li>328</li>
+                                        <li>144</li>
+                                        <li>118</li>
+                                        <li>87</li>
+                                        <li>79</li>
+                                        <li>69</li>
+                                        <li>90</li>
+                                        <li>70</li>
+                                        <li>95</li>
+                                        <li>105</li>
+                                        <li>217</li>
+                                        <li>236</li>
+                                        <li>586</li>
+                                        <li class="c_ba2636">2518</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="prev">
+                                    <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>11</li>
+                                        <li>5</li>
+                                        <li>24</li>
+                                        <li>8</li>
+                                        <li>52</li>
+                                        <li>7</li>
+                                        <li>4</li>
+                                        <li>2</li>
+                                        <li>0</li>
+                                        <li>9</li>
+                                        <li>12</li>
+                                        <li>58</li>
+                                        <li>2</li>
+                                        <li>32</li>
+                                        <li>30</li>
+                                        <li class="c_ba2636">249</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="avg">
+                                    <span inf="该号码在历史上所有遗漏的平均值" class="jtip" tipconf="maxWidth:300">平均遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>211</li>
+                                        <li>70</li>
+                                        <li>36</li>
+                                        <li>21</li>
+                                        <li>14</li>
+                                        <li>9</li>
+                                        <li>8</li>
+                                        <li>7</li>
+                                        <li>7</li>
+                                        <li>8</li>
+                                        <li>9</li>
+                                        <li>13</li>
+                                        <li>21</li>
+                                        <li>36</li>
+                                        <li>71</li>
+                                        <li class="c_ba2636">227</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                        <p class="selectInfo">
+                            <span>您选中了
+                                <strong class="c_ba2636">3</strong>注，共
+                                <strong class="c_ba2636">6</strong>元
+                                <span class="c_727171">若中奖，奖金
+                                    <strong class="c_ba2636">10</strong>至
+                                    <strong class="c_ba2636">
+                                        16</strong>元，盈利
+                                    <strong class="c_ba2636">4</strong>至
+                                    <strong class="c_ba2636">10</strong>元</span>
+                            </span>
+                        </p>
+
+                        <div class="betbtnBox">
+                            <a title="确认选号" rel="nofollow" class="betbtn"></a>
+                        </div>
+                    </div>
+                    <div class="betBox sthtx" ng-show="navIndex==1" id="panl_3tx">
+                        <div class="title">
+                            <h3>玩法提示：</h3>对所有相同的三个号码（111、222、333、444、555、666）进行投注，任意号码开出即中奖，单注奖金
+                            <em>40</em>元。<i class="jtip questionMark" tip="#tip_3tx"></i>
+                        </div>
+                        <div class="chartWrap hide ">
+                            <div class="ctrl">
+                                <strong>期次选择：</strong>
+                                <select>
+                                    <option value="10">最新10期</option>
+                                    <option value="20">最新20期</option>
+                                </select>
+                                <label>
+                                    <input type="checkbox" name="showLine" checked="">折线</label>
+                            </div>
+                        </div>
+
+                        <div class="select_num ">
+                            <div class="Blocksballs sthtx_ball">
+                                <em title="三同号通选" class="js_ball" data-value="1" ng-click=""></em>
+                                <em class="clear clearBalls" data-action="clear">清空</em>
+                            </div>
+                            <div class="OptimizeBox js-datas-con clearfix">
+                                <div class="Optimize hide" data-miss-navIndex="period">
+                                    <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>3</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="curr">
+                                    <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>11</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="max">
+                                    <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>282</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="prev">
+                                    <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>23</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <p class="selectInfo">
+                            <span>您选中了
+                                <strong class="c_ba2636">1</strong>注，共
+                                <strong class="c_ba2636">2</strong>元
+                                <span class="c_727171">若中奖，奖金
+                                    <strong class="c_ba2636">40</strong>元，盈利
+                                    <strong class="c_ba2636">
+                                        38</strong>元</span>
+                            </span>
+                        </p>
+
+                        <div class="betbtnBox">
+                            <a title="确认选号" rel="nofollow" class="betbtn"></a>
+                        </div>
+                    </div>
+                    <div class="betBox sthdx" ng-show="navIndex==2" id="panl_3dx">
+                        <div class="title">
+                            <h3>玩法提示：</h3>
+                            对所有相同的三个号码（111、222、333、444、555、666）进行投注，任意号码开出即中奖，单注奖金
+                            <em>240</em>元。
+                            <i class="jtip questionMark" tip="#tip_3dx"></i>
+                        </div>
+                        <div class="chartWrap hide ">
+                            <div class="ctrl">
+                                <strong>期次选择：</strong>
+                                <select>
+                                    <option value="10">最新10期</option>
+                                    <option value="20">最新20期</option>
+                                </select>
+                                <label>
+                                    <input type="checkbox" name="showLine" checked="">折线</label>
+                            </div>
+                        </div>
+
+                        <div class="select_num">
+                            <ul class="Blocksballs twoNumBt clearfix" id="k3_3dx_balls">
+                                <li class="js_ball" data-value="111">
+                                    <em>1</em>
+                                    <em>1</em>
+                                    <em>1</em>
+                                </li>
+                                <li class="js_ball" data-value="222">
+                                    <em>2</em>
+                                    <em>2</em>
+                                    <em>2</em>
+                                </li>
+                                <li class="js_ball" data-value="333">
+                                    <em>3</em>
+                                    <em>3</em>
+                                    <em>3</em>
+                                </li>
+                                <li class="js_ball" data-value="444">
+                                    <em>4</em>
+                                    <em>4</em>
+                                    <em>4</em>
+                                </li>
+                                <li class="js_ball" data-value="555">
+                                    <em>5</em>
+                                    <em>5</em>
+                                    <em>5</em>
+                                </li>
+                                <li class="js_ball" data-value="666">
+                                    <em>6</em>
+                                    <em>6</em>
+                                    <em>6</em>
+                                </li>
+                                <li class="clear clearBalls" data-action="clear">清空</li>
+                            </ul>
+                            <div class="OptimizeBox js-datas-con clearfix">
+                                <div class="Optimize hide" data-miss-navIndex="period">
+                                    <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li class="c_1e50a2">0</li>
+                                        <li>1</li>
+                                        <li class="c_1e50a2">0</li>
+                                        <li class="c_1e50a2">0</li>
+                                        <li class="c_ba2636">2</li>
+                                        <li class="c_1e50a2">0</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="curr">
+                                    <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>190</li>
+                                        <li>35</li>
+                                        <li class="c_ba2636">418</li>
+                                        <li>301</li>
+                                        <li>11</li>
+                                        <li>110</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="max">
+                                    <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>1463</li>
+                                        <li>1067</li>
+                                        <li>1214</li>
+                                        <li>1617</li>
+                                        <li>1300</li>
+                                        <li class="c_ba2636">2518</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="prev">
+                                    <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>11</li>
+                                        <li>123</li>
+                                        <li>55</li>
+                                        <li>9</li>
+                                        <li>44</li>
+                                        <li class="c_ba2636">249</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <p class="selectInfo">
+                            <span>您选中了
+                                <strong class="c_ba2636">1</strong>注，共
+                                <strong class="c_ba2636">2</strong>元
+                                <span class="c_727171">若中奖，奖金
+                                    <strong class="c_ba2636">240</strong>元，盈利
+                                    <strong class="c_ba2636">
+                                        238</strong>元</span>
+                            </span>
+                        </p>
+
+                        <div class="betbtnBox">
+                            <a title="确认选号" rel="nofollow" class="betbtn"></a>
+                        </div>
+                    </div>
+                    <div class="betBox sbth" ng-show="navIndex==3" id="panl_3bt">
+                        <p class="game_intro betTypeWrap" my-delegate-object='{"events":["click"],"selectors":["input"],"handlers":["switchInnerTab"]}'>
+                            <label>
+                                <input type="radio" value="3bt_normal" name="3bt_betType" checked="checked">标准投注
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" value="3bt_special" name="3bt_betType">胆拖投注</label>
+                        </p>
+
+                        <div class="gameWrap putong">
+                            <div class="title">
+                                <h3>玩法提示：</h3>从1～6中任选3个或多个号码，所选号码与开奖号码的3个号码相同即中奖，单注奖金
+                                <em>40</em>元。<i class="jtip questionMark" tip="#tip_3bt"></i>
+                            </div>
+                            <div class="chartWrap hide ">
+                                <div class="ctrl">
+                                    <strong>期次选择：</strong>
+                                    <select>
+                                        <option value="10">最新10期</option>
+                                        <option value="20">最新20期</option>
+                                    </select>
+                                    <label>
+                                        <input type="checkbox" name="showLine" checked="">折线</label>
+                                </div>
+                            </div>
+
+                            <div class="select_num">
+                                <ul class="Blocksballs OneNum clearfix">
+                                    <li class="js_ball" data-value="1">
+                                        <em>1</em>
+                                    </li>
+                                    <li class="js_ball" data-value="2">
+                                        <em>2</em>
+                                    </li>
+                                    <li class="js_ball" data-value="3">
+                                        <em>3</em>
+                                    </li>
+                                    <li class="js_ball" data-value="4">
+                                        <em>4</em>
+                                    </li>
+                                    <li class="js_ball" data-value="5">
+                                        <em>5</em>
+                                    </li>
+                                    <li class="js_ball" data-value="6">
+                                        <em>6</em>
+                                    </li>
+                                    <li class="clear clearBalls" data-action="clear">清空</li>
+                                </ul>
+                                <div class="OptimizeBox js-datas-con clearfix">
+                                    <div class="Optimize hide" data-miss-navIndex="period">
+                                        <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                        <ul class="Blocksballs clearfix">
+                                            <li class="c_ba2636">34</li>
+                                            <li class="c_1e50a2">26</li>
+                                            <li>33</li>
+                                            <li>31</li>
+                                            <li>28</li>
+                                            <li>33</li>
+                                        </ul>
+                                    </div>
+                                    <div class="Optimize hide" data-miss-navIndex="curr">
+                                        <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                        <ul class="Blocksballs clearfix">
+                                            <li class="c_ba2636">3</li>
+                                            <li>0</li>
+                                            <li>0</li>
+                                            <li>2</li>
+                                            <li>0</li>
+                                            <li class="c_ba2636">3</li>
+                                        </ul>
+                                    </div>
+                                    <div class="Optimize hide" data-miss-navIndex="max">
+                                        <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                        <ul class="Blocksballs clearfix">
+                                            <li>21</li>
+                                            <li>19</li>
+                                            <li class="c_ba2636">22</li>
+                                            <li>21</li>
+                                            <li>19</li>
+                                            <li>18</li>
+                                        </ul>
+                                    </div>
+                                    <div class="Optimize hide" data-miss-navIndex="prev">
+                                        <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                        <ul class="Blocksballs clearfix">
+                                            <li>0</li>
+                                            <li>0</li>
+                                            <li class="c_ba2636">2</li>
+                                            <li>1</li>
+                                            <li>0</li>
+                                            <li>1</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <p class="selectInfo">
+                                <span>您选中了
+                                    <strong class="c_ba2636">0</strong>注，共
+                                    <strong class="c_ba2636">0</strong>元</span>
+                            </p>
+
+                            <div class="betbtnBox">
+                                <a title="确认选号" rel="nofollow" class="betbtn disabled"></a> <a rel="nofollow" href="javascript:;" class="smartFilter" data-game="3bt_pt">智能过滤</a>
+                            </div>
+                        </div>
+                        <div class="gameWrap dantuo hide">
+                            <div class="title">
+                                <strong>玩法提示：</strong>选1～2个胆码，选1～5个拖码，胆码加拖码不少于3个；选号与奖号相同即中奖，单注奖金
+                                <em>40</em>元。</div>
+                            <div class="dantuo_com clearfix">
+                                <div class="dantuoBox" style="display:block">
+                                    <ul class="Blocksballs OneNum clearfix js_balls">
+                                        <li class="title">胆码：</li>
+                                        <li class="js_ball" data-value="1">
+                                            <em>1</em>
+                                        </li>
+                                        <li class="js_ball" data-value="2">
+                                            <em>2</em>
+                                        </li>
+                                        <li class="js_ball" data-value="3">
+                                            <em>3</em>
+                                        </li>
+                                        <li class="js_ball" data-value="4">
+                                            <em>4</em>
+                                        </li>
+                                        <li class="js_ball" data-value="5">
+                                            <em>5</em>
+                                        </li>
+                                        <li class="js_ball" data-value="6">
+                                            <em>6</em>
+                                        </li>
+                                        <li class="clear clearBalls" data-action="clear" data-index="0">清空</li>
+                                    </ul>
+                                    <div class="OptimizeBox js-datas-con clearfix">
+                                        <div class="Optimize hide" data-miss-navIndex="period">
+                                            <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li class="c_ba2636">34</li>
+                                                <li class="c_1e50a2">26</li>
+                                                <li>33</li>
+                                                <li>31</li>
+                                                <li>28</li>
+                                                <li>33</li>
+                                            </ul>
+                                        </div>
+                                        <div class="Optimize hide" data-miss-navIndex="curr">
+                                            <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li class="c_ba2636">3</li>
+                                                <li>0</li>
+                                                <li>0</li>
+                                                <li>2</li>
+                                                <li>0</li>
+                                                <li class="c_ba2636">3</li>
+                                            </ul>
+                                        </div>
+                                        <div class="Optimize hide" data-miss-navIndex="max">
+                                            <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li>21</li>
+                                                <li>19</li>
+                                                <li class="c_ba2636">22</li>
+                                                <li>21</li>
+                                                <li>19</li>
+                                                <li>18</li>
+                                            </ul>
+                                        </div>
+                                        <div class="Optimize hide" data-miss-navIndex="prev">
+                                            <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li>0</li>
+                                                <li>0</li>
+                                                <li class="c_ba2636">2</li>
+                                                <li>1</li>
+                                                <li>0</li>
+                                                <li>1</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <ul class="Blocksballs OneNum clearfix js_balls">
+                                        <li class="title">拖码：</li>
+                                        <li class="js_ball" data-value="1">
+                                            <em>1</em>
+                                        </li>
+                                        <li class="js_ball" data-value="2">
+                                            <em>2</em>
+                                        </li>
+                                        <li class="js_ball" data-value="3">
+                                            <em>3</em>
+                                        </li>
+                                        <li class="js_ball" data-value="4">
+                                            <em>4</em>
+                                        </li>
+                                        <li class="js_ball" data-value="5">
+                                            <em>5</em>
+                                        </li>
+                                        <li class="js_ball" data-value="6">
+                                            <em>6</em>
+                                        </li>
+                                        <li class="clear clearBalls" data-action="clear" data-index="1">清空</li>
+                                    </ul>
+                                    <div class="OptimizeBox js-datas-con clearfix">
+                                        <div class="Optimize hide" data-miss-navIndex="period">
+                                            <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li class="c_ba2636">34</li>
+                                                <li class="c_1e50a2">26</li>
+                                                <li>33</li>
+                                                <li>31</li>
+                                                <li>28</li>
+                                                <li>33</li>
+                                            </ul>
+                                        </div>
+                                        <div class="Optimize hide" data-miss-navIndex="curr">
+                                            <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li class="c_ba2636">3</li>
+                                                <li>0</li>
+                                                <li>0</li>
+                                                <li>2</li>
+                                                <li>0</li>
+                                                <li class="c_ba2636">3</li>
+                                            </ul>
+                                        </div>
+                                        <div class="Optimize hide" data-miss-navIndex="max">
+                                            <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li>21</li>
+                                                <li>19</li>
+                                                <li class="c_ba2636">22</li>
+                                                <li>21</li>
+                                                <li>19</li>
+                                                <li>18</li>
+                                            </ul>
+                                        </div>
+                                        <div class="Optimize hide" data-miss-navIndex="prev">
+                                            <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li>0</li>
+                                                <li>0</li>
+                                                <li class="c_ba2636">2</li>
+                                                <li>1</li>
+                                                <li>0</li>
+                                                <li>1</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+
+                                <p class="selectInfo">
+                                    <span>您选中了
+                                        <strong class="c_ba2636">0</strong>注，共
+                                        <strong class="c_ba2636">0</strong>元</span><i></i>
+                                </p>
+                            </div>
+                            <div class="betbtnBox">
+                                <a class="betbtn disabled" title="确认选号"></a> <a rel="nofollow" href="javascript:;" class="smartFilter" data-game="3bt_dt">智能过滤</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="betBox slhtx" ng-show="navIndex==4" id="panl_3lt">
+                        <div class="title">
+                            <h3>玩法提示：</h3>对所有3个相连的号码（123、234、345、456）进行投注，任意号码开出即中奖，单注奖金
+                            <em>10</em>元。<i class="jtip questionMark" tip="#tip_3lt"></i>
+                        </div>
+                        <div class="chartWrap hide ">
+                            <div class="ctrl">
+                                <strong>期次选择：</strong>
+                                <select>
+                                    <option value="10">最新10期</option>
+                                    <option value="20">最新20期</option>
+                                </select>
+                                <label>
+                                    <input type="checkbox" name="showLine" checked="">折线</label>
+                            </div>
+                        </div>
+
+                        <div class="select_num ">
+                            <div class="Blocksballs slhtx_ball">
+                                <em title="三同号通选" class="js_ball" data-value="1"></em>
+                                <em class="clear clearBalls" data-action="clear">清空</em>
+                            </div>
+                            <div class="OptimizeBox js-datas-con clearfix">
+                                <div class="Optimize hide" data-miss-navIndex="period">
+                                    <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>2</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="curr">
+                                    <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>6</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="max">
+                                    <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>77</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="prev">
+                                    <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>21</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                        <p class="selectInfo">
+                            <span>您选中了
+                                <strong class="c_ba2636">0</strong>注，共
+                                <strong class="c_ba2636">0</strong>元</span>
+                        </p>
+
+                        <div class="betbtnBox">
+                            <a title="确认选号" rel="nofollow" class="betbtn disabled"></a>
+                        </div>
+                    </div>
+                    <div class="betBox ethfx" ng-show="navIndex==5" id="panl_2fx">
+                        <div class="title">
+                            <h3>玩法提示：</h3>从11～66中任选1个或多个号码，选号与奖号（包含11～66，不限顺序）相同，即中奖
+                            <em>15</em>元。<i class="jtip questionMark" tip="#tip_2fx"></i>
+                        </div>
+                        <div class="chartWrap hide ">
+                            <div class="ctrl">
+                                <strong>期次选择：</strong>
+                                <select>
+                                    <option value="10">最新10期</option>
+                                    <option value="20">最新20期</option>
+                                </select>
+                                <label>
+                                    <input type="checkbox" name="showLine" checked="">折线</label>
+                            </div>
+                        </div>
+
+                        <div class="select_num">
+                            <ul class="Blocksballs twoNum clearfix">
+                                <li class="js_ball" data-value="1">
+                                    <em>1</em>
+                                    <em>1</em>
+                                </li>
+                                <li class="js_ball" data-value="2">
+                                    <em>2</em>
+                                    <em>2</em>
+                                </li>
+                                <li class="js_ball" data-value="3">
+                                    <em>3</em>
+                                    <em>3</em>
+                                </li>
+                                <li class="js_ball" data-value="4">
+                                    <em>4</em>
+                                    <em>4</em>
+                                </li>
+                                <li class="js_ball" data-value="5">
+                                    <em>5</em>
+                                    <em>5</em>
+                                </li>
+                                <li class="js_ball" data-value="6">
+                                    <em>6</em>
+                                    <em>6</em>
+                                </li>
+                                <li class="clear clearBalls" data-action="clear">清空</li>
+                            </ul>
+                            <div class="OptimizeBox js-datas-con clearfix">
+                                <div class="Optimize hide" data-miss-navIndex="period">
+                                    <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li class="c_1e50a2">1</li>
+                                        <li class="c_ba2636">8</li>
+                                        <li>4</li>
+                                        <li class="c_ba2636">8</li>
+                                        <li class="c_ba2636">8</li>
+                                        <li>5</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="curr">
+                                    <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li class="c_ba2636">66</li>
+                                        <li>1</li>
+                                        <li>18</li>
+                                        <li>2</li>
+                                        <li>11</li>
+                                        <li>5</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="max">
+                                    <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li class="c_ba2636">121</li>
+                                        <li>106</li>
+                                        <li>101</li>
+                                        <li>109</li>
+                                        <li>110</li>
+                                        <li>112</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="prev">
+                                    <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>16</li>
+                                        <li>10</li>
+                                        <li>17</li>
+                                        <li>5</li>
+                                        <li class="c_ba2636">19</li>
+                                        <li>8</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <p class="selectInfo">
+                            <span>您选中了
+                                <strong class="c_ba2636">0</strong>注，共
+                                <strong class="c_ba2636">0</strong>元</span>
+                        </p>
+
+                        <div class="betbtnBox">
+                            <a title="确认选号" rel="nofollow" class="betbtn disabled"></a>
+                        </div>
+                    </div>
+                    <div class="betBox ethdx" ng-show="navIndex==6" id="panl_2dx">
+                        <div class="title">
+                            <h3>玩法提示：</h3>选择1对相同号码和1个不同号码投注，选号与奖号相同（顺序不限），即中奖
+                            <em>80</em>元。<i class="jtip questionMark" tip="#tip_2dx"></i>
+                        </div>
+                        <div class="chartWrap hide ">
+                            <div class="ctrl">
+                                <strong>期次选择：</strong>
+                                <select>
+                                    <option value="10">最新10期</option>
+                                    <option value="20">最新20期</option>
+                                </select>
+                                <label>
+                                    <input type="checkbox" name="showLine" checked="">折线</label>
+                            </div>
+                        </div>
+
+                        <div class="select_num">
+                            <ul class="Blocksballs twoNum clearfix js_balls">
+                                <li class="title">同号：</li>
+                                <li class="js_ball js_ball1" data-value="11">
+                                    <em>1</em>
+                                    <em>1</em>
+                                </li>
+                                <li class="js_ball js_ball1" data-value="22">
+                                    <em>2</em>
+                                    <em>2</em>
+                                </li>
+                                <li class="js_ball js_ball1" data-value="33">
+                                    <em>3</em>
+                                    <em>3</em>
+                                </li>
+                                <li class="js_ball js_ball1" data-value="44">
+                                    <em>4</em>
+                                    <em>4</em>
+                                </li>
+                                <li class="js_ball js_ball1" data-value="55">
+                                    <em>5</em>
+                                    <em>5</em>
+                                </li>
+                                <li class="js_ball js_ball1" data-value="66">
+                                    <em>6</em>
+                                    <em>6</em>
+                                </li>
+                                <li class="clear clearBalls" data-action="clear" data-index="0">清空</li>
+                            </ul>
+                            <div class="OptimizeBox js-datas-con clearfix">
+                                <div class="Optimize hide" data-miss-navIndex="period">
+                                    <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li class="c_1e50a2">1</li>
+                                        <li>7</li>
+                                        <li>4</li>
+                                        <li class="c_ba2636">8</li>
+                                        <li>7</li>
+                                        <li>5</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="curr">
+                                    <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li class="c_ba2636">66</li>
+                                        <li>1</li>
+                                        <li>18</li>
+                                        <li>2</li>
+                                        <li>31</li>
+                                        <li>5</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="max">
+                                    <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li class="c_ba2636">135</li>
+                                        <li>105</li>
+                                        <li>126</li>
+                                        <li>125</li>
+                                        <li>119</li>
+                                        <li>116</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="prev">
+                                    <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>16</li>
+                                        <li>10</li>
+                                        <li class="c_ba2636">17</li>
+                                        <li>5</li>
+                                        <li>6</li>
+                                        <li>8</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <ul class="Blocksballs twoNumBt js_balls clearfix">
+                                <li class="title">不同号：</li>
+                                <li class="js_ball js_ball2" data-value="1">
+                                    <em>1</em>
+                                </li>
+                                <li class="js_ball js_ball2" data-value="2">
+                                    <em>2</em>
+                                </li>
+                                <li class="js_ball js_ball2" data-value="3">
+                                    <em>3</em>
+                                </li>
+                                <li class="js_ball js_ball2" data-value="4">
+                                    <em>4</em>
+                                </li>
+                                <li class="js_ball js_ball2" data-value="5">
+                                    <em>5</em>
+                                </li>
+                                <li class="js_ball js_ball2" data-value="6">
+                                    <em>6</em>
+                                </li>
+                                <li class="clear clearBalls" data-action="clear" data-index="1">清空</li>
+                            </ul>
+                            <div class="OptimizeBox js-datas-con clearfix">
+                                <div class="Optimize hide" data-miss-navIndex="period">
+                                    <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>6</li>
+                                        <li class="c_1e50a2">4</li>
+                                        <li>7</li>
+                                        <li>7</li>
+                                        <li class="c_ba2636">9</li>
+                                        <li>8</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="curr">
+                                    <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>8</li>
+                                        <li>19</li>
+                                        <li>14</li>
+                                        <li>5</li>
+                                        <li>1</li>
+                                        <li class="c_ba2636">36</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="max">
+                                    <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>131</li>
+                                        <li>139</li>
+                                        <li>129</li>
+                                        <li>113</li>
+                                        <li>114</li>
+                                        <li class="c_ba2636">141</li>
+                                    </ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="prev">
+                                    <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                    <ul class="Blocksballs clearfix">
+                                        <li>22</li>
+                                        <li>12</li>
+                                        <li class="c_ba2636">31</li>
+                                        <li>6</li>
+                                        <li>0</li>
+                                        <li>1</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <p class="selectInfo">
+                            <span>您选中了
+                                <strong class="c_ba2636">0</strong>注，共
+                                <strong class="c_ba2636">0</strong>元</span>
+                        </p>
+
+                        <div class="betbtnBox">
+                            <a title="确认选号" rel="nofollow" class="betbtn disabled"></a>
+                        </div>
+                    </div>
+                    <div class="betBox ebth" ng-show="navIndex==7" id="panl_2bt">
+                        <p class="game_intro betTypeWrap" my-delegate-object='{"events":["click"],"selectors":["input"],"handlers":["switchInnerTab"]}'>
+                            <label>
+                                <input type="radio" value="2bt_normal" name="2bt_betType" checked="checked">标准投注
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" value="2bt_special" name="2bt_betType">胆拖投注</label>
+                        </p>
+
+                        <div class="gameWrap putong">
+                            <div class="title">
+                                <h3>玩法提示：</h3>从1～6中任选2个或多个号码，所选号码与开奖号码任意2个号码相同，即中奖
+                                <em>8</em>元。<i class="jtip questionMark" tip="#tip_2bt"></i>
+                            </div>
+                            <div class="chartWrap hide ">
+                                <div class="ctrl">
+                                    <strong>期次选择：</strong>
+                                    <select>
+                                        <option value="10">最新10期</option>
+                                        <option value="20">最新20期</option>
+                                    </select>
+                                    <label>
+                                        <input type="checkbox" name="showLine" checked="">折线</label>
+                                </div>
+                            </div>
+
+                            <div class="select_num">
+                                <ul class="Blocksballs OneNum clearfix">
+                                    <li class="js_ball" data-value="1">
+                                        <em>1</em>
+                                    </li>
+                                    <li class="js_ball" data-value="2">
+                                        <em>2</em>
+                                    </li>
+                                    <li class="js_ball" data-value="3">
+                                        <em>3</em>
+                                    </li>
+                                    <li class="js_ball" data-value="4">
+                                        <em>4</em>
+                                    </li>
+                                    <li class="js_ball" data-value="5">
+                                        <em>5</em>
+                                    </li>
+                                    <li class="js_ball" data-value="6">
+                                        <em>6</em>
+                                    </li>
+                                    <li class="clear clearBalls" data-action="clear">清空</li>
+                                </ul>
+                                <div class="OptimizeBox js-datas-con clearfix">
+                                    <div class="Optimize hide" data-miss-navIndex="period">
+                                        <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                        <ul class="Blocksballs clearfix"></ul>
+                                    </div>
+                                    <div class="Optimize" data-miss-navIndex="curr">
+                                        <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                        <ul class="Blocksballs clearfix"></ul>
+                                    </div>
+                                    <div class="Optimize hide" data-miss-navIndex="max">
+                                        <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                        <ul class="Blocksballs clearfix"></ul>
+                                    </div>
+                                    <div class="Optimize hide" data-miss-navIndex="prev">
+                                        <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                        <ul class="Blocksballs clearfix"></ul>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <p class="selectInfo">
+                                <span>您选中了
+                                    <strong class="c_ba2636">0</strong>注，共
+                                    <strong class="c_ba2636">0</strong>元</span>
+                            </p>
+
+                            <div class="betbtnBox">
+                                <a title="确认选号" rel="nofollow" class="betbtn disabled"></a>
+                            </div>
+                        </div>
+                        <div class="gameWrap dantuo hide">
+                            <div class="title">
+                                <strong>玩法提示：</strong>选1个胆码，选1～5个拖码，胆码加拖码不少于2个；选号与奖号任意2号相同即中奖，单注奖金
+                                <em>8</em>元。</div>
+                            <div class="dantuo_com clearfix">
+                                <div class="dantuoBox" style="display:block">
+                                    <ul class="Blocksballs OneNum clearfix js_balls">
+                                        <li class="title">胆码：</li>
+                                        <li class="js_ball js_ball1" data-value="1">
+                                            <em>1</em>
+                                        </li>
+                                        <li class="js_ball js_ball1" data-value="2">
+                                            <em>2</em>
+                                        </li>
+                                        <li class="js_ball js_ball1" data-value="3">
+                                            <em>3</em>
+                                        </li>
+                                        <li class="js_ball js_ball1" data-value="4">
+                                            <em>4</em>
+                                        </li>
+                                        <li class="js_ball js_ball1" data-value="5">
+                                            <em>5</em>
+                                        </li>
+                                        <li class="js_ball js_ball1" data-value="6">
+                                            <em>6</em>
+                                        </li>
+                                        <li class="clear clearBalls" data-action="clear" data-index="0">清空</li>
+                                    </ul>
+                                    <div class="OptimizeBox js-datas-con clearfix">
+                                        <div class="Optimize hide" data-miss-navIndex="period">
+                                            <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li class="c_ba2636">34</li>
+                                                <li class="c_1e50a2">26</li>
+                                                <li>33</li>
+                                                <li>31</li>
+                                                <li>28</li>
+                                                <li>33</li>
+                                            </ul>
+                                        </div>
+                                        <div class="Optimize hide" data-miss-navIndex="curr">
+                                            <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li class="c_ba2636">3</li>
+                                                <li>0</li>
+                                                <li>0</li>
+                                                <li>2</li>
+                                                <li>0</li>
+                                                <li class="c_ba2636">3</li>
+                                            </ul>
+                                        </div>
+                                        <div class="Optimize hide" data-miss-navIndex="max">
+                                            <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li>21</li>
+                                                <li>19</li>
+                                                <li class="c_ba2636">22</li>
+                                                <li>21</li>
+                                                <li>19</li>
+                                                <li>18</li>
+                                            </ul>
+                                        </div>
+                                        <div class="Optimize hide" data-miss-navIndex="prev">
+                                            <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li>0</li>
+                                                <li>0</li>
+                                                <li class="c_ba2636">2</li>
+                                                <li>1</li>
+                                                <li>0</li>
+                                                <li>1</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <ul class="Blocksballs OneNum clearfix js_balls">
+                                        <li class="title">拖码：</li>
+                                        <li class="js_ball js_ball2" data-value="1">
+                                            <em>1</em>
+                                        </li>
+                                        <li class="js_ball js_ball2" data-value="2">
+                                            <em>2</em>
+                                        </li>
+                                        <li class="js_ball js_ball2" data-value="3">
+                                            <em>3</em>
+                                        </li>
+                                        <li class="js_ball js_ball2" data-value="4">
+                                            <em>4</em>
+                                        </li>
+                                        <li class="js_ball js_ball2" data-value="5">
+                                            <em>5</em>
+                                        </li>
+                                        <li class="js_ball js_ball2" data-value="6">
+                                            <em>6</em>
+                                        </li>
+                                        <li class="clear clearBalls" data-action="clear" data-index="1">清空</li>
+                                    </ul>
+                                    <div class="OptimizeBox js-datas-con clearfix">
+                                        <div class="Optimize hide" data-miss-navIndex="period">
+                                            <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li class="c_ba2636">34</li>
+                                                <li class="c_1e50a2">26</li>
+                                                <li>33</li>
+                                                <li>31</li>
+                                                <li>28</li>
+                                                <li>33</li>
+                                            </ul>
+                                        </div>
+                                        <div class="Optimize hide" data-miss-navIndex="curr">
+                                            <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li class="c_ba2636">3</li>
+                                                <li>0</li>
+                                                <li>0</li>
+                                                <li>2</li>
+                                                <li>0</li>
+                                                <li class="c_ba2636">3</li>
+                                            </ul>
+                                        </div>
+                                        <div class="Optimize hide" data-miss-navIndex="max">
+                                            <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li>21</li>
+                                                <li>19</li>
+                                                <li class="c_ba2636">22</li>
+                                                <li>21</li>
+                                                <li>19</li>
+                                                <li>18</li>
+                                            </ul>
+                                        </div>
+                                        <div class="Optimize hide" data-miss-navIndex="prev">
+                                            <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                            <ul class="Blocksballs clearfix">
+                                                <li>0</li>
+                                                <li>0</li>
+                                                <li class="c_ba2636">2</li>
+                                                <li>1</li>
+                                                <li>0</li>
+                                                <li>1</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                                <p class="selectInfo">
+                                    <span>您选中了
+                                        <strong class="c_ba2636">0</strong>注，共
+                                        <strong class="c_ba2636">0</strong>元</span><i></i>
+                                </p>
+                            </div>
+                            <div class="betbtnBox">
+                                <a class="betbtn disabled" title="确认选号"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="betBox ryhm" ng-show="navIndex==8" id="panl_ryx">
+                        <div class="title">
+                            <h3>玩法提示：</h3>选择1个您认为一定会开出的号码，系统将智能为您筛选出包含该号码的单选号码组合。</div>
+                        <div class="chartWrap hide ">
+                            <div class="ctrl">
+                                <strong>期次选择：</strong>
+                                <select>
+                                    <option value="10">最新10期</option>
+                                    <option value="20">最新20期</option>
+                                </select>
+                                <label>
+                                    <input type="checkbox" name="showLine" checked="">折线</label>
+                            </div>
+                        </div>
+
+                        <div class="select_num">
+                            <ul class="Blocksballs OneNum clearfix">
+                                <li class="js_ball" data-value="1">
+                                    <em>1</em>
+                                </li>
+                                <li class="js_ball" data-value="2">
+                                    <em>2</em>
+                                </li>
+                                <li class="js_ball" data-value="3">
+                                    <em>3</em>
+                                </li>
+                                <li class="js_ball" data-value="4">
+                                    <em>4</em>
+                                </li>
+                                <li class="js_ball" data-value="5">
+                                    <em>5</em>
+                                </li>
+                                <li class="js_ball" data-value="6">
+                                    <em>6</em>
+                                </li>
+                                <li class="clear clearBalls" data-action="clear">清空</li>
+                            </ul>
+                            <p class="game_intro c_727272 hide js_filter_info" id="k3_ryx_txt">
+                                <span>只要开出</span>&nbsp;&nbsp;
+                                <strong class="c_ba2636">2</strong>&nbsp;&nbsp;即中奖，奖金&nbsp;&nbsp;
+                                <strong class="c_ba2636">40-240</strong>&nbsp;&nbsp;元
+                                <span>，您可以使用<a id="k3_ryx_filter" class="js_filter" href="javascript:void(0)">形态筛选</a>，删除不需要的单注号码</span>
+                            </p>
+
+                            <div class="OptimizeBox js-datas-con clearfix">
+                                <div class="Optimize hide" data-miss-navIndex="period">
+                                    <span inf="统计近78期号码出现次数" class="jtip" tipconf="maxWidth:300">78期冷热</span>
+                                    <ul class="Blocksballs clearfix"></ul>
+                                </div>
+                                <div class="Optimize" data-miss-navIndex="curr">
+                                    <span inf="该号码自上次开出以来至本次未出现的期数" class="jtip" tipconf="maxWidth:300">当前遗漏</span>
+                                    <ul class="Blocksballs clearfix"></ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="max">
+                                    <span inf="该号码在历史上最大的遗漏值" class="jtip" tipconf="maxWidth:300">最大遗漏</span>
+                                    <ul class="Blocksballs clearfix"></ul>
+                                </div>
+                                <div class="Optimize hide" data-miss-navIndex="prev">
+                                    <span inf="该号码自上上次开出至上次开出之间的期数" class="jtip" tipconf="maxWidth:300">上次遗漏</span>
+                                    <ul class="Blocksballs clearfix"></ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <p class="selectInfo">
+                            <span>您选中了
+                                <strong class="c_ba2636">0</strong>注，共
+                                <strong class="c_ba2636">0</strong>元</span>
+                        </p>
+
+                        <div class="betbtnBox">
+                            <a title="确认选号" rel="nofollow" class="betbtn disabled"></a>
+                        </div>
+                    </div>
+                </div>
+                <span id="tip_hz" class="jtipWraper hide"><i></i>
+                    <strong>示例：</strong>
+                    <br>选号：
+                    <span class="c_ba2636">8</span>
+                    <br>开奖：
+                    <span class="c_ba2636">1 3 4</span>
+                    <br>中奖：
+                    <span class="c_ba2636">12
+                        <span data-plus-game="hz" data-key="12"></span>元</span>
+                </span>
+
+                <span id="tip_3tx" class="jtipWraper hide"><i></i>
+                    <strong>示例：</strong>
+                    <br>选号：
+                    <span class="c_ba2636">三同号通选</span>
+                    <br>开奖：
+                    <span class="c_ba2636">1 1 1</span>
+                    <br>中奖：
+                    <span class="c_ba2636">40
+                        <span data-plus-game="3tx"></span>元</span>
+                    <br>
+                    <br>选号：
+                    <span class="c_ba2636">三同号通选</span>
+                    <br>开奖：
+                    <span class="c_ba2636">2 2 2</span>
+                    <br>中奖：
+                    <span class="c_ba2636">40
+                        <span data-plus-game="3tx"></span>元</span>
+                    <br>
+                    <br>选号：
+                    <span class="c_ba2636">三同号通选</span>
+                    <br>开奖：
+                    <span class="c_ba2636">3 3 3</span>
+                    <br>中奖：
+                    <span class="c_ba2636">40
+                        <span data-plus-game="3tx"></span>元</span>
+                    <br>
+                    <br>选号：
+                    <span class="c_ba2636">三同号通选</span>
+                    <br>开奖：
+                    <span class="c_ba2636">4 4 4</span>
+                    <br>中奖：
+                    <span class="c_ba2636">40
+                        <span data-plus-game="3tx"></span>元</span>
+                    <br>
+                    <br>选号：
+                    <span class="c_ba2636">三同号通选</span>
+                    <br>开奖：
+                    <span class="c_ba2636">5 5 5</span>
+                    <br>中奖：
+                    <span class="c_ba2636">40
+                        <span data-plus-game="3tx"></span>元</span>
+                    <br>
+                    <br>选号：
+                    <span class="c_ba2636">三同号通选</span>
+                    <br>开奖：
+                    <span class="c_ba2636">6 6 6</span>
+                    <br>中奖：
+                    <span class="c_ba2636">40
+                        <span data-plus-game="3tx"></span>元</span>
+                </span>
+
+                <span id="tip_3dx" class="jtipWraper hide"><i></i>
+                    <strong>示例：</strong>
+                    <br>选号：
+                    <span class="c_ba2636">1 1 1</span>
+                    <br>开奖：
+                    <span class="c_ba2636">1 1 1</span>
+                    <br>中奖：
+                    <span class="c_ba2636">240
+                        <span data-plus-game="3dx"></span>元</span>
+                </span>
+
+                <span id="tip_3bt" class="jtipWraper hide"><i></i>
+                    <strong>示例：</strong>
+                    <br>选号：
+                    <span class="c_ba2636">2 4 6</span>
+                    <br>开奖：
+                    <span class="c_ba2636">2 4 6</span>
+                    <br>中奖：
+                    <span class="c_ba2636">40
+                        <span data-plus-game="3bt"></span>元</span>
+                </span>
+
+                <span id="tip_3lt" class="jtipWraper hide"><i></i>
+                    <strong>示例：</strong>
+                    <br>选号：
+                    <span class="c_ba2636">三连号通选</span>
+                    <br>开奖：
+                    <span class="c_ba2636">1 2 3</span>
+                    <br>中奖：
+                    <span class="c_ba2636">10
+                        <span data-plus-game="3lt"></span>元</span>
+                    <br>
+                    <br>选号：
+                    <span class="c_ba2636">三连号通选</span>
+                    <br>开奖：
+                    <span class="c_ba2636">2 3 4</span>
+                    <br>中奖：
+                    <span class="c_ba2636">10
+                        <span data-plus-game="3lt"></span>元</span>
+                    <br>
+                    <br>选号：
+                    <span class="c_ba2636">三连号通选</span>
+                    <br>开奖：
+                    <span class="c_ba2636">3 4 5</span>
+                    <br>中奖：
+                    <span class="c_ba2636">10
+                        <span data-plus-game="3lt"></span>元</span>
+                    <br>
+                    <br>选号：
+                    <span class="c_ba2636">三连号通选</span>
+                    <br>开奖：
+                    <span class="c_ba2636">4 5 6</span>
+                    <br>中奖：
+                    <span class="c_ba2636">10
+                        <span data-plus-game="3lt"></span>元</span>
+                    <br>
+                </span>
+
+                <span id="tip_2fx" class="jtipWraper hide"><i></i>
+                    <strong>示例：</strong>
+                    <br>选号：
+                    <span class="c_ba2636">1 1</span>
+                    <br>开奖：
+                    <span class="c_ba2636">1 1 2</span>
+                    <br>中奖：
+                    <span class="c_ba2636">15
+                        <span data-plus-game="2fx"></span>元</span>
+                    <br>
+                    <br>选号：
+                    <span class="c_ba2636">2 2</span>
+                    <br>开奖：
+                    <span class="c_ba2636">1 2 2</span>
+                    <br>中奖：
+                    <span class="c_ba2636">15
+                        <span data-plus-game="2fx"></span>元</span>
+                </span>
+
+                <span id="tip_2dx" class="jtipWraper hide"><i></i>
+                    <strong>示例：</strong>
+                    <br>选号：同号
+                    <span class="c_ba2636">1 1</span>不同号
+                    <span class="c_ba2636">3</span>
+                    <br>开奖：
+                    <span class="c_ba2636">1 1 3</span>
+                    <br>中奖：
+                    <span class="c_ba2636">80
+                        <span data-plus-game="2dx"></span>元</span>
+                    <br>
+                    <br>选号：同号
+                    <span class="c_ba2636">2 2</span>不同号
+                    <span class="c_ba2636">1</span>
+                    <br>开奖：
+                    <span class="c_ba2636">2 2 1</span>
+                    <br>中奖：
+                    <span class="c_ba2636">80
+                        <span data-plus-game="2dx"></span>元</span>
+                </span>
+
+                <span id="tip_2bt" class="jtipWraper hide"><i></i>
+                    <strong>示例：</strong>
+                    <br>选号：
+                    <span class="c_ba2636">1 2</span>
+                    <br>开奖：
+                    <span class="c_ba2636">1 2 3</span>
+                    <br>中奖：
+                    <span class="c_ba2636">8
+                        <span data-plus-game="2bt"></span>元</span>
+                </span>
+
+                <div class="selected_box clearfix">
+                    <div id="autoSaveBox" class="jtip hide" inf="勾选后，可以帮您记住号码篮已有的数据，下次打开页面时自动填充。">
+                        <input type="checkbox" name="autoSavePool" id="autoSavePool">
+                        <label for="autoSavePool">记忆号码篮数据</label>
+                    </div>
+                    <div id="select_list_box" class="selected_list">
+                        <dl my-delegate-object='{"events":["click"],"selectors":[".betDel"],"handlers":["deleteRow"]}'>
+                            <dd ng-repeat="list in result">
+                                <span class="type">{{list.name}}</span>
+                                <span class="nums"><strong class="c_ba2636">{{list.value}}</strong></span>
+                                <span class="edit"><a class="betDel" rel="betPoolAct">删除</a></span>
+                                <span class="sum">{{list.price}}元</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="selected_btnbox">
+                        <a hidefocus="true" ng-click="randomChooseOne()" class="selected_btn randomChoose_one" num="1" rel="nofollow" href="javascript:;">机选1注</a>
+
+                        <div class="randomBtn">
+                            <label>
+                                <input navIndex="text" value="5" />
+                                <!--<span>5注</span>-->
+                            </label>
+                            <a hidefocus="true" ng-click="randomChooseMulti($event)" class="selected_btn randomChoose_multi" num="u" rel="nofollow" href="javascript:;">机选</a>
+                        </div>
+                        <div class="shoucangBtn">
+                            <a href="javascript:;" class="storeUpBtn"><i></i>&nbsp;收藏</a>
+                            <a href="javascript:;" class="exportBtn"><i></i>&nbsp;导入</a>
+                        </div>
+                        <a hidefocus="true" class="selected_btn clear_btn" num="x" rel="nofollow" href="javascript:;" ng-click="clearList($event)">清空列表</a>
+                    </div>
+                </div>
+                <div class="betresult buyType1" div>
+                    <span class="holderWrapLeft">共
+                        <strong class="betNumCount">0</strong>注，</span>
+                    <span class="beiNumWrap">我要买
+                        <span class="addSubtract">
+                            <a href="javascript:;" rel="nofollow" hidefocus="true" class="subtract"></a>
+                            <input navIndex="text" value="1">
+                            <a href="javascript:;" rel="nofollow" hidefocus="true" class="add"></a>
+                        </span>倍，</span>
+                    <span class="holderWrapRight">共
+                        <strong class="betMoneyCount">0</strong>元&nbsp;
+                    </span>
+                </div>
+                <div class="betBtnBox">
+                    <p class="betBtns">
+                        <span id="normalBtnBox" class="">
+                            <a herf="javascript:;" rel="nofollow" class="betting_Btn" title="立即投注" ng-click="buy()"></a>
+                        </span>
+                        <span id="groupbuyEndBtnBox" class="hide">
+                            <a herf="javascript:;" rel="nofollow" class="groupEnd_Btn" title="合买截止"></a>
+                        </span>
+                        <span id="waitBtnBox" class="hide">
+                            <a herf="javascript:;" rel="nofollow" class="waitAward_Btn" title="等待开奖"></a>
+                            <span>
+                                <strong class="betTimer2">--分--秒</strong>后开始下一期投注</span>
+                        </span>
+                    </p>
+
+                    <p class="treaty">
+                        <input type="checkbox" checked="checked" id="agree_rule" name="checkbox">我已经阅读并同意<a href="http://caipiao.163.com/cphelp/order_rule.jsp" target="_blank">《委托投注规则》 </a>
+                    </p>
+                </div>
+            </section>
+        </section>
+    </article>
+
+    <!-- <script src="../Js/jobs/hbk3.js"></script> -->
+    <script src="../Js/jobs/hbk3-angular-directive.js"></script>
+    <script src="../Js/jobs/hbk3-angular-services.js"></script>
+    <script src="../Js/jobs/hbk3-angular.js"></script>
+
+</body>
+
+</html>
