@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<style>
+	/*select-box*/
+		.select-box {
+			position: relative;
+			display: inline-block;
+			*display: inline;
+			*zoom: 1;
+			margin-right: 10px;
+			vertical-align: middle;
+			border: 1px solid #DBDBDB;
+			background: #fafafa;
+			padding: 8px 24px 8px 18px;
+		}
+		.select-box-on {
+			background: #ffffff;
+			padding: 7px 23px 7px 17px;
+			border:2px solid #f60;
+		}
+		.select-title {
+			cursor:pointer;
+		}
+		.list-txt {
+			color:#666;
+			cursor: pointer;
+		}
+		.icon-arrow-up {
+			display:block;
+			position: absolute;
+			width:0;
+			top: 12px;
+			right: 9px;
+			height:0;
+			font-size:0;line-height:0;
+			border:5px solid transparent;
+			_border:5px dotted transparent;
+			border-top:5px solid #dbdbdb;
+		}
+		.select-box-on .icon-arrow-up {
+			margin-top: -3px;
+			border-top: 5px solid transparent;
+			_border-top: 5px dotted transparent;
+			border-bottom: 5px solid #f60;
+			top: 8px;
+		}
+		.option-item {
+			display:none;
+			position:absolute;
+			z-index: 999999;
+			top:30px;left:-2px;
+			width: 100%;
+			border:2px solid #f60;
+			background:#fff;
+			overflow-x:hidden;
+			overflow-y:auto;
+			zoom: 1;
+		}
+		.option-item li {
+			padding-left:8px;
+			cursor:pointer;
+			height:30px;
+			line-height:30px;
+			color:#666;
+			font-size:12px;
+			white-space: nowrap;
+			word-wrap: break-word;
+		}
+		.option-item li:hover,
+		.option-item li.on {
+			background:#f60;
+			color:#fff;
+		}
+		/*\select-box*/
+	</style>
+	<script type="text/javascript" src='http://code.jquery.com/jquery-1.7.2.min.js'></script>
+</head>
+
+<body>
+<div class="select-box">
+	<div class="select-title">
+		<span class="list-txt">title</span>
+		<b class="icon-arrow-up"></b>
+	</div>
+	<ul class="option-item" style="display: none;">
+		<li data-v="1" class="on">item1</li>
+		<li data-v="0" class="">item2</li>
+		<li data-v="3" class="">item3</li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+$('.select-box').find('.select-title').click(function (e) {
+	var option_item = $(this).next()[0];
+	if(option_item.style.display === 'block') {
+		return;
+	}
+	option_item.style.display = 'block';
+	this.parentNode.className += ' select-box-on';
+
+	e.stopPropagation();
+});
+
+$(document).click(function () {
+	$(".select-box").removeClass('select-box-on');
+	$(".option-item").hide();
+});
+
+$(".option-item").on('hover', 'li', function (e) {
+	var self = this;
+	$(this).toggleClass('hover', e.type === 'mouseenter');
+});
+$(".option-item").on('click','li', function () {
+	$(this).addClass('on').siblings().removeClass('on');
+	//doSomeThing here
+});
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+<!doctype html>
+<!--[if IE 6]><html class="ie6"><![endif]-->
+<!--[if IE 7]><html class="ie7"><![endif]-->
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if IE 9]><html class="ie9"><![endif]-->
+<!--[if !IE|gt IE 9]><!-->
+<html class="modern">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+	<style type="text/css">
+	
+	</style>
+</head>
+
+<body>
+<!--方案一-->
+<!--[if lte IE 8]>
+<bgsound src="爸爸去哪儿.mp3" loop='-1' autostart='true'></bgsound>
+<![endif]-->
+<!--[if gt IE 8|!IE]><!-->
+<!-- <audio src="爸爸去哪儿.mp3" autoplay loop controls></audio> -->
+<audio src="爸爸去哪儿.mp3" 1loop 1controls></audio>
+<!--<![endif]-->
+
+<!--方案二-->
+<!--<script type="text/javascript">
+if(!window.addEventListener) { // lte IE 8
+	document.write('<bgsound src="爸爸去哪儿.mp3"></bgsound>');
+}
+else {
+	document.write('<audio src="爸爸去哪儿.mp3" loop autoplay 1controls></audio>');
+}
+</script>
+-->
+</body>
+</html>

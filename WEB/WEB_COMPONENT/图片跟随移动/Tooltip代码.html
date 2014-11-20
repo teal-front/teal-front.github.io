@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>JavaScript实现的一个漂亮的气泡提示效果_网页代码站(www.webdm.cn)</title>
+<style type="text/css">
+body{font:76%/1.5 Arial,sans-serif;color:#333}
+div,span,table{able-layout:fixed;word-wrap:break-word;}
+div#container{margin:0 auto;}
+h1{color:#3CA3FF;margin:1em 0 0;letter-spacing:-2px}
+p{margin:0 0 1.7em}
+a{color:#F60;font-weight:bold}
+a:hover{color:#F00}
+.tooltip{width:198px;color:#000;font:lighter 11px/1.3 Arial,sans-serif;text-decoration:none;text-align:center}
+.tooltip span.top{padding:30px 8px 0;background:url(http://www.webdm.cn/images/20110712/bt.gif) no-repeat top}
+.tooltip b.bottom{padding:3px 8px 15px;color:#548912;background:url(http://www.webdm.cn/images/20110712/bt.gif) no-repeat bottom}
+</style>
+<script type="text/javascript">
+function enableTooltips(id){
+	var links,i,h;
+	if(!document.getElementById || !document.getElementsByTagName) return;
+	h=document.createElement("span");
+	h.id="btc";
+	//h.setAttribute("id","btc");
+	h.style.position="absolute";
+	document.getElementsByTagName("body")[0].appendChild(h);
+	if(id==null) links=document.getElementsByTagName("a");
+	else links=document.getElementById(id).getElementsByTagName("a");
+	for(i=0;i<links.length;i++){
+		Prepare(links[i]);
+    }
+}
+function Prepare(el){
+	var tooltip,t,b,s,l;
+	t=el.getAttribute("message");
+	if(t==null || t.length==0) return ;
+	el.removeAttribute("message");
+	tooltip=CreateEl("span","tooltip");
+	s=CreateEl("span","top");
+	s.appendChild(document.createTextNode(t));
+	tooltip.appendChild(s); 
+	b=CreateEl("b","bottom");
+	tooltip.appendChild(b);
+	//setOpacity(tooltip);
+	el.tooltip=tooltip;
+	el.onmouseover=showTooltip;
+	el.onmouseout=hideTooltip;
+	el.onmousemove=Locate;
+}
+function showTooltip(e){
+	document.getElementById("btc").appendChild(this.tooltip);
+	Locate(e);
+}
+function hideTooltip(e){
+	var d=document.getElementById("btc");
+	if(d.childNodes.length>0) d.removeChild(d.firstChild);
+}
+function setOpacity(el){
+	el.style.filter="alpha(opacity:95)";
+	el.style.KHTMLOpacity="0.95";
+	el.style.MozOpacity="0.95";
+	el.style.opacity="0.95";
+}
+function CreateEl(t,c){
+	var x=document.createElement(t);
+	x.className=c;
+	x.style.display="block";
+	return(x);
+}
+function Locate(e){
+	var posx=0,posy=0;
+	if(e==null) e=window.event;
+	if(e.pageX || e.pageY){
+		posx=e.pageX; posy=e.pageY;
+    }
+	else if(e.clientX || e.clientY){
+		if(document.documentElement.scrollTop){
+			posx=e.clientX+document.documentElement.scrollLeft;
+			posy=e.clientY+document.documentElement.scrollTop;
+		}
+		else{
+			posx=e.clientX+document.body.scrollLeft;
+			posy=e.clientY+document.body.scrollTop;
+		}
+	}
+	document.getElementById("btc").style.top=(posy+10)+"px";
+	document.getElementById("btc").style.left=(posx-20)+"px";
+}
+</script>
+<script type="text/javascript">
+window.onload=function(){enableTooltips()};
+</script>
+</head>
+<body>
+<div id="container">
+<a href="#"  message="网页代码站提供各类JavaScript/CSS特效代码,最专业的网页代码下载网站 - 致力为中国站长提供有质量的网页代码！">您知道吗？</a>
+</div>
+</body>
+</html>

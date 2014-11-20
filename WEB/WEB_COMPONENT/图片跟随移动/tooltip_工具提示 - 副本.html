@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>test js</title>
+	<style type="text/css">
+	#show { cursor:pointer; color:lime; display:inline; position:relative; }
+	#tooltip { position:absolute; top:18px; left:18px; border:1px solid gray; color:#fff; background:teal;visibility:hidden;z-index:999; }
+	.shadow { position:absolute; }
+	</style>	
+	<!--[if IE 6]>
+	<script>try{document.execCommand("BackgroundImageCache",false,true);}catch(e){}</script>
+	<![endif]-->
+</head>
+<body>
+<div id="content">
+	this is a paraphage.
+	<div id="show" tooltip="this tool" ><!-- onmouseover="Tooltip.time(this,event);" -->
+		show ToolTip
+		<!-- <div id="tooltip">this tool</div> -->
+	</div>
+	<div>asdfasdifasdlfkjasiopdfdddddddddddddddddddddddddddddddddddddd</div>
+</div>
+
+<script type="text/javascript">
+var show=document.getElementById('show');
+var text=show.getAttribute("tooltip");
+var tooltip=document.createElement("span");
+tooltip.appendChild(document.createTextNode(text));
+try{
+	show.addEventListener("mouseover",mouseover,false);
+}catch(e) {}
+if(show.attachEvent)
+show.attachEvent("onmouseover",mouseover);
+function mouseover(e) {
+	document.body.appendChild(tooltip);
+	tooltip.id="tooltip";
+	tooltip.style.visibility="visible";
+	tooltip.style.top=e.clientY+5+"px";
+	tooltip.style.left=e.clientX+5+"px";
+	try{
+		show.addEventListener("mouseout",mouseout,false);
+		show.addEventListener("mousemove",mousemove,false);
+	}catch(e){}
+	try{
+		show.attachEvent("onmouseout",mouseout);
+		show.attachEvent("onmousemove",mousemove);
+	}catch(e) {}
+}
+function mouseout(e) {
+	tooltip.style.visibility="hidden";	
+	if(show.removeEventListener) {
+		show.removeEventListener("mousemove",mousemove,false);
+		show.removeEventListener("mouseout",mouseout,false);
+	}
+	else if(show.detachEvent) {
+		show.detachEvent("onmousemove",mousemove);
+		show.detachEvent("onmouseout",mouseout);
+	}
+}
+function mousemove(e) {
+	tooltip.style.top=e.clientY+5+"px";
+	tooltip.style.left=e.clientX+5+"px";
+}
+//show.hover=function(){ show.firstChild.style.visibility="visible"; }
+/*
+//javascript权威指南　P378
+function Tooltip() {
+	this.tooltip=document.createElement('div');
+	this.tooltip.style.position="absolute";
+	this.tooltip.style.visibility="hidden";
+	this.tooltip.className="shadow";
+	this.content=document.createElement('div');
+	this.content.className="content";
+	this.tooltip.appendChild(this.content);	
+}
+Tooltip.prototype.show=function(text,x,y) {
+	this.content.innnerHTML=text;
+	this.tooltip.style.top=x+"px";
+	this.tooltip.style.left=y+"px";
+	this.tooltip.style.visibility="visible";
+	if(this.tooltip.parentNode && this.tooltip.parentNode!=document.body)
+		document.body.appendChild(this.tooltip);	
+}
+Tooltip.prototype.hide=function() {
+	this.tooltip.style.visibility="hidden";
+}
+Tooltip.DELAY=500; Tooltip.X_OFFSET=18; Tooltip.Y_OFFSET=18;
+Tooltip.prototype.time=function(target,e){
+	var text=target.getAttribute('tooltip');
+	if(!text) return;
+	var x=e.clientX;var y=e.clientY;//没写scrollTop scrollLeft
+	x+=Tooltip.X_OFFSET;y+=Tooltip.Y_OFFSET;
+	var self=this;
+	var timer=window.setTimeout(function(){ self.show(text,x,y); } ,Tooltip.DELAY);
+	target.onmouseout=mouseout;
+	function mouseout() {
+		self.hide();
+		window.clearTimeout(timer);
+		target.onmouseout=null;
+	}
+};
+Tooltip.tooltip=new Tooltip();
+Tooltip.time=function(target,e) { return Tooltip.tooltip.time(target,e); };
+var show=document.getElementById('show');
+show.addEventListener('mouseover',f,false);
+function f(e) {
+	Tooltip.tooltip.time(show,e);
+}*/
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+/*#_page-wrap { margin-top:60px; }*/
+#top_tips_container {display:none;position: fixed; top: 0px; left: 0px; height: 60px; width: 99.9%; z-index: 499999; overflow: hidden;}
+.top_tips {width:960px;margin:0 auto;}
+.text_close {position: absolute;right: 10px;top: 10px;width: 14px;height: 14px;font-size: 14px;color: #E4AF4D;line-height: 14px;font-family: Tahoma;font-weight: bold;overflow: hidden;text-align: center;}
+.ui_ico_warn {position: absolute;top: 20px;left: 0;z-index: 20;background-image: url(sprite/gb_hintbar_import.png?max_age=19830211&d=20120920173739);
+background-position: -67px -91px;height: 24px;width: 24px;}
+.hintbar_txt {margin-left: 35px;font-size: 14px;font-family: "Microsoft Yahei","\9ED1\4F53";
+padding-top: 22px;color: #984B12;line-height: 18px;height: 18px;}
+</style>
+<script src='http://code.jquery.com/jquery-1.7.2.min.js'></script>
+</head>
+
+<body>
+<div id="top_tips_container" style="">
+    	<div class="top_tips">
+        	<i class="ui_ico_warn"></i>
+            <div class="hintbar_txt">您的浏览器目前处于放大状态，会导致空间显示不正常，您可以键盘按“ctrl+数字0”组合键恢复初始状态。
+            <a href="javascript:;" onclick="tipHide();cancerZoom();return false;">不再提示</a>
+         </div>
+         <a title="点击退出" class="text_close" href="javascript:;" onclick="return false;">×</a>
+</div>
+    <script type="text/javascript" src='detect-zoom.js'></script>
+    <script type="text/javascript">
+	$(window).bind("resize.zoom",function(){
+		if(detectZoom.zoom()>1||detectZoom.zoom()<1) {
+			//tipShow();
+			console.log("big or small");
+		}
+		if(detectZoom.zoom()==1) {
+			//tipHide();
+			console.log("normal");
+		}
+	});
+	  function tipShow(){
+		$("#top_tips_container").slideDown(1500);
+		$("#_page-wrap").animate({marginTop:60},1500);
+	  }
+	  function tipHide(){
+		$("#top_tips_container").slideUp(1500);
+		$("#_page-wrap").animate({marginTop:0},1500);
+	  }
+	  //取消提醒
+	  function cancerZoom(){
+		  $(window).unbind("resize.zoom");
+	  }
+    </script>
+</body>
+</html>

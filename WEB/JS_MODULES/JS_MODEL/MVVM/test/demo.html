@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+  <!-- double-data binding -->
+  <input type="text" name="name" id="text">
+  <label for="text" id="label"></label>
+  
+  <div id="demo">
+    Hello 
+    <span class="{{css}}">{{name}}</span>
+  </div>
+
+  <script type="text/javascript" src="mvvm.js"></script>
+  <script type="text/javascript">
+  	var input = document.querySelector("#text"),
+	    label = document.querySelector("#label"),
+	    box = document.querySelector("#demo");
+
+	new Mvvm(box, {
+		name: "hello kitty",
+	  css: "beauity"
+	});
+  </script>
+</body>
+</html>

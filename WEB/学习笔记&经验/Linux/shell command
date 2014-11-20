@@ -1,0 +1,17 @@
+#sudo command
+
+sudo add-apt-repository ppa:{xxFilepath?} #
+sudo apt-get install {package1} {package2} {package3}
+sudo apt-get update  #update all
+sudo apt-get upgrade {package} #update the special package
+sudo apt-cache search {package keyword}  #search package
+sudo apt-cache show {package} #show information of package
+apt-get source {package} #download source code of package
+
+#nano editer /edit use administrator authority
+sudo nano {filepath}
+
+
+
+#apache2 restart
+sudo service apache2 restart

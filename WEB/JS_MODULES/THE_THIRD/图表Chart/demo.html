@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/Chart.Core.js"></script>
+	<script src="js/Chart.Line.js"></script>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="300"></canvas>
+
+	<script>
+	var box = document.querySelector("canvas");
+	var datasets = {
+		labels: ["January","February","March","April","May","June","July"],
+		data: [28,48,40,19,96,27,100,28,48,40,19,96,27,100]
+	};
+	drawChart(box, datasets, {
+			bezierCurve : false
+	});
+
+	function drawChart (box, datasets, options) {
+		var ctx = box.getContext("2d"),
+			createChart = function (data, options) {
+				return new Chart(ctx).Line(data, options);
+			}, 
+			padSpace4array = function (array, spaceNum) {
+			var space = " ";
+			while (spaceNum--) {
+				space += " ";
+			}
+			return array.join(space).split(" ");
+		};
+
+		var data = {};
+		data.labels = padSpace4array(datasets.labels, Math.floor(datasets.data.length / datasets.labels.length - 1));
+		data.datasets = [
+			{
+				fillColor : "rgba(220,220,220,0.5)",
+				strokeColor : "rgba(220,220,220,1)",
+				pointColor : "rgba(220,220,220,1)",
+				pointStrokeColor : "#fff",
+				data : datasets.data
+			}
+		];
+
+		createChart(data, options);		
+	}
+	
+	</script>
+</body>
+</html>

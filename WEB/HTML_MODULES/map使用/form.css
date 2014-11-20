@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+img { border:0; }
+input,select { font-size:100%; }
+.download { position:relative; }
+.form { position:absolute; top:98px; left:172px; 
+ }
+.choose-box { float:left; margin:6px 10px 0 0; padding-top:8px; font:12px/1 Arial,"microsoft yahei";}
+.phone-model { margin-left:15px; }
+.brandSelect { width:205px; height:30px; padding:2px; border:1px solid #B4C4DE; display:block; }
+.down-button { margin-left:465px; display:block; width:147px; height:61px; text-indent:-999px; background:url(http://pic.alipayobjects.com/e/201209/1JPFuKt1rQ.png) no-repeat; 1_margin-left:462px; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://pic.alipayobjects.com/e/201209/1JPFuKt1rQ.png" );
+ }

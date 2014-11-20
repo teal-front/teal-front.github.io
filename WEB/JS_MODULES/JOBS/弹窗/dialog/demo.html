@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>YY_dialog DEMO</title>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="jquery.dialog.js"></script>
+</head>
+
+<body>
+<a onclick="open1()" href="javascript:;">click me!</a>
+<a onclick="open2()" href="javascript:;">click me!</a>
+<script type="text/javascript">
+	function open1 () {
+		$.dialog({
+			//title: "title here",
+			buttons: [
+				{
+					"name": "cancel",
+					"action": "close"
+				},
+				{
+					"name": "confirm",
+					"action": function () {
+						console.log("confirm");
+					}
+				}
+			],  //noCancel
+			content: "a very long text here, to display the dialog."
+		});
+	}
+	function open2 () {
+		$.dialog({
+			content: "234234",
+			title: "tile"
+		});
+	}
+</script>
+</body>
+</html>

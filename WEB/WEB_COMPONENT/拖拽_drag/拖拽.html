@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+	-IE6－8下拖拽中的事件捕获使物体跟上鼠标事件（setCapture()，也可使框内文本不选中）
+	-http://www.zhinengshe.com/video.html#3 22.JS事件高级应用 - 01
+-->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+	<style type="text/css">
+	#wraper {
+		position:relative;
+		width:900px;height:90px;
+		margin:0 20px 0 auto;
+		border:1px solid #000;
+	}
+	#drag {
+		position:absolute;
+		width:90px;height:90px;
+		background:#80ee80;
+		cursor:pointer;
+	}
+	</style>
+</head>
+<body>
+<div id="wraper">
+	<div id="drag">a</div>
+</div>
+<div style="text-align:right;">some text,can you select me?</div>
+<script type="text/javascript">
+var oDrag=document.getElementById("drag");
+var oParent=oDrag.offsetParent;
+oDrag.onmousedown=function(e){
+	var e=e||event;
+	var x=e.clientX-this.offsetLeft,y=e.clientY-this.offsetTop;//都不带单位
+	
+	//下面的mousemove和mouseup事件都注册在document上，如果是在oDrag上则要使用事件捕获
+	//document.documentElement.onmousemove
+	document.onmousemove=function(e){ //这里document和document.documentElement都可以
+		var e=e||window.event;
+		var l=oDrag.style.left=e.clientX-x+"px";
+		var t=oDrag.style.top=e.clientY-y+"px";
+		
+		//不能拖出容器
+		if(parseInt(l)<0) { oDrag.style.left="0px"; }
+		else if(parseInt(l)>oParent.offsetWidth-2-oDrag.offsetWidth)//2是容器的边框宽度，因为o.offsetWidth包含了边框宽度
+		{ oDrag.style.left=oParent.offsetWidth-2-oDrag.offsetWidth+"px"; }
+		
+		if(parseInt(t)<0) { oDrag.style.top="0px"; } 
+		else if(parseInt(t)>oParent.offsetHeight-2-oDrag.offsetHeight)
+		{ oDrag.style.top=oParent.offsetHeight-2-oDrag.offsetHeight+"px"; }
+		
+		//磁性吸附
+		/*if(parseInt(l)<20) { oDrag.style.left="0px"; } //此行20为左边距磁性吸附距离，改为0则只是不允许拖出容器范围
+		else if(parseInt(l)>oParent.offsetWidth-oDrag.offsetWidth-20)//20为右边距磁性吸附距离
+		{ oDrag.style.left=oParent.offsetWidth-oDrag.offsetWidth+"px"; }
+		
+		if(parseInt(t)<20) { oDrag.style.top="0px"; } //20为上边距磁性吸附距离
+		else if(parseInt(t)>oParent.offsetHeight-oDrag.offsetHeight-20)//20为下边距磁性吸附距离
+		{ oDrag.style.top=oParent.offsetHeight-oDrag.offsetHeight+"px"; }*/
+		return false;//解决IE6-8下选中文字的问题，也可以用oDrag.setCapture()和oDrag.releaseCapture()
+	};
+	//document.documentElement.onmouseup
+	document.onmouseup=function(){
+		document.onmousemove=null;
+		document.onmouseup=null;
+	};
+	if(e.preventDefault) e.preventDefault();
+	if(e.returnValue) e.returnValue=false;//下面的return false为在对象属性上注册的事件取消默认行为
+	return false; //CH、FF、IE9下的选中文字问题
+};
+document.oncontextmenu=function(){ return false; }
+//http://www.zhinengshe.com/video.html#3  21.JS事件中级  20分钟处
+</script>
+</body>
+</html>

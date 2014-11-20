@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+	<style type="text/css">
+	#pre { position:absolute; z-index:90; border:6px solid #000; }
+	#pre img { vertical-align:top; }
+	</style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<img src="images/pic.jpg" class="image_pre" width=200 height=200>
+<script type="text/javascript">
+$(function(){
+	var $img=$(".image_pre");
+	
+	$img.hover(function(e){
+		console.dir(e);
+		//鼠标离图片左上角要有一点距离，不然鼠标下移时会在弹出图片上，导致图片消失
+		//$(this).css("cursor","none");
+		$("body").prepend('<div id="pre"><img src="images/pic.jpg"></div>');
+		//$("#pre").css({"top":e.pageY-$(this).height()/2+"px","left":e.pageX-$(this).height()/2+"px"});
+		$("#pre").css({"top":e.pageY+10+"px","left":e.pageX+10+"px"});
+	},function(e){
+		$("#pre").remove();
+	});
+	$img.mousemove(function(e){
+		//$("#pre").css({"top":e.pageY-$(this).height()/2+"px","left":e.pageX-$(this).height()/2+"px"});
+		$("#pre").css({"top":e.pageY+10+"px","left":e.pageX+10+"px"});
+	});
+});
+</script>
+</body>
+</html>

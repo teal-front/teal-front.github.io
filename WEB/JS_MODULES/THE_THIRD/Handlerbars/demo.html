@@ -1,0 +1,24 @@
+﻿<!-- http://handlebarsjs.com/ -->
+
+<!--normal-->
+<div class="entry">
+  <h1>{{titlt.name}}</h1> <!--这里是用对象的.来取值，用title[0]数组形式会报错-->
+  <div class="body">
+    {{body}}
+  </div>
+</div>
+
+<!-- 遍历数组 -->
+<div id="comments">
+  {{#each this or array}}
+  <h2><a href="/posts/{{../permalink}}#{{id}}">{{title}}</a></h2>
+  <div>{{body}}</div>
+  {{/each}}
+</div>
+
+<!-- if -->
+<div class="entry">
+  {{#if author}}
+    <h1>{{firstName}} {{lastName}}</h1>
+  {{/if}}
+</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {margin: 0; padding: 0;}
+	</style>
+	<link rel="stylesheet" href="css/dropdown.css">
+	<script src="js/jquery-1.7.2.js"></script>
+	<script src="js/jquery.easydropdown.js"></script>
+</head>
+<body>
+	<select name="select" id="select" class="dropdown" data-settings='{"cutOff":4,"onchange":"function(){console.log(this)}"}' disabled>
+		<option class="label">choose</option>
+		<option value="12">1044</option>
+		<option value="13">2011</option>
+		<option value="14">1042</option>
+		<option value="15">1034</option>
+		<option value="16">1042</option>
+		<option value="17">1061</option>
+		<option value="18">1075</option>
+		<option value="19">1061</option>
+		<option value="10">1094</option>
+	</select>
+
+	<script>
+	$(function () {
+		//支持jQuery和onchange绑定事件，不支持data-settings绑定
+		$("#select").change(function () {
+			console.log(this.value);
+		});
+		$("#select")[0].onchange = function () {
+			console.log("onchange: ", this.value);
+		};
+	});	
+	</script>
+</body>
+</html>

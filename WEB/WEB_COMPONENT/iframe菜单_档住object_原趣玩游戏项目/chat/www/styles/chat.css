@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* 初始化CSS */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+li{list-style: none;}
+body { color:#333; background-color: #ccc; font:12px/20px "SimSun","宋体","Arial Narrow",HELVETICA;}
+em,i {font-style:normal;}
+
+.clearfix:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.clearfix { zoom:1; }
+.clearit { clear:both; height:0; font-size:0; overflow:hidden; }
+a { color:#333333; text-decoration:none; }
+/*a:visited { color:#00a8a6;}*/
+a:hover, a:active, a:focus { color:#FF7800;}
+a:active, a:focus{text-decoration: none;}
+a:hover{text-decoration:none;}
+
+.l{ float: left; display: inline;}
+.r{ float: right; display: inline;}
+
+.chatbox{ width: 544px; height: 460px; margin: 0 auto; border: 1px solid #2d2a2a; background-color: #262627; color: #fff; font-family: 'Microsoft YaHei';}
+.chatbox .chatmain{width: 339px; height: 420px; height: 419px\0; background-color: #d2d2d2;}
+.chatbox .chatheader{ position: relative;height: 40px; background-color:#161615;}
+.chatbox .chatheader .usermainnifno{ width: 290px; overflow: hidden;}
+.chatbox .chatheader .usermainnifno .selfimg{position: absolute; z-index: 1; top: 0; left: 0; width: 40px; height: 40px;}
+.chatbox .chatheader .usermainnifno .selfimg img{ width: 40px; height: 40px; }
+.chatbox .chatheader .usermainnifno .seftinfo{ padding-left: 57px; line-height: 39px;}
+.chatbox .chatheader .usermainnifno .seftinfo span.titlename{font-size: 14px;}
+.chatbox .chatheader .packup{ cursor: pointer; width: 33px; line-height: 40px; padding-right: 15px; background:url(../images/up_down.jpg) no-repeat 28px 17px;}
+.chatbox .screen-container { padding: 4px 2px 4px 5px; height: 315px; }
+.chatbox .screen { overflow: hidden; height: 315px; }
+.chatbox .screen ul.screenul{ padding: 5px 5px 0;}
+.chatbox .screen ul.screenul li{margin: 0 0 10px 0; padding-left: 36px; list-style-type:none; color:#333;}
+.chatbox .screen ul.screenul li.notice{margin: 0 0 10px 0; padding-left: 0; list-style-type:none; color:#333;}
+.chatbox .screen ul.screenul li.notice p{ word-wrap: break-word; font-size: 14px; line-height: 22px; padding: 5px; color: #fff; background-color: #696969; border-radius: 4px;}
+.chatbox .screen ul.screenul li .name{ position: relative; height: 22px;}
+.chatbox .screen ul.screenul li .name img.xunz{ position: absolute; z-index: 1;top:0;left: -38px; width: 30px; height: 30px;}
+.chatbox .screen ul.screenul li .name span{ text-decoration: underline;cursor:pointer; color: #000000; font-size: 14px;}
+.chatbox .screen ul.screenul li .name a.me{ color: #333; }
+.chatbox .screen ul.screenul li .name a.me:hover{ color: #ff7a00;text-decoration: underline; }
+.chatbox .screen ul.screenul li p.cont{ word-wrap: break-word; font-size: 14px; width: 245px; line-height: 22px; padding: 5px; background-color: #fff; border-radius: 4px;}
+.chatbox .screen ul.screenul li p.cont img {height:50px;}
+.chatbox .screen ul.screenul li p.cont span.vipshow{ font-size: 11px; color: #ff7700;}
+.chatbox .screen ul.screenul li p.cont span.viphide{ display: none;}
+.person_info{ position:absolute;top: 50px; left: 50px; z-index: 3;background: #b9fff8; width: 258px; height: 103px; border: 1px solid #04c4b2; color: #333;}
+.person_info em.arrow{ position:absolute;top: -7px; left: 10px; z-index: 4;width:8px; height:7px; font-size: 0; background:url(../images/arrow.gif) no-repeat 0 0;}
+.person_info h3{ margin-left: 5px; padding:5px 0 0 23px; width:210px; height: 24px; font-size: 13px; font-weight: normal;}
+.person_info h3.vipshow{background: url(../images/vip.gif) no-repeat 0 9px;}
+.person_info h3.viphide{background: url(../images/vip_grey.gif) no-repeat 0 9px;}
+.person_info h3 span{float: left;display:inline;}
+.person_info h3 span.uname{}
+.person_info h3 span.unum{ width: 90px; overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.person_info .permain{ padding-left: 5px;}
+.person_info .permain .left{ width: 40px; height: 39px;}
+.person_info .permain .left img{width: 40px; height: 39px;}
+.person_info .permain .right{ padding-left: 10px; width: 177px; height: 47px;}
+
+.person_info .permain .right {overflow:hidden;}
+.person_info .permain .right ul li{ list-style-type: none; height: 23px; overflow: hidden;}
+
+.person_info .permain .right ul li span.ln{ float: left; width: 48px;}
+.person_info .permain .right ul li p{float: left; width: 100px;}
+.person_info .permain .right ul li p.perc{ float:left; width: 120px; margin-top: 3px; height: 12px; border: 1px solid #343434;}
+.person_info .permain .right ul li p.perc span{ display: block; background: #0066cc; height: 12px; width: 66%;}
+.person_info .bottom{ background: #04c4b2; height: 27px;}
+.person_info .bottom span{ float: right; display:inline; margin: 0 5px; padding: 0 2px; line-height: 27px; cursor: pointer; text-align: center; color: #fff;}
+.person_info .bottom span:hover{ color: #f78907;}
+.person_info .bottom span.isfri{ cursor: auto; color: #343434;}
+.person_info .bottom span.ispb{cursor: pointer; color: #343434;}
+
+.chatbox .sendbox{ height: 93px;}
+.chatbox .sendbox .emoticons{ height: 25px; background-color: #f3f3f2;}
+.chatbox .sendbox .emoticons ul{ width: 100px;}
+.chatbox .sendbox .emoticons ul li{position: relative; float: left; width: 25px; height: 25px; display:inline; margin: 0 10px 0;}
+.chatbox .sendbox .emoticons ul li img{ width: 25px; height: 25px; float: left; cursor: pointer;}
+.chatbox .sendbox .emoticons ul li .emoWrapper {display: none;width: 308px;bottom: 33px; left:0;position: absolute; z-index:99;background-color: #aaa;box-shadow: 0 0 10px #555;}
+.chatbox .sendbox .emoticons ul li .emoWrapper img {margin: 2px;padding: 2px;width: 25px;height: 25px; cursor: pointer;}
+.chatbox .sendbox .enterbox{ height: 72px;width: 339px; margin: 0 auto;}
+
+.chatbox .sendbox .enterbox textarea{resize: none; height: 61px;width: 329px; padding: 5px; background-color: #d2d2d2; border: none;}
+.chatbox .sendbox a.sendbtn{ position: relative; width: 64px; height: 19px; margin:3px 10px 0 0; line-height: 19px; text-align: center; background-color: #05cebb; color: #fff;}
+.chatbox .sendbox a.sendbtn:hover{ background-color: #0fbcac; color: #fff;}
+.chatbox .sendbox a.sendbtn .tips{white-space:nowrap; padding:5px; text-align:center; background: #333; color: red; border: 1px solid #fff;  border-radius: 5px; font-size: 12px; position: absolute; z-index: 3; top: 19px; left: -20px;}
+
+.chatbox .chatsidebar{ width: 205px; height: 420px;}
+.chatbox .chatsidebar .search{ height: 29px; padding:2px 0 0 3px; background-color: #393837;}
+.chatbox .chatsidebar .search .seainp{ }
+.chatbox .chatsidebar .search .seainp input{ padding:0 5px; font-family:'宋体';background-color: #2e2a2a; width: 159px; height: 25px; line-height: 25px; color: #fff; border:1px solid #484848;}
+.chatbox .chatsidebar .search a{ width: 25px; height: 25px; background:url(../images/search_btn.jpg) no-repeat 0 0;border:1px solid #484848;}
+.chatbox .chatsidebar .search a:hover{ background-position: 0 -25px;}
+
+.chatbox .channel{height: 225px; overflow-x: hidden; overflow-y: auto;}
+.chatbox .channel h2,.chatbox .friends h2{ height:25px; line-height:25px; color:#fff;padding-left: 4px; font-weight: bold; font-size: 12px; background-color: #141414;}
+.chatbox .channel ul{}
+.chatbox .channel ul li{position: relative; cursor: pointer; height: 25px;line-height: 25px; }
+.chatbox .channel ul li p{padding-left:4px;}
+.chatbox .channel ul li p.tips{background-color: #2f2f30; color: #595959; cursor: auto;}
+.chatbox .channel ul li p.fri{ width: 100px; overflow: hidden; padding-left: 18px; background: url(../images/dot1.jpg) no-repeat left 8px; margin-left: 10px;}
+.chatbox .channel ul li span.close{ margin:5px 5px 0 0;cursor: pointer; width: 14px; height: 14px;background: url(../images/close.jpg) no-repeat center center;}
+.chatbox .channel ul li span.onlinenum em{ color: #fd9e16;}
+.chatbox .channel ul li .infonum{ height: 14px; line-height: 14px; font-size: 12px; font-family: '宋体'; padding: 0 5px; margin: 6px 10px 0 0; background-color: #c2465c;}
+.chatbox .channel ul li.current{ background-color: #696363;}
+.chatbox .channel ul li.current p{border: none;}
+
+.chatbox .friends{height: 124px;}
+.chatbox .friends ul.myfriendslist{height: 141px; overflow-x: hidden; overflow-y: auto;}
+.chatbox .friends ul li{cursor: pointer; position: relative; height: 25px; padding-left: 4px;}
+.chatbox .friends ul li:hover{ background-color: #4a4646;}
+.chatbox .friends ul li img{ width: 20px; height: 20px; margin-top: 2px;}
+.chatbox .friends ul li p{ width: 104px; line-height: 25px; height: 25px; overflow: hidden; margin-left: 5px;}
+.chatbox .friends ul li span.isonline{position:absolute; top:16px; left:20px; z-index:1;width: 6px; height: 6px; border: 1px solid #605f5f;background-color: #908f8f;}
+.chatbox .friends ul li span.online{border: 1px solid #09978a;background-color: #05cebb; }
+.chatbox .friends ul li span.delfri{ width: 15px; height: 15px; margin: 6px 10px 0 0; background: url(../images/delfri.png) no-repeat 0 0;_background: url(../images/delfri.gif) no-repeat 0 0;}
+.chatbox .friends ul li span.chatpts{ width: 13px; height: 12px; margin: 8px 10px 0 0; background: url(../images/sltx.png) no-repeat 0 0;_background: url(../images/sltx.gif) no-repeat 0 0;}
+
+/* jScrollPane */
+.jspContainer { overflow: hidden; position: relative; }
+.jspPane { position: absolute; }
+.jspVerticalBar { position: absolute; top: 0; right: 0; width: 10px; height: 100%; }
+.jspCap { display: none; }
+.jspTrack { width: 8px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; background-color: #acacac; position: relative; /* margin: 3px 0; */ padding: 0 1px; }
+.jspDrag { width: 8px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; background-color: #696969; position: relative; top: 0; left: 0; cursor: pointer; }
+.jspArrow { background: #50506d; text-indent: -20000px; display: block; cursor: pointer; padding: 0; margin: 0; }
+.jspArrow.jspDisabled { cursor: default; background: #80808d; }
+.jspVerticalBar .jspArrow { height: 7px; width: 10px;font-size:0; background-image: url(../images/sprite-01.png); background-repeat: no-repeat; }
+.jspVerticalBar .jspArrowUp { background-position: 0px -43px; margin-bottom: 3px; }
+.jspVerticalBar .jspArrowDown { background-position: 0px -49px; margin-top: 3px; }
+.jspVerticalBar .jspArrow:focus { outline: none; }
+* html .jspCorner { margin: 0px -3px 0px 0px; }

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta name="Copyright" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title></title>
+    <style>
+    * {padding:0;margin: 0;}
+    body {padding-bottom: 268px;background: #D63931 url(images/main-bg.png) no-repeat center top;}
+    #main {width:1000px;margin:0 auto;}
+    .mBanner {position:relative;height:497px;background:url(images/banner-bg.png);}
+    .mLogo {position: absolute;width: 122px;height: 52px;left:5px;top:17px;text-indent: -4000px;}
+    .mContent {background:#FFF7CC;padding:48px 44px 10px;}
+    .mSection {margin-bottom: 44px;}
+    .mSection .title {margin-bottom: 18px;height:35px;line-height: 35px;color:#fff;font-size: 20px;padding-left:14px;background:url(images/title-bg.png) no-repeat;}
+    .mSection .text {font:18px "microsoft yahei"; color:#656565;line-height: 30px;}
+    .mSection .manipulate {position: relative;width: 849px;height: 380px;background:url(images/lottery-box.png) no-repeat;}
+    .mSection .rotate {position: absolute;top: 46px;left: 46px;}
+    .mSection .btn {position: absolute;top:137px;left:136px;}
+    .mSection .arrow {position: absolute;top:70px;left:166px;}
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-rotate2.2.js"></script>
+</head>
+
+<body class="">
+    <div id="main">
+        <div class="mContent">
+            <div class="mSection">
+                <div class="title">活动一</div>
+                <div class="text manipulate">
+                    <img class="rotate" src="images/lottery_rotate.png" alt="" width="274" height="275" />
+                    <img src="images/arrow.png" alt="" class="arrow">
+                    <a href="javascript:;" class="btn">
+                        <img src="images/lottery_btn.png" alt="" width="96" height="95" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    /* 一般的旋转效果 */
+    $(".rotate").rotate({ 
+       bind: 
+         { 
+            mouseover : function() { 
+                $(this).rotate({animateTo:180})
+            },
+            mouseout : function() { 
+                $(this).rotate({animateTo:0})
+            }
+         } 
+       
+    });
+    /* 抽奖效果 */
+    var rotateFunc = function(angle,text){
+        $('.rotate').stopRotate();
+        $(".rotate").rotate({
+            angle:0, 
+            duration: 5000, 
+            animateTo: angle+1440,
+            callback:function(){
+                alert(text)
+            }
+        });
+    };
+
+    $(".btn").click(function () {
+        /* async */
+        /*if (false/*登录否) {
+        } else {
+            $.get("http://localhost:8888/json/data.json", function (data) {
+                switch (data) {
+                    case "1": rotateFunc(30,'恭喜你中了现金券50元');break;
+                    case "2": rotateFunc(90,'恭喜你中了现金券100元');break;
+                    case "3": rotateFunc(150,'恭喜你中了现金券20元');break;
+                    case "4": rotateFunc(180,'恭喜你中了iPad Air2');break;
+                    case "5": rotateFunc(210,'恭喜你中了iPhone6');break;
+                    default: rotateFunc(240,'很遗憾，没中奖。');
+                }
+            }, 'html');
+        }*/
+        /* sync */
+        rotateFunc(240,'很遗憾，没中奖。');
+    })
+    </script>
+</body>
+
+</html>

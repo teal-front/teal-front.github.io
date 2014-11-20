@@ -1,0 +1,982 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery Sly滚动条插件制作横向滚动条和垂直滚动条</title>
+<meta name="description" content="jquery Sly滚动条插件制作水平横向滚动条产品展示和垂直滚动条产品展示，带索引导航按钮控制产品定位展示，支持自动轮播的滚动条滚动内容展示。" />
+<link type="text/css" href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id="header">
+	<div class="container">
+		<h1>Sly</h1>
+		<p>jQuery插件为导航为基础支持方向滚动</p>
+		
+		<div class="download">
+			<h4>下载最新的</h4>
+			<a href="http://github.com/Darsain/sly/raw/master/jquery.sly.js" class="left"><span>开发版本</span></a>
+			<a href="http://github.com/Darsain/sly/raw/master/jquery.sly.min.js" class="right"><span>min版本</span></a>
+		</div>
+		
+		<a href="http://github.com/Darsain/sly" class="repo ir">Github上的仓库和文档</a>
+	
+		<ul id="nav" class="clearfix">
+			<li><a href="#horizontal">水平</a></li>
+			<li><a href="#vertical">垂直</a></li>
+			<li><a href="#stylesheet">样式表</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="content">
+	<div id="sections" class="container">
+	
+		<div class="scrollbox" id="horizontal">
+		
+			<div class="slyWrap example1">
+			
+				<div class="scrollbar">
+					<div class="handle"></div>
+				</div>
+				<div class="sly" data-options='{ "horizontal": 1, "itemNav": "basic", "dragContent": 1, "startAt": 3, "scrollBy": 1 }'>
+					<ul class="big cfix">
+						<li><img src="images/01.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/02.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/03.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/04.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/05.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/06.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/07.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/08.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/09.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/10.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/11.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/12.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/13.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/14.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/15.jpg" width="187" height="170" alt="女装" /></li>
+					</ul>
+				</div>
+			
+				<ul class="pages"></ul>
+			
+				<div class="controls btn-toolbar">
+					<div class="btn-group">
+						<button class="btn prev">&laquo; 上一个</button>
+						<button class="btn next">下一个 &raquo;</button>
+					</div>
+					<div class="btn-group">
+						<button class="btn prevPage">&laquo; 上一页</button>
+						<button class="btn nextPage">下一页 &raquo;</button>
+					</div>
+					<div class="btn-group">
+						<button class="btn" data-action="toStart">开始</button>
+						<button class="btn" data-action="toCenter">到中间</button>
+						<button class="btn" data-action="toEnd">到底</button>
+					</div>
+					<div class="btn-group">
+						<button class="btn" data-action="toStart" data-arg="10"><strong>10</strong> 开始</button>
+						<button class="btn" data-action="toCenter" data-arg="10"><strong>10</strong> 到中间</button>
+						<button class="btn" data-action="toEnd" data-arg="10"><strong>10</strong> 到底</button>
+					</div>
+					<div class="btn-group">
+						<button class="btn" data-action="add">添加列表</button>
+						<button class="btn" data-action="remove">移除列表</button>
+					</div>
+				</div>
+			
+<pre class="prettyprint">
+$frame.sly({
+horizontal: 1,
+itemNav: "basic",
+dragContent: 1,
+startAt: 3,
+scrollBy: 1
+});
+</pre>
+			
+			</div><!--example1 end-->
+		
+			<hr>
+		
+			<div class="slyWrap example1">
+			
+				<div class="scrollbar">
+					<div class="handle"></div>
+				</div>
+				<div class="sly" data-options='{ "horizontal": 1, "itemNav": "smart", "dragContent": 1, "startAt": 3, "scrollBy": 1 }'>
+					<ul class="big cfix">
+						<li><img src="images/01.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/02.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/03.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/04.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/05.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/06.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/07.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/08.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/09.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/10.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/11.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/12.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/13.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/14.jpg" width="187" height="170" alt="女装" /></li>
+						<li><img src="images/15.jpg" width="187" height="170" alt="女装" /></li>
+					</ul>
+				</div>
+			
+				<ul class="pages"></ul>
+			
+				<div class="controls btn-toolbar">
+					<div class="btn-group">
+						<button class="btn prev">&laquo; 上一个</button>
+						<button class="btn next">下一个 &raquo;</button>
+					</div>
+					<div class="btn-group">
+						<button class="btn prevPage">&laquo; 上一页</button>
+						<button class="btn nextPage">下一页 &raquo;</button>
+					</div>
+					<div class="btn-group">
+						<button class="btn" data-action="toStart">开始</button>
+						<button class="btn" data-action="toCenter">到中间</button>
+						<button class="btn" data-action="toEnd">到底</button>
+					</div>
+					<div class="btn-group">
+						<button class="btn" data-action="toStart" data-arg="10"><strong>10</strong> 开始</button>
+						<button class="btn" data-action="toCenter" data-arg="10"><strong>10</strong> 到中间</button>
+						<button class="btn" data-action="toEnd" data-arg="10"><strong>10</strong> 到底</button>
+					</div>
+					<div class="btn-group">
+						<button class="btn" data-action="add">添加列表</button>
+						<button class="btn" data-action="remove">移除列表</button>
+					</div>
+				</div>
+			
+<pre class="prettyprint">
+$frame.sly({
+horizontal: 1,
+itemNav: "smart",
+dragContent: 1,
+startAt: 3,
+scrollBy: 1
+});
+</pre>
+			
+			</div><!--example1 end-->
+		
+			<hr>
+		
+		<div class="slyWrap example2">
+		
+			<div class="scrollbar">
+				<div class="handle"></div>
+			</div>
+		
+			<div class="sly" data-options='{ "horizontal": 1, "itemNav": "centered", "dragContent": 1, "scrollBy": 1 }'>
+				<ul class="big cfix">
+					<li><img src="bjb/01.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/02.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/03.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/04.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/05.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/06.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/07.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/08.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/09.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/10.jpg" width="220" height="220" /></li>
+				</ul>
+			</div>
+		
+			<ul class="pages"></ul>
+		
+			<div class="controls btn-toolbar">
+				<div class="btn-group">
+					<button class="btn prev">&laquo; 上一个</button>
+					<button class="btn next">下一个 &raquo;</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn prevPage">&laquo; 上一页</button>
+					<button class="btn nextPage">下一页 &raquo;</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="toStart">开始</button>
+					<button class="btn" data-action="toCenter">到中间</button>
+					<button class="btn" data-action="toEnd">到底</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="toCenter" data-arg="5"><strong>5</strong> 到中间</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="add">添加列表</button>
+					<button class="btn" data-action="remove">移除列表</button>
+				</div>
+			</div>
+		
+<pre class="prettyprint">
+$frame.sly({
+horizontal: 1,
+itemNav: "centered",
+dragContent: 1,
+scrollBy: 1
+});
+</pre>
+		
+		</div>
+		
+		<hr>
+		
+		<div class="slyWrap example2">
+		
+			<div class="scrollbar">
+				<div class="handle"></div>
+			</div>
+		
+			<div class="sly" data-options='{ "horizontal": 1, "itemNav": "forceCentered", "dragContent": 1, "scrollBy": 1, "easing": "easeOutBack" }'>
+				<ul class="big cfix">
+					<li><img src="bjb/01.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/02.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/03.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/04.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/05.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/06.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/07.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/08.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/09.jpg" width="220" height="220" /></li>
+					<li><img src="bjb/10.jpg" width="220" height="220" /></li>
+				</ul>
+			</div>
+		
+			<ul class="pages"></ul>
+		
+			<div class="controls btn-toolbar">
+				<div class="btn-group">
+					<button class="btn prev">&laquo; 上一个</button>
+					<button class="btn next">下一个 &raquo;</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn prevPage">&laquo; 上一页</button>
+					<button class="btn nextPage">下一页 &raquo;</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="toStart">开始</button>
+					<button class="btn" data-action="toCenter">到中间</button>
+					<button class="btn" data-action="toEnd">到底</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="toCenter" data-arg="5"><strong>5</strong> 到中间</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="add">添加列表</button>
+					<button class="btn" data-action="remove">移除列表</button>
+				</div>
+			</div>
+		
+<pre class="prettyprint">
+$frame.sly({
+horizontal: 1,
+itemNav: "forceCentered",
+dragContent: 1,
+scrollBy: 1,
+easing: "easeOutBack" // with jQuery easing v1.3
+});
+</pre>
+		
+		</div>
+		
+		<hr>
+		
+		<div class="slyWrap example3">
+		
+			<div class="scrollbar">
+				<div class="handle"></div>
+			</div>
+		
+			<div class="sly" data-options='{ "horizontal": 1, "itemNav": "basic", "dragContent": 1, "scrollBy": 1, "cycleBy": "pages", "cycleInterval": 1000, "startPaused": 1, "pauseOnHover": 1 }'>
+				<ul class="big cfix">
+					<li><img src="pic/01.jpg" width="465" height="200" alt="风景" /></li>
+					<li><img src="pic/02.jpg" width="465" height="200" alt="风景" /></li>
+					<li><img src="pic/03.jpg" width="465" height="200" alt="美食" /></li>
+					<li><img src="pic/04.jpg" width="465" height="200" alt="美食" /></li>
+					<li><img src="pic/01.jpg" width="465" height="200" alt="风景" /></li>
+					<li><img src="pic/02.jpg" width="465" height="200" alt="风景" /></li>
+					<li><img src="pic/03.jpg" width="465" height="200" alt="美食" /></li>
+					<li><img src="pic/04.jpg" width="465" height="200" alt="美食" /></li>
+					<li><img src="pic/02.jpg" width="465" height="200" alt="风景" /></li>
+					<li><img src="pic/03.jpg" width="465" height="200" alt="美食" /></li>
+				</ul>
+			</div>
+		
+			<ul class="pages"></ul>
+		
+			<div class="controls btn-toolbar">
+				<div class="btn-group">
+					<button class="btn btn-green" data-action="cycle">循环</button>
+					<button class="btn btn-green " data-action="pause">暂停</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn prevPage">&laquo; 上一页</button>
+					<button class="btn nextPage">下一页 &raquo;</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="toStart">开始</button>
+					<button class="btn" data-action="toCenter">到中间</button>
+					<button class="btn" data-action="toEnd">到底</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="toStart" data-arg="5"><strong>5</strong> 开始</button>
+					<button class="btn" data-action="toCenter" data-arg="5"><strong>5</strong> 到中间</button>
+					<button class="btn" data-action="toEnd" data-arg="5"><strong>5</strong> 到底</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="add">添加列表</button>
+					<button class="btn" data-action="remove">移除列表</button>
+				</div>
+			</div>
+		
+<pre class="prettyprint">
+$frame.sly({
+horizontal: 1,
+itemNav: "basic",
+dragContent: 1,
+scrollBy: 1,
+cycleBy: 'pages',
+cycleInterval: 1000,
+startPaused: 1
+});
+</pre>
+		
+		</div>
+		
+		<hr>
+		
+		<div class="slyWrap example4">
+		
+			<div class="sly" data-options='{ "horizontal": 1, "itemNav": "forceCentered", "cycleBy": "items", "cycleInterval": 2000 }'>
+				<ul class="big cfix">
+					<li>
+						<h3><a href="http://www.jsfoot.com/js/images/cj/2012-03-14/420.html">js图片滚动</a></h3>
+						<p>js图片切换特效制作js焦点图slider上下滚动切换带序列按钮控制图片滚动。内含js代码下载。</p>
+					</li>
+					<li>
+						<h3><a href="http://www.jsfoot.com/js/images/more/2012-05-15/608.html">js lazyload延迟加载</a></h3>
+						<p>js图片特效随着浏览器滚动条滚动网页图片延迟加载，可控制页面某一位置图片是否开始加载。js代码。</p>
+					</li>
+					<li>
+						<h3><a href="http://www.jsfoot.com/js/letter/qh/2012-03-18/438.html">js文字特效</a></h3>
+						<p>js文字特效制作js文字切换效果让焦点文字带滤镜效果切换滚动，内含js代码下载。</p>
+					</li>
+					<li>
+						<h3><a href="http://www.jsfoot.com/js/letter/gd/2012-03-18/434.html">js文字滚动</a></h3>
+						<p>js文字滚动插件制作一个js文字滚动效果，两排双行关联向上文字间隙滚动,支持多组文字滚动列表。内含js代码下载。</p>
+					</li>
+					<li>
+						<h3><a href="http://www.jsfoot.com/js/form/qxfx/2012-03-25/500.html">js表单验证</a></h3>
+						<p>js特效制作js checkbox复选框全选 反选 取消全部等设置多个表单里面的checkbox复选框勾选特效。内含js代码下载。</p>
+					</li>
+					<li>
+						<h3><a href="http://www.jsfoot.com/js/table/px/2012-03-19/444.html">js表格</a></h3>
+						<p>js表格特效制作一个js表格排序筛选，点击表格标题，子内容按大小、字母先后顺序排列。内含js代码下载。</p>
+					</li>
+					<li>
+						<h3><a href="http://www.jsfoot.com/js/letter/ss/2012-03-18/436.html">js文字闪烁</a></h3>
+						<p>js文字特效制作一个js文字闪烁效果，文字间隙颜色变化红、黄、蓝闪烁过程。内含js代码下载</p>
+					</li>
+				</ul>
+			</div>
+		
+			<ul class="pages"></ul>
+		
+			<div class="controls btn-toolbar">
+				<div class="btn-group">
+					<button class="btn btn-green" data-action="cycle">循环</button>
+					<button class="btn btn-green " data-action="pause">暂停</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn prev">&laquo; 上一个</button>
+					<button class="btn next">下一个 &raquo;</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn prevPage">&laquo; 上一页</button>
+					<button class="btn nextPage">下一页 &raquo;</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="toStart">开始</button>
+					<button class="btn" data-action="toCenter">到中间</button>
+					<button class="btn" data-action="toEnd">到底</button>
+				</div>
+			</div>
+		
+<pre class="prettyprint">
+$frame.sly({
+horizontal: 1,
+itemNav: 'forceCentered',
+cycleBy: 'items',
+cycleInterval: 2000
+});
+</pre>
+		
+		</div>
+		
+	</div><!--horizontal end-->
+	
+	<hr>
+	
+	<div id="vertical" class="scrollbox clearfix">
+	
+		<div class="slyWrap example1">
+		
+			<div class="scrollbar">
+				<div class="handle"></div>
+			</div>
+		
+			<div class="sly" data-options='{ "itemNav": "smart", "dragContent": 1, "startAt": 10, "scrollBy": 1, "elasticBounds": 1 }'>
+				<ul class="big cfix" data-items="30">
+					
+				</ul>
+			</div>
+		
+			<ul class="pages"></ul>
+		
+			<div class="controls btn-toolbar">
+				<div class="btn-group">
+					<button class="btn prev">&laquo; 上一个</button>
+					<button class="btn next">下一个 &raquo;</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn prevPage">&laquo; 上一页</button>
+					<button class="btn nextPage">下一页 &raquo;</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="toStart">开始</button>
+					<button class="btn" data-action="toCenter">到中间</button>
+					<button class="btn" data-action="toEnd">到底</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="add">添加列表</button>
+					<button class="btn" data-action="remove">移除列表</button>
+				</div>
+			</div>
+		
+<pre class="prettyprint">
+$frame.sly({
+itemNav: "smart",
+dragContent: 1,
+startAt: 10,
+scrollBy: 1,
+elasticBounds: 1
+});
+</pre>
+		
+		</div>
+	
+	
+		<div class="slyWrap example2" style="float:right;">
+		
+			<div class="scrollbar">
+				<div class="handle"></div>
+			</div>
+		
+			<div class="sly" data-options='{ "scrollBy": 100, "startAt": 200 }'>
+				<div>
+					<h1>Lorem ipsum dolor</h1>
+					<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas.Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.<em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tinciduntcondimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+					<h2>Header Level 2</h2>
+					<ol>
+						<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+						<li>Aliquam tincidunt mauris eu risus.</li>
+					</ol>
+					<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue.Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus,at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+					<h3>Header Level 3</h3>
+					<ul>
+						<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+						<li>Aliquam tincidunt mauris eu risus.</li>
+					</ul>
+<pre>
+#header h1 a {
+display: block;
+width: 300px;
+height: 80px;
+}
+</pre>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>	
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h4>Header Level 4</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>	
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+		
+			<ul class="pages"></ul>
+		
+			<div class="controls btn-toolbar">
+				<div class="btn-group">
+					<button class="btn prevPage">&laquo; 上一页</button>
+					<button class="btn nextPage">下一页 &raquo;</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="toStart">开始</button>
+					<button class="btn" data-action="toCenter">到中间</button>
+					<button class="btn" data-action="toEnd">到底</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn" data-action="toStart" data-arg="h3"><strong>H3</strong> 开始</button>
+					<button class="btn" data-action="toCenter" data-arg="h3"><strong>H3</strong> 到中间</button>
+					<button class="btn" data-action="toEnd" data-arg="h3"><strong>H3</strong> 到底</button>
+				</div>
+			</div>
+		
+<pre class="prettyprint">
+$frame.sly({
+scrollBy: 100,
+startAt: 100
+});
+</pre>
+		</div>
+	
+	</div><!--vertical end-->
+	
+	<hr>
+	
+	<div id="stylesheet">
+		<h2>共用的css样式</h2>
+<pre>
+.slyWrap .controls{margin:20px 0 ;}
+
+.controls{text-align:center;}
+
+.sly{overflow:hidden;}
+.sly > ul{list-style:none;margin:0;padding:0;}
+.sly > ul li{position:relative;margin:0;padding:0;background:#4DBCE9;color:#fff;text-align:center;cursor:pointer;}
+.sly > ul li.active{background:#fff;color:#4DBCE9;
+	-webkit-box-shadow:inset 0 0 0 1px #4DBCE9, inset 0 0 40px 20px #97e6f7;
+	-moz-box-shadow:inset 0 0 0 1px #4DBCE9, inset 0 0 40px 20px #97e6f7;
+	-o-box-shadow:inset 0 0 0 1px #4DBCE9, inset 0 0 40px 20px #97e6f7;
+	box-shadow:inset 0 0 0 1px #4DBCE9, inset 0 0 40px 20px #97e6f7;
+}
+
+.pages{list-style:none;margin:20px 0;padding:0;text-align:center;}
+.pages li{display:inline-block;width:11px;height:11px;margin:0 2px;text-indent:-999px;background:#fff;border-radius:10px;cursor:pointer;
+	overflow:hidden;border:1px solid #aaa;
+}
+.pages li:hover{background:#eee;}
+.pages li.active{background:#999;border-color:#888;box-shadow:inset 0 0 0 2px #eee;}
+
+.scrollbar{background:#808080;border-radius:4px;border:2px solid #808080;border-top-color:#666;line-height:0;}
+.scrollbar .handle{border-radius:4px;background:#fff;cursor:pointer;line-height:0;
+	-webkit-box-shadow:0 1px 0 #555;
+	-moz-box-shadow:0 1px 0 #555;
+	-o-box-shadow:0 1px 0 #555;
+	box-shadow:0 1px 0 #555;
+}
+</pre>		
+		<h2>水平的css样式</h2>
+<pre class="prettyprint">	
+/*  */
+#horizontal .slyWrap{margin:3em 0;}
+
+#horizontal .scrollbar{margin:1em 0;height:5px;}
+#horizontal .scrollbar .handle{width:100px;height:100%;}
+
+#horizontal .example1 .sly{height:170px;}
+#horizontal .example1 .sly ul{height:100%;}
+#horizontal .example1 .sly ul li{float:left;width:187px;height:100%;margin:0 1px 0 0;}
+#horizontal .example1 .sly ul li img{width:185px;height:168px;border:solid 1px #ddd;}
+#horizontal .example1 .sly ul li.active img{border:solid 1px #3366cc;}
+
+#horizontal .example2 .sly{height:200px;}
+#horizontal .example2 .sly ul{height:100%;}
+#horizontal .example2 .sly ul li{float:left;width:266px;height:100%;margin:0 1px 0 0; }
+#horizontal .example2 .sly ul li img{width:264px;height:198px;border:solid 1px #ddd;}
+#horizontal .example2 .sly ul li.active img{border:solid 1px #3366cc;}
+
+#horizontal .example3 .sly{height:200px;}
+#horizontal .example3 .sly ul{height:100%;}
+#horizontal .example3 .sly ul li{float:left;width:465px;height:100%;margin:0 10px 0 0;cursor:default;}
+#horizontal .example3 .sly ul li.active{background:#4DBCE9;color:#fff;-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none;box-shadow:none;}
+
+#horizontal .example4 .sly{height:160px;}
+#horizontal .example4 .sly ul{height:100%;}
+#horizontal .example4 .sly ul li{float:left;padding:0 20px;width:360px;height:100%;font-size:50px;opacity:0.2;cursor:default;
+overflow:hidden;background:none;box-shadow:none;font-size:14px;text-align:justify;color:#444;
+-webkit-transition:opacity 0.3s linear;-moz-transition:opacity 0.3s linear;-o-transition:opacity 0.3s linear;transition:opacity 0.3s linear;
+}
+#horizontal .example4 .sly ul li.active{opacity:1;}
+</pre>
+		<h2>垂直的css样式</h2>
+<pre class="prettyprint">
+#vertical .slyWrap{margin:1em 0;width:450px;float:left;}
+
+#vertical .scrollbar{width:5px;}
+#vertical .scrollbar .handle{height:100px;width:100%;}
+
+#vertical .example1{position:relative;}
+#vertical .example1 .sly{width:425px;height:500px;border:1px solid #aaa;}
+#vertical .example1 .sly ul{width:100%;height:100%;overflow:hidden;}
+#vertical .example1 .sly ul li{height:80px;margin:0 0 1px 0;font-size:40px;line-height:80px;}
+#vertical .example1 .scrollbar{position:absolute;top:0;right:10px;height:500px;}
+
+#vertical .example2{position:relative;}
+#vertical .example2 .sly{width:445px;margin-left:25px;height:500px;border:1px solid #aaa;background:#fff;}
+#vertical .example2 .sly > div{padding:1em 1.5em;}
+#vertical .example2 .scrollbar{position:absolute;top:0;left:10px;height:500px;}
+</pre>
+	<h2>按钮的css样式</h2>		
+<pre class="prettyprint">
+/* Buttons */
+.btn{display:inline-block;padding:5px 10px 5px;margin-bottom:0;font-size:13px;line-height:18px;color:#333333;text-align:center;text-decoration:none;
+	vertical-align:middle;background-color:#f5f5f5;text-shadow:-1px -1px 0 rgba(255, 255, 255, 0.75);
+	background-image:-moz-linear-gradient(top, #fff, #e6e6e6);
+	background-image:-ms-linear-gradient(top, #fff, #e6e6e6);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#e6e6e6));
+	background-image:-webkit-linear-gradient(top, #fff, #e6e6e6);
+	background-image:-o-linear-gradient(top, #fff, #e6e6e6);
+	background-image:linear-gradient(top, #fff, #e6e6e6);
+	background-repeat:repeat-x;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#444', endColorstr='#333', GradientType=0);
+	border:1px solid;
+	border-color:#333 #333 #bfbfbf;
+	border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.3);
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	-webkit-box-shadow:inset 0 1px 0 #fff, 0 1px 1px rgba(0, 0, 0, 0.15);
+	   -moz-box-shadow:inset 0 1px 0 #fff, 0 1px 1px rgba(0, 0, 0, 0.15);
+	        box-shadow:inset 0 1px 0 #fff, 0 1px 1px rgba(0, 0, 0, 0.15);
+	cursor:pointer;
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	*margin-left:.3em;
+}
+.btn:hover,
+.btn:active,
+.btn.active,
+.btn.disabled,
+.btn[disabled]{background-color:#e6e6e6;}
+.btn:active, .btn.active{background-color:#cccccc \9;}
+.btn:first-child{*margin-left:0;}
+.btn:hover{
+	color:#333333;
+	text-decoration:none;
+	background-color:#e6e6e6;
+	background-position:0 -15px;
+	-webkit-transition:background-position 0.1s linear;
+	-moz-transition:background-position 0.1s linear;
+	-ms-transition:background-position 0.1s linear;
+	-o-transition:background-position 0.1s linear;
+	transition:background-position 0.1s linear;
+}
+.btn:focus{outline:thin dotted #333;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+.btn.active, .btn:active{
+	background-image:none;
+	-webkit-box-shadow:inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow:inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow:inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	background-color:#e6e6e6;
+	background-color:#d9d9d9 \9;
+	outline:0;
+}
+.btn.disabled, .btn[disabled]{cursor:default;background-image:none;background-color:#e6e6e6;opacity:0.65;filter:alpha(opacity=65);-webkit-box-shadow:none;
+	-moz-box-shadow:none;box-shadow:none;
+}
+.btn-large{padding:9px 14px;font-size:15px;line-height:normal;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
+.btn-large [class^="icon-"]{margin-top:1px;}
+.btn-small{padding:5px 9px;font-size:11px;line-height:16px;}
+.btn-small [class^="icon-"]{margin-top:-1px;}
+.btn-mini{padding:2px 6px;font-size:11px;line-height:14px;}
+
+.btn-blue,
+.btn-blue:hover,
+.btn-orange,
+.btn-orange:hover,
+.btn-red,
+.btn-red:hover,
+.btn-green,
+.btn-green:hover,
+.btn-black,
+.btn-black:hover{text-shadow:0 -1px 0 rgba(0, 0, 0, 0.3);color:#ffffff;}
+
+.btn-blue,
+.btn-orange,
+.btn-red,
+.btn-green,
+.btn-black{
+	-webkit-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0, 0, 0, 0.3);
+	   -moz-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0, 0, 0, 0.3);
+	        box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.btn-blue.active,
+.btn-orange.active,
+.btn-red.active,
+.btn-green.active{color:rgba(255, 255, 255, 0.75);}
+
+.btn-blue{
+	background-color:#006dcc;
+	background-image:-moz-linear-gradient(top, #0088cc, #0044cc);
+	background-image:-ms-linear-gradient(top, #0088cc, #0044cc);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+	background-image:-webkit-linear-gradient(top, #0088cc, #0044cc);
+	background-image:-o-linear-gradient(top, #0088cc, #0044cc);
+	background-image:linear-gradient(top, #0088cc, #0044cc);
+	background-repeat:repeat-x;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0044cc', GradientType=0);
+	border-color:#0044cc #0044cc #002a80;
+	border-color:rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.5);
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-blue:hover,
+.btn-blue:active,
+.btn-blue.active,
+.btn-blue.disabled,
+.btn-blue[disabled]{background-color:#0044cc;}
+.btn-blue:active, .btn-blue.active{background-color:#003399 \9;}
+
+.btn-orange{
+	background-color:#faa732;
+	background-image:-moz-linear-gradient(top, #fbb450, #f89406);
+	background-image:-ms-linear-gradient(top, #fbb450, #f89406);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
+	background-image:-webkit-linear-gradient(top, #fbb450, #f89406);
+	background-image:-o-linear-gradient(top, #fbb450, #f89406);
+	background-image:linear-gradient(top, #fbb450, #f89406);
+	background-repeat:repeat-x;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbb450', endColorstr='#f89406', GradientType=0);
+	border-color:#f89406 #f89406 #ad6704;
+	border-color:rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.3);
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-orange:hover,
+.btn-orange:active,
+.btn-orange.active,
+.btn-orange.disabled,
+.btn-orange[disabled]{background-color:#f89406;}
+.btn-orange:active, .btn-orange.active{background-color:#c67605 \9;}
+
+.btn-red{
+	background-color:#da4f49;
+	background-image:-moz-linear-gradient(top, #ee5f5b, #bd362f);
+	background-image:-ms-linear-gradient(top, #ee5f5b, #bd362f);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
+	background-image:-webkit-linear-gradient(top, #ee5f5b, #bd362f);
+	background-image:-o-linear-gradient(top, #ee5f5b, #bd362f);
+	background-image:linear-gradient(top, #ee5f5b, #bd362f);
+	background-repeat:repeat-x;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
+	border-color:#bd362f #bd362f #802420;
+	border-color:rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.4);
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-red:hover,
+.btn-red:active,
+.btn-red.active,
+.btn-red.disabled,
+.btn-red[disabled]{background-color:#bd362f;}
+.btn-red:active, .btn-red.active{background-color:#942a25 \9;}
+
+.btn-green{
+	background-color:#5bb75b;
+	background-image:-moz-linear-gradient(top, #62c462, #51a351);
+	background-image:-ms-linear-gradient(top, #62c462, #51a351);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+	background-image:-webkit-linear-gradient(top, #62c462, #51a351);
+	background-image:-o-linear-gradient(top, #62c462, #51a351);
+	background-image:linear-gradient(top, #62c462, #51a351);
+	background-repeat:repeat-x;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#51a351', GradientType=0);
+	border-color:#51a351 #51a351 #387038;
+	border-color:rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.3);
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-green:hover,
+.btn-green:active,
+.btn-green.active,
+.btn-green.disabled,
+.btn-green[disabled]{background-color:#51a351;}
+.btn-green:active, .btn-green.active{background-color:#408140 \9;}
+
+.btn-black{
+	background-color:#393939;
+	background-image:-moz-linear-gradient(top, #454545, #262626);
+	background-image:-ms-linear-gradient(top, #454545, #262626);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#454545), to(#262626));
+	background-image:-webkit-linear-gradient(top, #454545, #262626);
+	background-image:-o-linear-gradient(top, #454545, #262626);
+	background-image:linear-gradient(top, #454545, #262626);
+	background-repeat:repeat-x;
+	-webkit-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 1px rgba(0, 0, 0, 0.3);
+	   -moz-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 1px rgba(0, 0, 0, 0.3);
+	        box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 1px rgba(0, 0, 0, 0.3);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#262626', GradientType=0);
+	border-color:#222 #222 #000;
+	border-color:rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.7);
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-black:hover,
+.btn-black:active,
+.btn-black.active,
+.btn-black.disabled,
+.btn-black[disabled]{background-color:#222;}
+.btn-black:active, .btn-black.active{background-color:#0c0c0c \9;}
+
+button.btn, input[type="submit"].btn{*padding-top:2px;*padding-bottom:2px;}
+button.btn::-moz-focus-inner, input[type="submit"].btn::-moz-focus-inner{padding:0;border:0;}
+button.btn.large, input[type="submit"].btn.large{*padding-top:7px;*padding-bottom:7px;}
+button.btn.small, input[type="submit"].btn.small{*padding-top:3px;*padding-bottom:3px;}
+
+.btn-group{position:relative;*zoom:1;*margin-left:.3em;}
+.btn-group:before, .btn-group:after{display:table;content:"";}
+.btn-group:after{clear:both;}
+.btn-group:first-child{*margin-left:0;}
+.btn-group + .btn-group{margin-left:5px;}
+.btn-toolbar{ }
+.btn-toolbar .btn-group{display:inline-block;*display:inline;*zoom:1;}
+.btn-group .btn{position:relative;float:left;margin-left:-1px;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
+.btn-group .btn:first-child{
+	margin-left:0;
+	-webkit-border-top-left-radius:2px;
+	-moz-border-radius-topleft:2px;
+	border-top-left-radius:2px;
+	-webkit-border-bottom-left-radius:2px;
+	-moz-border-radius-bottomleft:2px;
+	border-bottom-left-radius:2px;
+}
+.btn-group .btn:last-child, .btn-group .dropdown-toggle{
+	-webkit-border-top-right-radius:2px;
+	-moz-border-radius-topright:2px;
+	border-top-right-radius:2px;
+	-webkit-border-bottom-right-radius:2px;
+	-moz-border-radius-bottomright:2px;
+	border-bottom-right-radius:2px;
+}
+.btn-group .btn.large:first-child{
+	margin-left:0;
+	-webkit-border-top-left-radius:2px;
+	-moz-border-radius-topleft:2px;
+	border-top-left-radius:2px;
+	-webkit-border-bottom-left-radius:2px;
+	-moz-border-radius-bottomleft:2px;
+	border-bottom-left-radius:2px;
+}
+.btn-group .btn.large:last-child, .btn-group .large.dropdown-toggle{
+	-webkit-border-top-right-radius:2px;
+	-moz-border-radius-topright:2px;
+	border-top-right-radius:2px;
+	-webkit-border-bottom-right-radius:2px;
+	-moz-border-radius-bottomright:2px;
+	border-bottom-right-radius:2px;
+}
+</pre>
+	</div>
+	
+</div><!--sections end-->
+	
+</div><!--content end-->
+
+<div id="footer">
+	<div class="container">
+		<span class="fright"><a href="#top">返回顶部</a></span>
+		<p><a href="http://www.opensource.org/licenses/MIT">MIT许可证</a>.</p>
+	</div>
+</div><!--footer end-->
+	
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.sly.js"></script>
+<script type="text/javascript" src="js/jquery.easing-1.3.min.js"></script>
+
+<script type="text/javascript">
+$(function($){
+
+	// 占位符项目来填充列表的功能
+	function populate(container, count, offset){
+		var output = '';
+		offset = isNaN(offset) ? 0 : offset;
+		for(var i = 0; i<count; i++ ){
+			output += '<li>'+(offset+i)+'</li>';
+		}
+		return $(output).appendTo(container);
+	}
+
+	// 填充列表项
+	$('ul[data-items]').each(function(i,e){
+		var items = parseInt($(e).data('items'), 10);
+		populate(e, items);
+	});
+
+	// 主要调用部分
+	$(document).on('activated',function(event){
+		var $section = $(".scrollbox");
+		var $frame = $section.find('.frame'),
+			$ul = $frame.find('ul').eq(0),
+			$scrollbar = $section.find('.scrollbar'),
+			$buttons = $section.find('.controlbar [data-action]');
+		
+		populate($ul, 10);
+			
+		// 控制
+		$buttons.on('click',function(e){
+			var action = $(this).data('action');
+			switch(action){
+				case 'reset':
+				$frame.sly('toStart');
+				setTimeout(function(){
+					$ul.find('li').slice(10).remove();
+					$frame.sly('reload');
+				}, 200);
+				break;
+				default:
+				$frame.sly(action);
+			}
+		});
+		
+		$section.find(".slyWrap").each(function(i,e){
+			var cont = $(this),
+				frame = cont.find(".sly"),
+				slidee = frame.find("ul"),
+				scrollbar = cont.find(".scrollbar"),
+				pagesbar = cont.find(".pages"),
+				options = frame.data("options"),
+				controls = cont.find(".controls"),
+				prevButton = controls.find(".prev"),
+				nextButton = controls.find(".next"),
+				prevPageButton = controls.find(".prevPage"),
+				nextPageButton = controls.find(".nextPage");
+
+			options = $.extend({},options,{
+				scrollBar: scrollbar,
+				pagesBar: pagesbar,
+				prev: prevButton,
+				next: nextButton,
+				prevPage: prevPageButton,
+				nextPage: nextPageButton,
+				disabledClass: 'btn-disabled'
+			});
+
+			frame.sly( options );
+
+			cont.find("button").click(function(){
+				var action = $(this).data('action'),
+				arg = $(this).data('arg');
+				switch(action){
+					case 'add':
+					slidee.append(slidee.children().slice(-1).clone().removeClass().text(function(i,text){
+						return text/1 + 1;
+					}));
+					frame.sly('reload');
+					break;
+					case 'remove':
+					slidee.find("li").slice(-1).remove();
+					frame.sly('reload');
+					break;
+					default:
+					frame.sly(action, arg);
+				}
+			});
+
+		});
+	
+	}).trigger('activated');
+	
+});
+</script>
+
+</body>
+</html>

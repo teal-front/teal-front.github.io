@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="styles/chat.css" />
+    <script type="text/javascript" src="scripts/sea.js"></script>
+    <script type="text/javascript" src="scripts/config.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+//        var socket = io.connect();
+//        var socAllId = null;
+//        var socMyId = null
+//        socket.on('mysocId', function (data) {
+//            console.log(data);
+//        });
+//        socket.on('allId', function (data) {
+//            socAllId = data;
+//            console.log(data);
+//        });
+//        window.onload = function(){
+//            $(window).trigger('socAll',[socAllId]);
+//        }
+    </script>
+    <title></title>
+</head>
+<body>
+    <div id="chat" class="chatbox clearfix">
+            <div class="chatheader clearfix">
+                <div class="l usermainnifno">
+                    <div class="selfimg l"><img src="images/tit_world.jpg" alt=""/></div>
+                    <div class="seftinfo l">
+                        <span class="titlename">世界频道</span>
+                    </div>
+                </div>
+                <div class="packup close r">收起</div>
+            </div>
+        <div class="clearfix">
+            <div class="chatmain l">
+                <div class="screen">
+                    <ul class="screenUl">
+                        <script type="text/template" id="chatContList">
+                            <li>
+                                <div class="name">
+                                    <img src="<%= imgXunz %>" alt="">
+                                    <img src="<%= imgVip %>" alt="">
+                                    <span class="nameid" ><%= uname %>:</span>
+                                </div>
+                                <p class="cont"><%= msg %><span class="<%= vipIsShow %>">（<%= vipMsg %>）</span></p>
+                            </li>
+                        </script>
+                        <!--切换频道模板-->
+                        <script type="text/template" id="chatContListAll">
+                            <% _.each(colle,function(obj){%>
+                            <li>
+                                <div class="name">
+                                    <img src="<%= imgXunz %>" alt="">
+                                    <img src="<%= imgVip %>" alt="">
+                                    <span class="me"><%= myName %>:</span>
+                                </div>
+                                <p class="cont"><%= msg %><span class="<%= vipIsShow %>">（<%= vipMsg %>）</span></p>
+                            </li>
+                            <% }); %>
+                        </script>
+                    </ul>
+                    <div class="person_info" style="display: none;">
+                        <div class="permain clearfix">
+                           <div class="left l"><img src="images/wx_pic.png" alt=""/></div>
+                           <div class="right l">
+                               <ul>
+                                   <li>
+                                       <span class="ln name">萌大奶</span>
+                                       <p>
+                                           <img src="images/vip.gif" alt=""/>
+                                           <span class="num">(987654321)</span>
+                                       </p>
+                                   </li>
+                                   <li>
+                                       <span class="ln cjz">成就值</span>
+                                       <p class="perc"><span></span></p>
+                                   </li>
+                                   <li>
+                                       <span class="ln ncj">新成就</span>
+                                       <p><span>不作死就不会死</span></p>
+                                   </li>
+                               </ul>
+                           </div>
+                        </div>
+                        <div class="bottom clearfix"><span class="pbs">-屏蔽</span><span class="addf">+好友</span></div>
+                    </div>
+                </div>
+                <div class="sendbox">
+                    <div class="emoticons">
+                        <ul class="clearfix l">
+                            <li class="emoji">
+                                <img src="images/emojitip.jpg" alt=""/>
+                                <div class="tsj emojiWrapper" style="display: none;">
+                                    <img src="images/emoji/40.gif" title="40">
+                                    <img src="images/emoji/39.gif" title="39">
+                                    <img src="images/emoji/38.gif" title="38">
+                                    <img src="images/emoji/37.gif" title="37">
+                                    <img src="images/emoji/36.gif" title="36">
+                                    <img src="images/emoji/35.gif" title="35">
+                                    <img src="images/emoji/34.gif" title="34">
+                                    <img src="images/emoji/33.gif" title="33">
+                                    <img src="images/emoji/32.gif" title="32">
+                                    <img src="images/emoji/31.gif" title="31">
+                                    <img src="images/emoji/30.gif" title="30">
+                                    <img src="images/emoji/29.gif" title="29">
+                                    <img src="images/emoji/28.gif" title="28">
+                                    <img src="images/emoji/27.gif" title="27">
+                                    <img src="images/emoji/26.gif" title="26">
+                                    <img src="images/emoji/25.gif" title="25">
+                                    <img src="images/emoji/24.gif" title="24">
+                                    <img src="images/emoji/23.gif" title="23">
+                                    <img src="images/emoji/22.gif" title="22">
+                                    <img src="images/emoji/21.gif" title="21">
+                                    <img src="images/emoji/20.gif" title="20">
+                                    <img src="images/emoji/19.gif" title="19">
+                                    <img src="images/emoji/18.gif" title="18">
+                                    <img src="images/emoji/17.gif" title="17">
+                                    <img src="images/emoji/16.gif" title="16">
+                                    <img src="images/emoji/15.gif" title="15">
+                                    <img src="images/emoji/14.gif" title="14">
+                                    <img src="images/emoji/13.gif" title="13">
+                                    <img src="images/emoji/12.gif" title="12">
+                                    <img src="images/emoji/11.gif" title="11">
+                                    <img src="images/emoji/10.gif" title="10">
+                                    <img src="images/emoji/9.gif" title="9">
+                                    <img src="images/emoji/8.gif" title="8">
+                                    <img src="images/emoji/7.gif" title="7">
+                                    <img src="images/emoji/6.gif" title="6">
+                                    <img src="images/emoji/5.gif" title="5">
+                                    <img src="images/emoji/4.gif" title="4">
+                                    <img src="images/emoji/3.gif" title="3">
+                                    <img src="images/emoji/2.gif" title="2">
+                                    <img src="images/emoji/1.gif" title="1">
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="javascript:;" class="sendbtn r" data-channel="worldchannel">发送消息</a>
+                    </div>
+                    <div class="enterbox">
+                        <textarea name="" id="entercont">写消息...</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="chatsidebar l">
+                <div class="search clearfix">
+                    <div class="seainp l">
+                        <input type="text" placeholder="请输入好友名字" id="searchFriend" list="searchFriendResult"/>
+                        <datalist id="searchFriendResult">
+                            <option value="*@qq.com"></option>
+                            <option value="*@vip.com"></option>
+                            <option value="*@wei.com"></option>
+                            <option value="*@b.com"></option>
+                            <option value="*@ifeng.com"></option>
+                        </datalist>
+                    </div>
+                    <a href="javascript:;" class="sbtn l"></a>
+                </div>
+                <div class="channel" id="channel">
+                    <h2>聊天频道</h2>
+                    <ul class="channelList">
+                        <li class="current" data-channelname = "worldchannel"><p class="l">世界频道</p><span class="onlinenum l">（<em>3000</em>人在线）</span><div class="infonum r">100</div></li>
+                        <li data-channelname = "syschannel"><p class="l">系统通知</p><div class="infonum r">100</div></li>
+                        <li><p class="tips">*目前仅支持与5位好友同时聊天</p></li>
+                        <li><p class="fri l">宅男宅男</p><span class="close r"></span><div class="infonum r">100</div></li>
+                        <!--<script type="text/template" id="friendsList">-->
+                            <!--<li data-channelname = <%= socId %>><p><%= name %></p><span class="close">X</span></li>-->
+                        <!--</script>-->
+                    </ul>
+                </div>
+                <div class="friends" id="friends">
+                    <h2><p class="l">我的好友</p><span class="l">(<em class="onlinenum">20</em>/<em class="totalnum">30</em>)</span></h2>
+                    <ul class="myfriendslist" id="myFriendsList">
+                        <li class="on" data-user-id="">
+                            <img src="images/mrtx.jpg" class="userimg l" alt=""/>
+                            <p class="username l">我的好友我的好友···</p>
+                            <span class="isonline online"></span>
+                            <span class="delfri r"></span>
+                            <span class="chatpts r"></span>
+                        </li>
+                        <li data-user-id="">
+                            <img src="images/mrtx.jpg" class="userimg l" alt=""/>
+                            <p class="username l">我的好友我的好友···</p>
+                            <span class="isonline"></span>
+                            <span class="delfri r"></span>
+                            <span class="chatpts r"></span>
+                        </li>
+                        <li data-user-id="">
+                            <img src="images/mrtx.jpg" class="userimg l" alt=""/>
+                            <p class="username l">我的好友我的好友···</p>
+                            <span class="isonline"></span>
+                            <span class="delfri r"></span>
+                            <span class="chatpts r"></span>
+                        </li>
+                        <li data-user-id="">
+                            <img src="images/mrtx.jpg" class="userimg l" alt=""/>
+                            <p class="username l">我的好友我的好友···</p>
+                            <span class="isonline"></span>
+                            <span class="delfri r"></span>
+                            <span class="chatpts r"></span>
+                        </li>
+                        <li data-user-id="">
+                            <img src="images/mrtx.jpg" class="userimg l" alt=""/>
+                            <p class="username l">我的好友我的好友···</p>
+                            <span class="isonline"></span>
+                            <span class="delfri r"></span>
+                            <span class="chatpts r"></span>
+                        </li>
+                        <li data-user-id="">
+                            <img src="images/mrtx.jpg" class="userimg l" alt=""/>
+                            <p class="username l">我的好友我的好友···</p>
+                            <span class="isonline"></span>
+                            <span class="delfri r"></span>
+                            <span class="chatpts r"></span>
+                        </li>
+                        <li data-user-id="">
+                            <img src="images/mrtx.jpg" class="userimg l" alt=""/>
+                            <p class="username l">我的好友我的好友···</p>
+                            <span class="isonline"></span>
+                            <span class="delfri r"></span>
+                            <span class="chatpts r"></span>
+                        </li>
+                    </ul>
+                    <!--<script type="text/x-jquery-tmpl" id="friendsListTemplate">-->
+                        <!--<li class="on" data-user-id="">-->
+                            <!--<i class="honor">${honor}</i>-->
+                            <!--<i>${vip}</i>-->
+                            <!--<span>${name}</span>-->
+                            <!--<span>${online}</span>-->
+                            <!--<span>${hasMessage}</span>-->
+                        <!--</li>-->
+                    <!--</script>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        seajs.use('./scripts/chat/job/friendsChat',function(fc){
+            var obj = {
+                myName:'zj',                        //登录的用户名
+                imgVip:'images/vip.gif',            //vip图标
+                imgXunz:'images/xunz.gif',          //勋章图标
+                vipMsg:'该条信息来自vip用户！',        //vip提示信息
+                isVip:1                             //是否是VIP用户
+            }
+            fc(obj);
+        });
+    </script>
+</body>
+</html>

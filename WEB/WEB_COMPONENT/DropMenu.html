@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+div {position:relative;width:220px;height:30px;line-height:30px;border:1px solid #f60;}
+#result {display:block;}
+.item {position:absolute;text-align:center;display:none;top:30px;left:0;}
+.list {display:static;}
+.on,.list:hover {background:#f30;}
+</style>
+<script type="text/javascript" src="jQuery-1.7.2.js"></script>
+</head>
+
+<body>
+<div class="menu">
+    <span id="result">menu</span>
+    <div class="item">
+      <div class="list">1</div>
+      <div class="list">2</div>
+      <div class="list">3</div>
+      <div class="list">4</div>
+      <div class="list">5</div>
+      <div class="list">6</div>
+    </div>
+</div>
+<script type="text/javascript">
+$("#result").click(function() {
+	if(!$(".item").is(":hidden")) {
+		$(document).unbind("click.select");
+		$(".item").hide();
+		return;
+	}
+	$(".item").show();
+	menuTrigger();
+	$(document).bind("click.select",function() {
+		$(document).unbind("keydown.select");
+		$(".item").hide();
+	});
+	return false;
+});
+function menuTrigger() {
+	var KEY={"UP":38,"DOWN":40,"ENTER":13};
+	$(document).bind("keydown.select",function(e) {
+		switch(e.which) {
+			case KEY.UP:select(0);break;
+			case KEY.DOWN:select(1);break;
+			case KEY.ENTER:endSelect();break;
+		}
+	});
+	function select(direct) {
+		var i;
+		if($(".list.on").length>0) {
+			i=$(".list.on").index();
+			i=direct ? ++i%6 : (--i+6)%6;
+		}
+		else {
+			i=direct ? 0 : 5;
+		}
+		var txt=$(".list").removeClass("on").eq(i).addClass('on').html();
+		$("#result").text(txt);
+	}
+	function endSelect() {
+		$(".item").hide();
+		$(document).unbind("keydown.select");
+	}
+}
+</script>
+</body>
+</html>

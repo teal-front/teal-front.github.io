@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="78d02013-7a7d-4947-ac61-5a517060fea0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/scripts/config.js" afterPath="$PROJECT_DIR$/www/scripts/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/scripts/tools/jquery-sea.js" afterPath="$PROJECT_DIR$/www/scripts/tools/jquery-sea.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/scripts/sea.js" afterPath="$PROJECT_DIR$/www/scripts/sea.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/scripts/tools/underscore.js" afterPath="$PROJECT_DIR$/www/scripts/tools/underscore.js" />
+    </list>
+    <ignored path="chat.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="chat" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.50790757">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="friendschat.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/www/scripts/chat/job/friendschat.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="31" column="28" selection-start="1121" selection-end="1121" vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="2140">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="setting.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/setting.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="8" column="20" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="520">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="global.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/www/scripts/global.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="7" column="33" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="640">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sea.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/www/scripts/sea.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="2" column="0" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="420">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/www/scripts/config.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="23" column="43" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="1160">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="insert.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/www/scripts/chat/plugs/insert.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="3" column="41" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1020">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="21" column="57" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="2440">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dialogtest.html" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/view/dialogtest.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="127" column="22" selection-start="6981" selection-end="6981" vertical-scroll-proportion="0.12844037" vertical-offset="2428" max-vertical-offset="4620">
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <marker date="1400811496713" expanded="true" signature="1877:3195" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="1928:2874" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="2923:3161" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="3394:4792" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="3445:4459" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="4508:4758" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="4986:5073" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="5503:6282" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="5650:6247" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="5691:6208" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="5736:5907" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="5952:6166" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="6340:6896" placeholder="..." />
+                    <marker date="1400811496713" expanded="true" signature="6511:6823" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="appview.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/www/scripts/chat/view/appview.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="375" column="39" selection-start="14324" selection-end="14324" vertical-scroll-proportion="0.0" vertical-offset="7500" max-vertical-offset="8120">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="dialogtest-yw.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/www/dialogtest-yw.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="52" column="33" selection-start="2273" selection-end="2273" vertical-scroll-proportion="0.0" vertical-offset="1040" max-vertical-offset="2620">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="friends.js" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/www/scripts/friends/friends.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="10" column="49" selection-start="274" selection-end="274" vertical-scroll-proportion="0.1516793" vertical-offset="0" max-vertical-offset="4400">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="friendchattab.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/www/scripts/friends/friendchattab.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="56" column="20" selection-start="1734" selection-end="1734" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2220">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/www/chat.json" />
+        <option value="$PROJECT_DIR$/www/ajax/postMessageURL.json" />
+        <option value="$PROJECT_DIR$/www/dialogtest-yw.html" />
+        <option value="$PROJECT_DIR$/www/scripts/friends/friends.js" />
+        <option value="$PROJECT_DIR$/www/scripts/tools/callbacks.js" />
+        <option value="$PROJECT_DIR$/www/scripts/friends/friendChatTab.js" />
+        <option value="$PROJECT_DIR$/www/scripts/tools/Callbacks.js" />
+        <option value="$PROJECT_DIR$/www/styles/jquery.jscrollpane.css" />
+        <option value="$PROJECT_DIR$/www/scripts/tools/jScrollPane.js" />
+        <option value="$PROJECT_DIR$/www/styles/chat - 副本.css" />
+        <option value="$PROJECT_DIR$/www/scripts/chat/job/friendsChat.js" />
+        <option value="$PROJECT_DIR$/www/scripts/chat/module/chat.js" />
+        <option value="$PROJECT_DIR$/www/scripts/chat/view/appView.js" />
+        <option value="$PROJECT_DIR$/www/scripts/tools/underscore.js" />
+        <option value="$PROJECT_DIR$/www/scripts/tools/jscrollpane.js" />
+        <option value="$PROJECT_DIR$/www/scripts/tools/jquery.mousewheel.js" />
+        <option value="$PROJECT_DIR$/www/s.html" />
+        <option value="$PROJECT_DIR$/www/scripts/tools/jquery-sea.js" />
+        <option value="$PROJECT_DIR$/www/dialogtest.html" />
+        <option value="$PROJECT_DIR$/www/dialogtest 1.html" />
+        <option value="$PROJECT_DIR$/www/scripts/global1.js" />
+        <option value="$PROJECT_DIR$/www/scripts/chat/plugs/insert.js" />
+        <option value="$PROJECT_DIR$/www/scripts/global.js" />
+        <option value="$PROJECT_DIR$/www/styles/chat.css" />
+        <option value="$PROJECT_DIR$/www/styles/main.css" />
+        <option value="$PROJECT_DIR$/www/scripts/config.js" />
+        <option value="$PROJECT_DIR$/www/scripts/sea.js" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/www/scripts/chat/job/friendschat.js" />
+        <option value="$PROJECT_DIR$/view/dialogtest.html" />
+        <option value="$PROJECT_DIR$/www/scripts/chat/view/appview.js" />
+        <option value="$PROJECT_DIR$/setting.js" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-211" />
+    <option name="y" value="172" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="E:/svn_webpage" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="SearchEverywhereHistory" value="" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="250" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="250" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="260" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="75" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="115" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth5" value="927" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder5" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="203" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="193" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="206" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="201" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="203" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth5" value="871" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5" value="5" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Program Files\wamp\www\7wtx\chat\www\scripts\tools" />
+    </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:4000" />
+          <option name="urlPath" value="/www/styles/" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:4000" />
+          <option name="urlPath" value="/www/styles/chat.css" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:4000" />
+          <option name="urlPath" value="/chat/www/styles/chat.css" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:4000" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="true" cleanupOnStartRun="true" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="false">C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\Program Files\wamp\www\7wtx\chat" />
+          <option name="myCopyRoot" value="D:\Program Files\wamp\www\7wtx\chat" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\Program Files\wamp\www\7wtx\chat" />
+          <option name="myCopyRoot" value="D:\Program Files\wamp\www\7wtx\chat" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="78d02013-7a7d-4947-ac61-5a517060fea0" name="Default" comment="" />
+      <created>1399878512255</created>
+      <updated>1399878512255</updated>
+    </task>
+    <task id="LOCAL-00001">
+      <created>1399953366142</created>
+      <updated>1399953366142</updated>
+    </task>
+    <task id="LOCAL-00002">
+      <created>1400039100120</created>
+      <updated>1400039100120</updated>
+    </task>
+    <task id="LOCAL-00003">
+      <created>1400049417115</created>
+      <updated>1400049417115</updated>
+    </task>
+    <task id="LOCAL-00004">
+      <created>1400054033103</created>
+      <updated>1400054033103</updated>
+    </task>
+    <task id="LOCAL-00005">
+      <created>1400056387103</created>
+      <updated>1400056387103</updated>
+    </task>
+    <task id="LOCAL-00006">
+      <created>1400209745103</created>
+      <updated>1400209745103</updated>
+    </task>
+    <task id="LOCAL-00007">
+      <created>1400223106121</created>
+      <updated>1400223106121</updated>
+    </task>
+    <task id="LOCAL-00008">
+      <created>1400232920106</created>
+      <updated>1400232920106</updated>
+    </task>
+    <task id="LOCAL-00009">
+      <created>1400233092107</created>
+      <updated>1400233092107</updated>
+    </task>
+    <task id="LOCAL-00010">
+      <created>1400233232104</created>
+      <updated>1400233232104</updated>
+    </task>
+    <task id="LOCAL-00011">
+      <created>1400237443106</created>
+      <updated>1400237443106</updated>
+    </task>
+    <task id="LOCAL-00012">
+      <created>1400555496108</created>
+      <updated>1400555496108</updated>
+    </task>
+    <task id="LOCAL-00013">
+      <created>1400555576107</created>
+      <updated>1400555576107</updated>
+    </task>
+    <task id="LOCAL-00014">
+      <created>1400555608107</created>
+      <updated>1400555608107</updated>
+    </task>
+    <task id="LOCAL-00015">
+      <created>1400569015107</created>
+      <updated>1400569015107</updated>
+    </task>
+    <task id="LOCAL-00016">
+      <created>1400661200941</created>
+      <updated>1400661200941</updated>
+    </task>
+    <task id="LOCAL-00017">
+      <created>1400663571103</created>
+      <updated>1400663571103</updated>
+    </task>
+    <task id="LOCAL-00018">
+      <created>1400664418106</created>
+      <updated>1400664418106</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-211" y="172" width="1936" height="1056" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26105264" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273684" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31263158" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="711" y="136" width="1088" height="840" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35263157" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947367" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USERS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <confirmMoveToFailedCommit value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="7" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/www/scripts/chat/job/friendschat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="28" selection-start="1121" selection-end="1121" vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="2140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="20" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="33" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="640">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/sea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="43" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="1160">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/chat/plugs/insert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="41" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="57" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="2440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/dialogtest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="34" selection-start="5772" selection-end="5772" vertical-scroll-proportion="0.0" vertical-offset="2100" max-vertical-offset="4620">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1400811496713" expanded="true" signature="1877:3195" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="1928:2874" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="2923:3161" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="3394:4792" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="3445:4459" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="4508:4758" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="4986:5073" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="5503:6282" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="5650:6247" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="5691:6208" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="5736:5907" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="5952:6166" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="6340:6896" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="6511:6823" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/chat/view/appview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="375" column="39" selection-start="14324" selection-end="14324" vertical-scroll-proportion="0.0" vertical-offset="7500" max-vertical-offset="8120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/dialogtest-yw.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="33" selection-start="2273" selection-end="2273" vertical-scroll-proportion="0.0" vertical-offset="1040" max-vertical-offset="2620">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/friends/friends.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="32" selection-start="3412" selection-end="3412" vertical-scroll-proportion="0.0" vertical-offset="2000" max-vertical-offset="4460">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/friends/friendchattab.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="37" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/ajax/postMessageURL.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="14" selection-start="49" selection-end="49" vertical-scroll-proportion="-2.0689654" vertical-offset="0" max-vertical-offset="200" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/chat.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="23" selection-start="922" selection-end="922" vertical-scroll-proportion="-16.344828" vertical-offset="306" max-vertical-offset="1200">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/tools/callbacks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="6" selection-start="161" selection-end="161" vertical-scroll-proportion="0.13001083" vertical-offset="0" max-vertical-offset="923" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/chat/view/friendsview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="16" selection-start="384" selection-end="384" vertical-scroll-proportion="0.26373628" vertical-offset="0" max-vertical-offset="910" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/tools/backbone.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="18" selection-start="107" selection-end="107" vertical-scroll-proportion="-2.9629629" vertical-offset="0" max-vertical-offset="5140" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/tools/underscore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="12524" selection-start="12833" selection-end="12833" vertical-scroll-proportion="0.0" vertical-offset="3019" max-vertical-offset="3920" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/tools/jquery.mousewheel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="4680" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/chat/view/appView - 副本.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3800" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/chat/view/chatmodelview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="31" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/tools/jquery-sea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="5" selection-start="93128" selection-end="93128" vertical-scroll-proportion="0.0" vertical-offset="24219" max-vertical-offset="25120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io/lib/socket.io.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="172" selection-end="172" vertical-scroll-proportion="-2.0855856" vertical-offset="2092" max-vertical-offset="2980" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/chat/module/chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="45" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/dialogtest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="-6.206897" vertical-offset="0" max-vertical-offset="4860">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/dialogtest 1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="37" selection-start="706" selection-end="706" vertical-scroll-proportion="0.44237486" vertical-offset="0" max-vertical-offset="5140">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/s.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="53" selection-start="288" selection-end="288" vertical-scroll-proportion="0.2522936" vertical-offset="0" max-vertical-offset="872" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/chat/plugs/insert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="41" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="33" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="10" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2300" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/styles/chat.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="0" selection-start="8155" selection-end="8155" vertical-scroll-proportion="0.31868133" vertical-offset="1750" max-vertical-offset="2660" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="43" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="179" max-vertical-offset="1240">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/sea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="57" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="2240">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/tools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="20" selection-start="277" selection-end="277" vertical-scroll-proportion="0.17758046" vertical-offset="0" max-vertical-offset="901" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/chat/view/appview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="375" column="39" selection-start="14324" selection-end="14324" vertical-scroll-proportion="0.0" vertical-offset="7500" max-vertical-offset="8120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="20" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/tools/jscrollpane.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1270" column="36" selection-start="65021" selection-end="65021" vertical-scroll-proportion="0.16483517" vertical-offset="25250" max-vertical-offset="26160">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/dialogtest-yw.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="33" selection-start="2273" selection-end="2273" vertical-scroll-proportion="0.0" vertical-offset="1040" max-vertical-offset="2620">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/chat/job/friendschat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="28" selection-start="1121" selection-end="1121" vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="2140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/friends/friendchattab.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="20" selection-start="1734" selection-end="1734" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2220">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/scripts/friends/friends.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="49" selection-start="274" selection-end="274" vertical-scroll-proportion="0.1516793" vertical-offset="0" max-vertical-offset="4400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/dialogtest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="22" selection-start="6981" selection-end="6981" vertical-scroll-proportion="0.12844037" vertical-offset="2428" max-vertical-offset="4620">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1400811496713" expanded="true" signature="1877:3195" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="1928:2874" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="2923:3161" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="3394:4792" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="3445:4459" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="4508:4758" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="4986:5073" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="5503:6282" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="5650:6247" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="5691:6208" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="5736:5907" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="5952:6166" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="6340:6896" placeholder="..." />
+            <marker date="1400811496713" expanded="true" signature="6511:6823" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

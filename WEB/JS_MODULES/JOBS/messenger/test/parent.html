@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<article class="hentry">
+  <h1 class="entry-title">跨域 Iframe 通信演示</h1>
+  <div class="entry-content">
+    <h2 id="演示">演示<a href="#演示" class="anchor">¶</a></h2><p>
+    我是父页面
+    <script>document.write('(' + location.protocol + '//' + location.host + ')');</script>(http://aralejs.org)
+</p>
+
+<p>
+    <input id="message">
+    <input type="button" value="发送给子页面" id="send">
+</p>
+
+<pre id="output">来自子页面的消息:</pre>
+
+<div class="nico-iframe">
+<iframe src="iframe-index-1.html" allowtransparency="true" frameborder="0" scrolling="0"></iframe><a class="new-window" target="_blank" href="iframe-index-1.html">新窗口打开</a></div><div class="highlight collapse"><pre><code class="xml"><span class="tag">&lt;<span class="title">p</span>&gt;</span>
+  我是子页面
+  <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">document.write(<span class="string">'('</span> + location.protocol + <span class="string">'//'</span> + location.host + <span class="string">')'</span>);</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">p</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"message"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">id</span>=<span class="value">"send"</span> <span class="attribute">value</span>=<span class="value">"发送给父页面"</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;<span class="title">pre</span> <span class="attribute">id</span>=<span class="value">"output"</span>&gt;</span>来自父页面的消息:<span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+seajs.use([<span class="string">'arale/messenger/2.0.0/messenger'</span>, <span class="string">'$'</span>], <span class="keyword">function</span>(Messenger, $) {
+    <span class="keyword">var</span> messenger = <span class="keyword">new</span> Messenger(<span class="string">'iframe1'</span>, <span class="string">'demo'</span>);
+    messenger.addTarget(window.parent, <span class="string">'parent'</span>);
+
+    <span class="comment">// 通过点击按钮发送消息</span>
+    <span class="keyword">var</span> send = $(<span class="string">'#send'</span>);
+    <span class="keyword">var</span> message = $(<span class="string">'#message'</span>);
+    <span class="keyword">var</span> output = $(<span class="string">'#output'</span>);
+    send.click(<span class="keyword">function</span>() {
+        messenger.targets[<span class="string">'parent'</span>].send(message.val());
+        <span class="comment">//messenger.send();  // 这样会发给所有 targets</span>
+        message.val(<span class="string">''</span>);
+    });
+
+    <span class="comment">// 监听消息</span>
+    messenger.listen(<span class="keyword">function</span>(msg) {
+        console.log(<span class="string">'收到'</span>, msg);
+        output.html(output.html() + <span class="string">' '</span> + msg);
+    });
+});
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"><span class="tag">body</span><span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#DAF5FF</span>}</span></span></span></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></pre><a class="code-toggle" href="#">展开</a></div><h2 id="父页面这么写">父页面这么写<a href="#父页面这么写" class="anchor">¶</a></h2><script>seajs.use(['messenger', '$'], function(Messenger, $) {
+    var messenger = new Messenger('parent', 'demo');
+    messenger.addTarget($('iframe')[0].contentWindow, 'iframe1');
+
+    // 通过点击按钮发送消息
+    var send = $('#send');
+    var message = $('#message');
+    var output = $('#output');
+    send.click(function() {
+        console.log('发出', message.val());
+        messenger.targets['iframe1'].send(message.val());
+        message.val('');
+    });
+
+    // 监听消息
+    messenger.listen(function(msg) {
+        output.html(output.html() + ' ' + msg);
+    });
+});</script><div class="highlight"><pre><code class="javascript">seajs.use([<span class="string">'arale/messenger/2.0.0/messenger'</span>, <span class="string">'$'</span>], <span class="keyword">function</span>(Messenger, $) {
+    <span class="keyword">var</span> messenger = <span class="keyword">new</span> Messenger(<span class="string">'parent'</span>, <span class="string">'demo'</span>);
+    messenger.addTarget($(<span class="string">'iframe'</span>)[<span class="number">0</span>].contentWindow, <span class="string">'iframe1'</span>);
+
+    <span class="comment">// 通过点击按钮发送消息</span>
+    <span class="keyword">var</span> send = $(<span class="string">'#send'</span>);
+    <span class="keyword">var</span> message = $(<span class="string">'#message'</span>);
+    <span class="keyword">var</span> output = $(<span class="string">'#output'</span>);
+    send.click(<span class="keyword">function</span>() {
+        console.log(<span class="string">'发出'</span>, message.val());
+        messenger.targets[<span class="string">'iframe1'</span>].send(message.val());
+        message.val(<span class="string">''</span>);
+    });
+
+    <span class="comment">// 监听消息</span>
+    messenger.listen(<span class="keyword">function</span>(msg) {
+        output.html(output.html() + <span class="string">' '</span> + msg);
+    });
+});</code></pre></div>
+  </div>
+</article>
+	</body>
+</html>

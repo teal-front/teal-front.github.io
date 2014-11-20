@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+	<style type="text/css">
+	/*====tabs标题样式设置====*/
+			.tabs {
+				margin: 0;
+				padding: 0;
+				float: left;
+				list-style: none;
+				height: 32px;/*设置tabs的高度*/
+				/*根据上图所示，设置列表ul的左边框和右边框*/
+				border-bottom: 1px solid #999;
+				border-left: 1px solid #999;
+				width: 100%;
+			}
+			.tabs li {
+				float: left;
+				margin: 0;
+				padding: 0;
+				height: 31px;/*=列表项高度设置为比ul高度少1px，=*/
+				line-height: 31px;/*=设置相同的line-height让元素居中=*/
+				/*=根据上图显示，设置li的边框，并且左边框不设置=*/
+				border: 1px solid #999;
+				border-left: none;
+				margin-bottom: -1px;/*=将列表项下拉1px=*/
+				overflow: hidden;
+				position: relative;
+				background: #e0e0e0;
+			}
+			.tabs a {
+				text-decoration: none;
+				color: #000;
+				display: block;
+				font-size: 1.2em;
+				padding: 0 10px;
+				border: 1px solid #fff;
+				outline: none;
+			}
+			.tabs a:hover {
+				background: #ccc;
+			}
+			.tabs li.active,
+			.tabs li.active a:hover {
+				background: #fff;
+				/*=设置当前tabs项的底部边框，颜色对面和主内容背景色一致=*/
+				border-bottom: 1px solid #fff;
+			}
+			/*==tabs主内容样式设置==*/
+			.tabContent {
+				border: 1px solid #999;
+				border-top: none;
+				overflow: hidden;
+				clear: both;
+				float: left;
+				width: 100%;
+				background: #fff;
+			}
+			.tabBody {
+				padding: 20px;
+				font-size: 1.2em;
+			}
+	</style>
+</head>
+<body>
+<ul class="tabs">
+	<li><a href="#tab1">Header1</a></li>
+	<li><a href="#tab2">Header2</a></li>
+</ul>
+<div class="tabContent">
+	<div id="tab1" class="tabBody">content for header1</div>
+	<div id="tab2" class="tabBody">content for header2</div>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//页面载入时
+		$('.tabBody:not(:first)').hide();//隐藏除了第一个主内容外的所有内容
+		$('.tabs li:first').addClass('active');//给第一个tabs标题项加上'active'类
+		//给列tabs的列表项绑定click事件
+		$('.tabs li').click(function(){
+			//当前项加上‘active’类，同时有'active'的相邻项移除'active'类
+			$(this).addClass('active').siblings('li.active').removeClass('active');
+			//隐藏所有主内容
+			$('.tabBody').hide();
+			//查找tabs标题中a元素的href属性值，以确定激活tabs对应的内容
+			var activeTab = $(this).find('a').attr('href');
+			//显示当前项的主内容
+			$(activeTab).fadeIn('slow');
+			return false;
+		});
+	});
+</script>
+		
+</body>
+</html>

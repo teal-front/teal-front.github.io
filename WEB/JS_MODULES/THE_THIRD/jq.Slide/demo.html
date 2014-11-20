@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery slide插件淘宝焦点图片轮播滚动,文字滚动,图片滚动</title>
+<meta name="description" content="jquery焦点图slide插件制作淘宝焦点图片轮播切换滚动，左右按钮控制产品图片滚动切换，列表文字滚动。图片/文字支持垂直滚动,水平滚动，淡出淡现等。" />
+<style type="text/css">
+/* base */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{padding:0;margin:0;}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,th,var{font-weight:normal;font-style:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-weight:7100;}
+h1{font-size:18px}
+h2{font-size:16px}
+h3{font-size:14px}
+h4{font-size:14px}
+h5{font-size:12px}
+h6{font-size:12px}
+q:before,q:after{content:''}
+abbr,acronym{border:0}
+hr {margin: 0;padding: 0;border: 0;color: #CDCDCD;background-color: #CDCDCD;height: 1px}
+blockquote{color:#666;font-style:italic;}
+sup,sub{line-height:0}
+abbr,acronym{border-bottom:1px dotted #666}
+pre{white-space:pre;}
+pre,code,tt{font:12px 'andale mono', 'lucida console', monospace;line-height:1.5}
+/*clear clearfix*/
+.clearfix:after {content: "\0020"; display: block; height: 0;clear: both; visibility: hidden; }
+.clearfix {zoom: 1;} 
+.clear{clear:both;}
+/* table */
+h3{margin:5px;font-size:20px}
+pre{background-color:#FFFDDE;margin:10px 0;padding:10px}
+#page{margin-left:100px}
+table.KS-table{border-top:none;border-right:none;border-bottom:1px solid #6790ad;border-left:1px solid #6790ad;}
+table.KS-table caption{height:40px;line-height:40px;border:1px solid #6790ad;border-bottom:0 none;padding-left:10px;font-size:12px;font-weight:700;color:#F00;background-color:#EFF3F8}
+table.KS-table td,table.KS-table th{border-top:1px solid #6790ad;border-right:1px solid #6790ad;border-bottom:none;border-left:0;padding:3px}
+table.KS-table th{height:30px;background-color:#EFF3F8}
+/* temp1 */
+#temp1{height:301px;width:709px;background:url(images/bg.png) no-repeat}
+#temp1 .JQ-content-box{float:left;overflow:hidden;width:549px;height:289px;margin:6px 0 0 6px;_margin:6px 0 0 3px;position:relative}
+#temp1 .JQ-content-box .JQ-slide-content{position:absolute}
+#temp1 .JQ-content-box .JQ-slide-content li{zoom:1;overflow:hidden;height:289px;vertical-align:text-top}
+#temp1 .JQ-content-box .JQ-slide-content li img{width:549px;height:289px;display:block}
+#temp1 .JQ-slide-nav{display:block;float:right;width:145px;height:301px;overflow:hidden;}
+#temp1 .JQ-slide-nav li{display:inline;float:left;padding-left:12px;padding-bottom:6px;width:133px;height:61px;padding-top:6px;margin-bottom:3px;background:url(images/nom.png)}
+#temp1 .JQ-slide-nav li.on{display:inline;float:left;padding-left:12px;padding-bottom:6px;width:133px;height:61px;padding-top:6px;margin-bottom:3px;background:url(images/on_box.png)}
+#temp1 .JQ-slide-nav li img{width:127px;height:61px;display:block}
+/* temp2 */
+#temp2{height:301px;width:709px;background:url(images/bg.png) no-repeat}
+#temp2 .JQ-content-box{float:left;overflow:hidden;width:549px;height:289px;margin:6px 0 0 6px;_margin:6px 0 0 3px;position:relative}
+#temp2 .JQ-content-box .JQ-slide-content{position:absolute}
+#temp2 .JQ-content-box li{width:549px;height:289px;float:left;}
+#temp2 .JQ-slide-nav{display:block;float:right;width:145px;height:301px;overflow:hidden;}
+#temp2 .JQ-slide-nav li{display:inline;float:left;padding-left:12px;padding-bottom:6px;width:133px;height:61px;padding-top:6px;margin-bottom:3px;background:url(images/nom.png)}
+#temp2 .JQ-slide-nav li.on{display:inline;float:left;padding-left:12px;padding-bottom:6px;width:133px;height:61px;padding-top:6px;margin-bottom:3px;background:url(images/on_box.png)}
+#temp2 .JQ-slide-nav li img{width:127px;height:61px;display:block}
+/* temp3 */
+#temp3{height:301px;width:709px;background:url(images/bg.png) no-repeat}
+#temp3 .JQ-content-box{float:left;overflow:hidden;width:549px;height:289px;margin:6px 0 0 6px;_margin:6px 0 0 3px;position:relative}
+#temp3 .JQ-content-box .JQ-slide-content  li{position:absolute;top:0;left:0}
+#temp3 .JQ-content-box img{width:549px;height:289px;display:block}
+#temp3 .JQ-slide-nav{display:block;float:right;width:145px;height:301px;overflow:hidden;}
+#temp3 .JQ-slide-nav li{display:inline;float:left;padding-left:12px;padding-bottom:6px;width:133px;height:61px;padding-top:6px;margin-bottom:3px;background:url(images/nom.png)}
+#temp3 .JQ-slide-nav li.on{display:inline;float:left;padding-left:12px;padding-bottom:6px;width:133px;height:61px;padding-top:6px;margin-bottom:3px;background:url(images/on_box.png)}
+#temp3 .JQ-slide-nav li img{width:127px;height:61px;display:block}
+/* slide-box */
+#slide-box{width:690px;position:relative;height:472px;}
+#slide-box .corner{clear:both;border-top:#333 1px solid;display:block;overflow:hidden;height:0;margin:0 1px;}
+#slide-box .slide-content{background:#333;padding:10px;}
+#slide-box .JQ-slide-content{position:absolute;}
+#slide-box .JQ-slide-nav a{display:block;z-index:99;width:37px;color:#b4b4b4;position:absolute;top:205px;height:65px;text-decoration:none;}
+#slide-box .JQ-slide-nav span{display:block;background:#4b4b4b;font:700 53px arial;width:37px;cursor:pointer;height:63px;text-align:center;}
+#slide-box .JQ-slide-nav .corner{border-color:#4b4b4b;}
+#slide-box .JQ-slide-nav .prev{left:-10px;}
+#slide-box .JQ-slide-nav .next{right:-10px;}
+#slide-box .wrap{overflow:hidden;width:670px;height:450px;position:relative;}
+#slide-box ul{width:10000px;}
+#slide-box li{float:left;width:340px;height:450px;}
+#slide-box li img{width:330px;height:450px;}
+#slide-box .JQ-slide-nav a:hover,#slide-box .JQ-slide-nav a:hover span{color:#f43d1e;}
+/* temp5 */
+#temp5{overflow:auto}
+#temp5 .JQ-content-box{width:300px;height:100px;min-height:25px;line-height:25px;border:#ccc 1px solid;overflow:hidden}
+#temp5 .JQ-slide-content{}
+#temp5 .JQ-slide-content li{height:25px;padding-left:10px;}
+/* temp6 */
+#temp6 .JQ-content-box{overflow:hidden;width:710px;height:144px;position:relative}
+#temp6 .JQ-slide-content{position:absolute}
+#temp6 .JQ-slide-content li{zoom:1;overflow:hidden;height:144px;vertical-align:text-top}
+#temp6 img{display:block;}
+#temp6 .JQ-slide-nav{position:absolute;right:10px;bottom:10px;height:18px;padding-top:2px;}
+#temp6 .JQ-slide-nav li{background-color:#FFE0EB;border:1px solid #FF6699;color:#D94B01;cursor:pointer;float:left;font-size:12px;height:16px;line-height:16px;margin-left:3px;text-align:center;width:16px;}
+#temp6 .JQ-slide-nav li.on{background-color:#EB3C65;border-color:#9A102F;color:#FFFFFF;font-weight:bold;height:18px;line-height:18px;margin-top:-2px;width:18px;}
+#temp6 .JQ-slide-nav li img{display:block}
+</style>
+
+<script type="text/javascript" src="http://www.jsfoot.com/skin/js/jquery.js"></script>
+<script type="text/javascript" src="js/jq.Slide.js"></script>
+<script type="text/javascript">
+$(function(){
+
+    $("#temp1").Slide({
+		effect : "scroolY",
+    	speed : "normal",
+		timer : 3000
+	});
+	
+	$("#temp2").Slide({
+		effect : "scroolX",
+    	speed : "normal",
+		timer : 3000
+	});	
+	
+	$("#temp3").Slide({
+		effect : "fade",
+    	speed : "normal",
+		timer : 3000
+	});
+	
+	$("#temp4").Slide({
+		effect : "scroolLoop",
+		autoPlay:false,
+    	speed : "normal",
+		timer : 3000,
+		steps:2
+	});
+	
+	$("#temp5").Slide({
+		effect : "scroolTxt",
+    	speed : "normal",
+		timer : 3000,
+		steps:1
+	});
+	
+	$("#temp6").Slide({
+		effect : "scroolY",
+    	speed : "normal",
+		timer : 3000
+	});
+	
+});
+</script>
+</head>
+<body>
+	
+	<div id="page">
+		<table width="760" border="0" cellspacing="0" cellpadding="0" class="KS-table">
+			<caption>JQ-Slide插件参数说明表</caption>
+			<tr>
+				<th width="155" scope="row">参数名</th>
+				<td width="438">参数值(默认值可以省略)</td>
+				<td width="166">&nbsp;</td>
+			</tr>
+			<tr>
+				<th rowspan="5" scope="row">effect </th>
+				<td>scroolY（默认）：垂直滚动</td>
+				<td rowspan="5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td>scroolX：水平滚动</td>
+			</tr>
+			<tr>
+				<td>scroolTxt：文本垂直滚动</td>
+			</tr>
+			<tr>
+				<td>fade：淡出</td>
+			</tr>
+			<tr>
+				<td>scroolLoop：水平左右点击滚动</td>
+			</tr>
+			<tr>
+				<th scope="row">autoPlay</th>
+				<td>true（默认）： or false</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<th scope="row">speed</th>
+				<td>动画速度时间，默认&quot;normal&quot;，可以使用毫秒或者JQ中的fast，slow，normal</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<th scope="row">timer</th>
+				<td>滚动间隔时间，默认&quot;1000，可以使用毫秒或者JQ中的fast，slow，normal</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<th scope="row">claNav</th>
+				<td>JQ-slide-nav（默认）：触点对象数组父级</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<th scope="row">claCon</th>
+				<td>JQ-slide-content（默认）：滚动对象或滚动对象父级</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<th scope="row">steps</th>
+				<td>1（默认）：滚动几个</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		<br />
+		
+		<hr />
+		<br />
+		<h3>滚动一：</h3>
+		<div id="temp1">
+			<div class="JQ-content-box">
+				<ul class="JQ-slide-content">
+					<li><a href="#" target="_blank"><img height="289" src="images/ad1.jpg" width="549" /></a></li>
+					<li><a href="#" target="_blank"><img height="289" src="images/ad2.jpg" width="549"></a></li>
+					<li><a href="#" target="_blank"><img height="289" src="images/ad3.jpg" width="549"></a></li>
+					<li><a href="#" target="_blank"><img height="289" src="images/ad4.jpg" width="549"></a></li>
+				</ul>
+			</div>
+			<ul class="JQ-slide-nav">
+				<li class="on"><a href="#" class="next"><img src="images/guangg1.jpg"></a></li>
+				<li><a href="#"><img src="images/guangg2.jpg"></a></li>
+				<li><a href="#"><img src="images/guangg3.jpg"></a></li>
+				<li><a href="#"><img src="images/guangg4.jpg"></a></li>
+			</ul>
+		</div><!--temp1 end-->
+<pre>
+$("#temp1").Slide({
+	effect : "scroolY",
+	speed : "normal",
+	timer : 3000
+});
+</pre>
+
+		<hr />
+		<h3>滚动二：</h3>
+		<div id="temp2">
+			<div class="JQ-content-box">
+				<ul class="JQ-slide-content">
+					<li><a href="#" target="_blank"><img height="289" src="images/ad1.jpg" width="549" /></a></li>
+					<li><a href="#" target="_blank"><img height="289" src="images/ad2.jpg" width="549"></a></li>
+					<li><a href="#" target="_blank"><img height="289" src="images/ad3.jpg" width="549"></a></li>
+					<li><a href="#" target="_blank"><img height="289" src="images/ad4.jpg" width="549"></a></li>
+				</ul>
+			</div>
+			<ul class="JQ-slide-nav">
+				<li class="on"><a href="#"><img src="images/guangg1.jpg"></a></li>
+				<li><a href="#"><img src="images/guangg2.jpg"></a></li>
+				<li><a href="#"><img src="images/guangg3.jpg"></a></li>
+				<li><a href="#"><img src="images/guangg4.jpg"></a></li>
+			</ul>
+		</div><!--temp2 end-->
+<pre>
+$("#temp2").Slide({
+	effect : "scroolX",
+	speed : "normal",
+	timer : 3000
+});
+</pre>
+
+		<hr />
+		<h3>滚动三：</h3>
+		<div id="temp3">
+			<div class="JQ-content-box">
+				<ul class="JQ-slide-content">
+					<li><a href="#" target="_blank"><img height="289" src="images/ad1.jpg" width="549" /></a></li>
+					<li><a href="#" target="_blank"><img height="289" src="images/ad2.jpg" width="549"></a></li>
+					<li><a href="#" target="_blank"><img height="289" src="images/ad3.jpg" width="549"></a></li>
+					<li><a href="#" target="_blank"><img height="289" src="images/ad4.jpg" width="549"></a></li>
+				</ul>
+			</div>
+			<ul class="JQ-slide-nav">
+				<li class="on"><a href="#"><img src="images/guangg1.jpg"></a></li>
+				<li><a href="#"><img src="images/guangg2.jpg"></a></li>
+				<li><a href="#"><img src="images/guangg3.jpg"></a></li>
+				<li><a href="#"><img src="images/guangg4.jpg"></a></li>
+			</ul>
+		</div><!--temp3 end-->
+<pre>
+$("#temp3").Slide({
+	effect : "fade",
+	speed : "normal",
+	timer : 3000
+});
+</pre>
+
+		<hr />
+		<h3>滚动四：</h3>
+		<div id="slide-box">
+			<b class="corner"></b>
+			<div class="slide-content" id="temp4">
+				<div class="wrap">
+					<ul class="JQ-slide-content">
+						<li><a href="#" target="_blank"><IMG src="images/01.jpg" alt="懒人图库" width="330" height="450" /></a></li>
+						<li><a href="#" target="_blank"><IMG alt="懒人图库" src="images/02.jpg" width="330" height="450" /></a></li>
+						<li><a href="#" target="_blank"><IMG alt="懒人图库" src="images/03.jpg" width="330" height="450" /></a></li>
+						<li><a href="#" target="_blank"><IMG alt="懒人图库" src="images/04.jpg" width="330" height="450" /></a></li>
+						<li><a href="#" target="_blank"><IMG alt="懒人图库" src="images/05.jpg" width="330" height="450" /></a></li>
+						<li><a href="#" target="_blank"><IMG alt="懒人图库" src="images/06.jpg" width="330" height="450" /></a></li>
+					</ul>
+				</div>
+				<div class="JQ-slide-nav">
+					<a class="prev" href="#">
+						<b class="corner"></b>
+						<span>&#8249;</span>
+						<B class="corner"></B>
+					</a>
+					<a class="next" href="#">
+						<b class="corner"></b>
+						<span>&#8250;</span>
+						<B class="corner"></B>
+					</a>
+				</div>
+			</div>
+			<b class="corner"></b>
+		</div><!--slide-box end-->
+<pre>
+$("#temp4").Slide({
+	effect : "scroolLoop",
+	autoPlay:false,
+	speed : "normal",
+	timer : 3000,
+	steps:2
+});
+</pre>
+	
+	
+		<hr />
+		<h3>滚动五：</h3>
+		<div id="temp5">
+			<div class="JQ-content-box">
+				<ul class="JQ-slide-content">
+					<li>这是公告标题的第一行</li>
+					<li>这是公告标题的第二行</li>
+					<li>这是公告标题的第三行</li>
+					<li>这是公告标题的第四行</li>
+					<li>这是公告标题的第五行</li>
+					<li>这是公告标题的第六行</li>
+					<li>这是公告标题的第七行</li>
+					<li>这是公告标题的第八行</li>
+					<li>这是公告标题的第9行</li>
+					<li>这是公告标题的第10行</li>
+					<li>这是公告标题的第11行</li>
+					<li>这是公告标题的第12行</li>
+				</ul>
+			</div>
+		</div><!--temp5 end-->
+<pre>
+$("#temp5").Slide({
+	effect : "scroolTxt",
+	speed : "normal",
+	timer : 3000,
+	steps:1
+});
+</pre>
+
+		<hr />
+		<h3>滚动六：</h3>
+		<div id="temp6">
+			<div class="JQ-content-box">
+				<ul class="JQ-slide-content">
+					<li><a href="#" target="_blank"><img height="144" alt="" title="" src="images/g5.jpg" width="710" /></a> </li>
+					<li><a href="#" target="_blank"><img height="144" alt="" title="" src="images/20100820-284f62ce01db688e.jpg" width="710" /></a> </li>
+					<li><a href="#" target="_blank"><img height="144" alt="" title="" src="images/g1.jpg" width="710" /></a> </li>
+				</ul>
+				<ul class="JQ-slide-nav">
+					<li class="on">1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</div>
+		</div><!--temp6 end-->
+<pre>
+$("#temp6").Slide({
+	effect : "scroolY",
+	speed : "normal",
+	timer : 3000
+});
+</pre>
+
+	</div>
+</body>
+</html>

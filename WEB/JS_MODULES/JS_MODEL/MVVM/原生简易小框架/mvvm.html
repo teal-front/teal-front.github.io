@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+	from: http://www.html-js.com/article/TJ-idiotic-fly-front-three-simple-realization-of-the-MVVM
+	model->view: Object.defineProperty(obj, "key", {set: function (value) {render(value)}}) !important
+-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MVVM</title>
+	<style>
+		* {
+  font-family: Consolas, 微软雅黑;
+  color: #666;
+}
+.green {
+  color: #42b983;
+}
+.demo {
+  box-shadow: 2px 2px 8px rgb(204, 204, 204);
+  padding: 30px;
+  margin: 30px;
+}
+label span {
+  width: 80px;
+  display: inline-block;
+}
+	</style>
+	<script defer src="mvvm.js"></script>
+</head>
+<body>
+	<div id='demo1' class='demo'>
+  Hello <span class='{{css}}' data-text='xx'>{{name}}</span>!
+  <br>
+  <p>now is {{time}}</p>
+</div>
+
+<div id='demo2' class='demo'>
+  <label><span>name:</span>
+    <input name='name'>
+  </label>
+  <br>
+  <label><span>password:</span>
+    <input name='password'>
+  </label>
+  <pre>{
+  name: {{name}},
+  passowrd: {{password}}
+}</pre>
+</div>
+</body>
+</html>

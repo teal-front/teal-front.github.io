@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>TEST</title>
+	<style type="text/css">
+		body,form,fieldset,legend,div,input {
+			margin:0;padding:0;
+		}
+		#form {
+			margin:40px 0 0 40px;
+			height:350px;
+			background:url(http://max.jotfor.ms/sprite/images/index_x.png) repeat-x 0 -690px;
+		}
+		fieldset {
+			padding:10px 0 0 20px;
+			border:none;
+			border-top:2px solid #FF9900;
+			_background:none;
+			_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(scr="");
+		}
+		legend {
+			color:#FF9900;
+			font-size:12px;
+			font-weight:bold;
+			text-shadow:0 -1px 0 rgba(0,0,0,.5);
+			margin-right:5px;
+		}
+		.username { float:left;}
+		label.label_1 {
+			float:left;
+			color:#fff;
+			font-size:12px;
+			text-shadow:0 1px 0 #000;
+			margin-bottom:5px;
+		}
+		
+		input.in {
+			float:left;
+			clear:left;
+			width:145px;
+			color:#fff;
+			font-size:16px;
+			border:1px solid #333;
+			border-radius:4px;
+			background:url(http://max.jotfor.ms/sprite/images/index_x.png) repeat-x 0 -1163px;
+		}
+		input.in:focus {
+			border-color:#ff9900;
+		}
+	</style>
+</head>
+<body>
+<div id="form">
+	<form>
+	<fieldset>
+		<legend>
+			<span>Welcome</span>
+			<b>Guest</b>
+			,
+			<span>Sign In to Your Account</span>
+		</legend>
+		<div class="username">
+			<label for="username" class="label_1">Username</label>
+			<input type="text" class="in" id="username">
+			<div class="field">
+				<input type="checkbox" checked="checked" id="checkbox">
+				<label for="checkbox" class="label_2">Remember Me</label>
+			</div>
+		</div>
+		<div class="username">
+			<label for="password" class="label_1">Password</label>
+			<input type="password" class="in" id="password">
+			<div class="field">
+				<input type="submit" value="Sign-in" class="out">
+				<input type="submit" value="Forgot Password?">
+			</div>	
+		</div>
+	</fieldset>
+	</form>
+</div>
+</body>
+</html>

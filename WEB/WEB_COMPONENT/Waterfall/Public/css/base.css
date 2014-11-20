@@ -1,0 +1,354 @@
+/**
+  * 描    述：重置,布局及基础样式
+  * 涉及区域：公共,全局
+  */
+html,body {
+    font-size: 14px;
+    font-family: "Century Gothic","Microsoft yahei";
+    color: #323232;
+    background-color: #F9F9F9;
+}
+body {min-height: 660px;}
+body,p,h1,h2,h3,h4,h5,h6,
+dl,dt,dd,ul,ol,li,
+form,input,textarea,button,
+pre,img {
+    margin: 0;
+    padding: 0;
+}
+ul,ul li {
+    list-style: none;
+}
+img {
+    border: 0;
+}
+a{
+    color: #444;
+    text-decoration: none;
+}
+a:hover{
+    color: #093;
+    text-decoration: underline;
+}
+input,textarea,select {
+    font-size: 100%;
+    outline: 0;
+    resize: none;
+    color: #323232;
+    font-family: "微软雅黑";
+}
+/* 布局 */
+.fl {
+    float:left;
+    display:inline;
+}
+.fr {
+    float:right;
+    display:inline;
+}
+.cf {
+    zoom:1;
+}
+.cf:after {
+    display:block;
+    visibility:hidden;
+    width:0;
+    height:0;
+    line-height:0;
+    font-size:0;
+    clear:both;
+    content:".";
+}
+.main {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 70px;
+    width: 1000px;
+    min-height: 500px;
+    height: auto!important;
+}
+.wrapper {
+    float: left;
+    width: 720px;
+}
+.sidebar {
+    float: right;
+    width: 270px;
+}
+.box {
+    margin-bottom: 10px;
+    border: 1px solid #D4D4D4;
+    background-color: #FFF;
+}
+/* 公用样式 */
+.hidden {
+    display: none!important;
+}
+.b0 {
+    border: 0!important;
+}
+.avatar {
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    padding: 1px;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid #D4D4D4;
+}
+.avatar img{
+    width: 44px;
+}
+.loading-box {
+    text-align: center;
+}
+.loading {
+    display: inline-block;
+    padding: 15px 15px 15px 55px;
+    font-size: 16px;
+    color: #FFF;
+    border-radius: 5px;
+    background: url(../images/loading.gif) no-repeat 15px center #565656;
+}
+.loadings {
+    display: inline-block;
+    padding: 15px 15px 15px 15px;
+    font-size: 16px;
+    color: #FFF;
+    border-radius: 5px;
+    background: #565656;
+}
+
+
+/* 返回顶部样式 */
+#gotoTop{
+    display:none;
+    position:fixed;
+    top:75%;
+    left:50%;
+    cursor:pointer;
+    margin-top:-50px;
+    margin-left:520px;
+    width: 64px;
+    height:64px;
+    line-height: 100;
+    overflow: hidden;
+    background: url(../images/gTopa.png) no-repeat;
+}
+#gotoTop{
+    _position:absolute;
+    _top:expression_r(documentElement.scrollTop + documentElement.clientHeight * 3/4 + "px");
+}
+
+/* 瀑布流 */
+
+.container {
+
+    /* margin-right: -9px; */
+
+    width: 1200px;
+
+    margin: 0 0 0 auto;
+
+    display: inline-block;
+
+}
+.container .col {float:left;margin:0 10px 0 0;width:231px;border:1px solid #d4d4d4;}
+.container .item {
+
+    position: relative;
+
+    margin: 0 0 10px 0;
+
+    width: 231px;
+
+    color: #A7A7A7;
+
+    border: 1px solid #D4D4D4;
+
+    background-color:#FFFFFF;
+
+}
+
+.container .title {
+
+    margin: 10px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+.container .title a {
+
+    font-size: 16px;
+
+}
+
+.container .img {
+
+    display: block;
+
+    margin: 0 10px 10px;
+
+    padding: 2px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+.container .img img {
+
+    display: block;
+
+    max-width: 202px;
+
+}
+
+.container .intro {
+
+    margin: 0 10px 10px;
+
+    line-height: 1.6;
+
+    color: #000;
+
+    overflow: hidden;
+
+    word-wrap: break-all;
+
+}
+
+.container .opt-info {
+
+    margin:0 10px 10px;
+
+}
+
+.container .opt-info span {
+
+    margin-right: 10px;
+
+}
+
+.container .opt-info em {
+
+    margin-right: 5px;
+
+    font-style: normal;
+
+    color: #53B40F;
+
+}
+
+.masonry-brick .cmt-box {
+
+    padding: 10px;
+
+    padding-bottom: 0;
+
+    background-color: #F6F6F6;
+
+}
+
+.masonry-brick .cmt-box .cmt-item {
+
+    margin-bottom: 0;
+
+    border-bottom: 0;
+
+}
+.footer {
+
+    margin-top: 20px;
+
+    min-width: 1000px;
+
+    border-top: 8px solid #000;
+
+    background-color: #34393C;
+
+}
+
+.footer .ft-main {
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    padding: 15px 0;
+
+    width: 1000px;
+
+    line-height: 1.8;
+
+}
+
+.footer .ft-main h3 {
+
+    color: #7E8283;
+
+}
+
+.footer .ft-main a {
+
+    color: #7E8283;
+
+}
+
+.footer .ft-main a:hover {
+
+    color: #BABCBD;
+
+}
+
+.footer .ft-col {
+
+    float: left;
+
+    padding-right: 20px;
+
+    margin-right: 25px;
+
+    height: 196px;
+
+    background: url(../img/bottom_solid.png) no-repeat right center;
+
+}
+
+.footer .ft-intro {
+
+    float: left;
+
+    padding-right: 20px;
+
+    width: 574px;
+
+    color: #7E8283;
+
+    background: url(../img/bottom_solid.png) no-repeat right center;
+
+}
+
+.footer .ft-intro .btm-logo {
+
+    background: url(../img/bottom_logo.png) no-repeat 480px 105px;
+
+}
+
+.footer .copyright {
+
+    margin-top: 20px;
+
+    font-weight: bold;
+
+}

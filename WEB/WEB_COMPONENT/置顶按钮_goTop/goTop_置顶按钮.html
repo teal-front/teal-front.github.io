@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#Fixed {
+			position: fixed;
+			_position: absolute;
+			z-index: 100;
+			bottom: 70px;
+			left: 50%;
+			margin-left: 496px;
+			_bottom: auto;
+			_top: expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-70);
+			border: 2px solid #eee;
+			width: 63px;
+			text-indent: -40000px;
+			background: #fff
+		}
+		#goCart, #goChat, #goTop, #feedback {
+			background-image: url('toTop.png') !important
+		}
+		#goTop:hover {
+			opacity: 1;
+			filter: alpha(opacity=100);
+			-moz-transition: opacity 0.3s ease-in, opacity 0.3s ease-out;
+			-webkit-transition: opacity 0.3s ease-in, opacity 0.3s ease-out;
+			transition: opacity 0.3s ease-in, opacity 0.3s ease-out;
+		}
+		#goTop {
+			display: none;
+			width: 63px;
+			height: 61px;
+			opacity: 0.5;
+			filter: alpha(opacity=50);
+			-moz-transition: opacity 0.3s ease-in, opacity 0.3s ease-out;
+			-webkit-transition: opacity 0.3s ease-in, opacity 0.3s ease-out;
+			transition: opacity 0.3s ease-in, opacity 0.3s ease-out;
+			background-color: #000 !important;
+			background-position: -1px -119px !important;
+			cursor: pointer;
+		}
+		#goCart, #goChat, #goTop {
+			position: relative;
+			width: 63px;
+			height: 59px;
+			background: -1px -1px no-repeat;
+			cursor: pointer;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<div id="Fixed">
+	<a id="goTop" class="fl" title="去顶部" href="javascript:;" style="display: block;">去顶部</a>
+</div>
+
+<script type="text/javascript">
+	$(window).bind('scroll', {fixedOffsetBottom: parseInt($('#Fixed').css('bottom'))}, function (e) {
+		var scrollTop = $(window).scrollTop();
+		var referFooter = $('.advantage').length > 0 ? $('.advantage') : $('#newBottomHtml');
+
+		scrollTop > 204 ? $('#goTop').show() : $('#goTop').hide();
+		/*有底部的情况，触到底部到随底部上升*/
+		if (!/msie 6/i.test(navigator.userAgent)) {
+			if ($(window).height() - (referFooter.offset().top - $(window).scrollTop()) > e.data.fixedOffsetBottom) {
+				$('#Fixed').css('bottom', $(window).height() - (referFooter.offset().top - $(window).scrollTop()))
+			} else {
+				$('#Fixed').css('bottom', e.data.fixedOffsetBottom)
+			}
+		}
+	});
+	
+	$('#goTop').click(function () {
+		$('body,html').stop().animate({'scrollTop': 0, 'duration': 400, 'easing': 'ease-in'})
+	});
+</script>
+</body>
+</html>

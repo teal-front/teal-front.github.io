@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title></title>
+    <style>
+        html, body { width:100%; height:100%;margin:0;padding:0;}
+        #div { width: 100%; height: 100%; -moz-box-shadow: inset 0 0 2px 2px #008080;-webkit-box-shadow: inset 0 0 2px 2px #008080;box-shadow: inset 0 0 2px 2px #008080;outline: 3px solid red;}
+    </style>
+    <script src="../js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<!--<div id="div"></div>-->
+
+<object type="application/x-shockwave-flash" id="RPGGame"
+        data="http://cdn.mm.uuzuonline.com/flash1/Index.swf?v=140317002" width="100%" height="100%">
+    <param name="menu" value="false">
+    <param name="src" value="http://cdn.mm.uuzuonline.com/flash1/Index.swf?v=140317002"/>
+    <param name="scale" value="noScale">
+    <param name="allowFullscreen" value="true">
+    <param name="allowScriptAccess" value="always">
+    <param name="bgcolor" value="">
+    <param name="wmode" value="window">
+    <param name="flashvars"
+           value="pid=789617867&amp;sid=31000690000478&amp;cdn=cdn.mm.uuzuonline.com/flash1&amp;gtw=s478.nsol.g.1360.com&amp;svn=无尽牢笼(s478）&amp;upr=0&amp;oid=1&amp;opt=69&amp;xdt=0&amp;isn=0&amp;ext=&amp;version=140317002">
+</object>
+<!--<object type="application/x-shockwave-flash" data="http://player.youku.com/player.php/sid/XNjkyNDM2OTQw/v.swf"
+        width="100%" height="100%" id="youku-player">
+    <param name="allowFullScreen" value="true">
+    <param name="allowScriptAccess" value="always">
+    <param name="movie" value="http://player.youku.com/player.php/sid/XNjkyNDM2OTQw/v.swf">
+    <param name="flashvars" value="imglogo=&amp;paid=0&amp;partnerId=youkuind_">
+
+    <p>你的浏览器不支持object，请安装Flash: <a href="#">www.htmlsapp.comji</a></p>
+</object>-->
+<script>
+    /*
+     * 解决游戏页底部导航被遮住的问题
+     * 需要定义在iframe页面里面
+     */
+    !function ($, win) {
+        document.domain = "teal-front.github.io";
+        var layout = {
+            create: function (position) {
+                this.remove();
+                var iF = document.createElement("iframe");
+                iF.scrolling = "no";
+                iF.frameborder = "0";
+                iF.className = "layout-iframe";
+                iF.style.cssText = "position:absolute;bottom:0;border:none;background:#fff;zoom:1;";
+                for (var name in position) {
+                    iF.style[name] = position[name] + "px";
+                }
+                document.body.appendChild(iF);
+            },
+            remove: function () {
+                $("iframe.layout-iframe").remove();
+            }
+        };
+
+        win.layout = layout;
+    }(jQuery, window, undefined);
+
+</script>
+</body>
+</html>

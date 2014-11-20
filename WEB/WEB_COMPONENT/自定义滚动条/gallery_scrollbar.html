@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+	<style type="text/css">
+	.toolbar { position:ralative; }
+	.img_list { position:relative;border:1px solid #000;width:734px;height:179px;overflow:hidden;background:#F3F3F3; }
+	.thumblist { position:absolute;top:0;left:0;padding:0;list-style:none;width:1500px; }
+	.thumblist li { float:left;display:inline;width:94px;height:74px;margin-right:8px;
+		background:url(../images/sline_w.png) no-repeat -4px -329px;padding:7px 2px 2px; }
+	.thumblist .selected { background-position:-4px -417px; }
+	.thumblist a { display:inline-block;width:94px;height:74px; }
+	.thumblist img { display:inline;margin-left:22px;width:50px;height:74px; }
+	.scrollbar { position:absolute;top:127px;left:0;
+		width:100%;height:19px;
+		background:url(images/scroll_bar.png) repeat-x center; }
+	.handle { position:absolute;left:0;top:0;
+		width:153px;height:19px;
+		background:url(images/ver_h.gif) no-repeat;
+		cursor:pointer;
+	}
+	.handleHover { background-position:0px -19px; }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div class="toolbar">
+	<div class="img_list">
+		<ul class="thumblist">
+			<li class="selected"><a href=""><img src="" alt=""></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+			<li><a href=""><img src="" alt="imgalt"></a></li>
+		</ul>
+		<div class="scrollbar">
+			<div class="handle"></div>
+		</div>
+	</div>
+</div>
+<input type="range" id="range">
+
+<script type="text/javascript">
+var oScroll=$$("scrollbar"),oHandle=$$("handle"),oThumblist=$$("thumblist"),oImgList=$$("img_list");
+oHandle.onmouseover=function(){
+	var c=this.className;
+	this.className=c+" handleHover";
+};
+oHandle.onmouseout=function(){
+	this.className="handle";
+};
+oHandle.onmousedown=function(e){
+	var e=e||event;
+	var x=e.clientX-this.offsetLeft,y=e.clientY-this.offsetTop;
+	setSelected(document.documentElement,false);//阻止拖拽时文字的选中，放在onmousemove里无效//使用的是document.documentElement对象，如果是document则FF报错
+	document.onmousemove=function(e){		
+		var e=e||event;
+		var l=oHandle.style.left=e.clientX-x+"px";
+		if(parseInt(l)<0) { l=oHandle.style.left="0px"; }
+		else if(parseInt(l)>oScroll.offsetWidth-oHandle.offsetWidth) { l=oHandle.style.left=oScroll.offsetWidth-oHandle.offsetWidth+"px"; }
+		
+		//下面这话放下面，因为不然l会有超过容器的情况
+		oThumblist.style.left="-"+parseInt(l)*742/581+"px";
+		//oThumblist.style.left="-"+parseInt(l)*(oThumblist.offsetWidth-oImgList.offsetWidth)/(oScroll.offsetWidth-oHandle.offseWidth)+"px";
+		return false;
+	};
+	document.onmouseup=function(e){
+		setSelected(document.documentElement,true);
+		document.onmousemove=null;
+		document.onmouseup=null;
+	};
+};
+//getElementsByClassName
+function $$(o){
+	if(document.getElementsByClassName){  
+		return document.getElementsByClassName(o)[0];
+	}
+	else {
+		return getElementsByClassName(o)[0];
+	}
+	/*else if(document.querySelectorAll) { //IE8
+		return document.querySelectorAll("."+o)[0];
+	}*/
+	function getElementsByClassName(name,element){
+		var o=[];
+		var allElement=(element||document).getElementsByTagName("*");
+		var j=allElement.length,pattern=new RegExp("\\b"+name+"\\b");// "(^|\\s)"+name+"(\\s|$)"
+		while(j--){
+			var name=allElement[j].className;
+			if(pattern.test(name)) o.push(allElement[j]);
+		}
+		/*for(var i=0;i<allElement.length;i++){
+			var names=allElement[i].className.split(/\s+/);
+			for(var j=0;j<names.length;j++){
+				if(name==names[j]){
+					o.push(allElement[i]);
+					break;
+				}
+			}
+		}*/
+		return o;
+	}
+}
+//设置Element文字的可选状态
+function setSelected(target, boo){
+	//设置文字是否可以复制boo=true时可以复制，否则禁止复制
+	if (typeof target.onselectstart!="undefined"){ //IE  
+		target.onselectstart=function(){
+			return boo;
+		}
+	}else if (typeof target.style.MozUserSelect!="undefined"){ //Firefox   
+		/*MozUserSelect有三个值: 
+		*1.none表示所有子元素都不能被选择 
+		*2.-moz-all子元素的所有文字都可以被选择 
+		*3.-moz-none子元素的所有文字都不能选择，但input除外 
+		*/
+		if(boo)  target.style.MozUserSelect="-moz-all";
+		else  target.style.MozUserSelect="none";
+	}else{ //other  
+		target.onmousedown=function(){
+			return boo;  
+		}
+	}
+}
+</script>
+</body>
+</html>
