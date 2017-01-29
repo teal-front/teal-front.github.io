@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    Nodejs index page.
+</header>
+<section>
+    <ul>
+        <% index.names.forEach(function (name) {%>
+        <li>name: <%= name.name %>, age: <%= name.age %></li>
+        <% }) %>
+    </ul>
+</section>
+
+<%- include('./partials/footer', {data: 1}, {delimiter: '%'}) %>
+
+<script>
+    const nodeJsVersion = '<%= app %>';
+</script>
+</body>
+</html>

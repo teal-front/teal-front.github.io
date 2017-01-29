@@ -1,0 +1,81 @@
+<style>
+    .active {
+        color: teal;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <ul class="nav navbar-nav">
+            <li><a href="/historyState/demo1" class="historyAPI">demo1</a></li>
+            <li><a href="/historyState/demo2" class="historyAPI">demo2</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well">
+                Click on Links above to see history API usage using <code>pushState</code> method.
+            </div>
+        </div>
+        <div class="row">
+            <div class="jumbotron" id="contentHolder">
+                <h1>Home!</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // document DOMContentLoaded, not readystatechange
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.historyAPI').forEach(function (ele) {
+
+            ele.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                var href = this.href;
+
+                // Getting Content
+                getContent(href, true);
+
+                document.querySelectorAll('.historyAPI').forEach(function (ele) {
+                     ele.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    });
+
+    // when click browser back button or history.go or history.back(),
+    // but no history.pushState or history.replaceState
+    window.addEventListener("popstate", function(e) {
+        console.log('state:', e.state);
+
+        // Get State value using e.state
+        getContent(location.pathname, false);
+    });
+
+    function getContent(url, addEntry) {
+        get(url, function( data ) {
+            // Updating Content on Page
+            document.querySelector('#contentHolder').innerHTML = data;
+
+            if(addEntry == true) {
+                // Add History Entry using pushState
+                history.pushState(null, '', url);
+            }
+
+        });
+    }
+
+    function get (url, successCb) {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', url, true);
+        xhr.onload = function () {
+            successCb(this.responseText);
+        };
+        xhr.send();
+    }
+</script>

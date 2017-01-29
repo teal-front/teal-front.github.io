@@ -1,0 +1,165 @@
+Error: listen EADDRINUSE :::8898
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at Server._listen2 (net.js:1236:14)
+    at listen (net.js:1272:10)
+    at Server.listen (net.js:1368:5)
+    at EventEmitter.listen (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\application.js:617:24)
+    at Object.<anonymous> (F:\我的坚果云\项目\Nodejs_demo\core\app.js:31:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+TypeError: controller[action] is not a function
+    at F:\我的坚果云\项目\Nodejs_demo\H5\routes\index.js:24:27
+    at Layer.handle [as handle_request] (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:312:13)
+    at F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:280:7
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:349:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at param (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:410:3)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\index.js:271:10)
+    at next (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\router\route.js:121:14)
+Error: listen EADDRINUSE :::8898
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at Server._listen2 (net.js:1236:14)
+    at listen (net.js:1272:10)
+    at Server.listen (net.js:1368:5)
+    at EventEmitter.listen (F:\我的坚果云\项目\Nodejs_demo\node_modules\express\lib\application.js:617:24)
+    at Object.<anonymous> (F:\我的坚果云\项目\Nodejs_demo\core\app.js:31:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)

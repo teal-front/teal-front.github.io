@@ -1,0 +1,17 @@
+{
+  "name": "Kingwell",
+  "description": "Example project to demonstrate Grunt.",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "kingwell",
+    "email": "test@test.com"
+  },
+  "devDependencies": {
+    "body-parser": "",
+    "cookie-parser": "",
+    "express": "4.x",
+    "multer": "^1.2.0"
+  },
+  "dependencies": {}
+}

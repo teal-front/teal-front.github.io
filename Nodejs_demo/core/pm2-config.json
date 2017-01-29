@@ -1,0 +1,19 @@
+{
+  "apps": [
+    {
+      "name": "DEV",
+      "cwd": "F:/我的坚果云/项目/Nodejs_demo", // if not set 'cwd', watch scope is only the `core` folder
+      "script": "./core/app.js",
+      "instances": 1,
+      "watch": ["./core", "./H5"],
+      "ignore_watch": ["*/logs/**"],
+      "exec_mode": "cluster_mode",
+      "node_args": [
+          "--debug=5858"
+          //"--inspect=9222 --debug-brk"
+      ]
+      //"error_file": "logs/errfile.log"
+      //"out_file": "./logs/outfile.log",
+    }
+  ]
+}
