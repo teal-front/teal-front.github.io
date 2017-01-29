@@ -6,7 +6,7 @@ define(function (require, exports, module) {
         $.post(url, function (d) {
             if(d){
                 var array = d,
-                    html = "<option value='-1'>请选择</opiton>";
+                    html = "<option value='-1'>请选择</option>";
                 var i = 0, l = array.length, selected, item;
                 if (l != 0) {
                     for (; i < l; i++) {

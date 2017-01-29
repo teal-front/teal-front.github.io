@@ -1,3 +1,27 @@
+/**
+ *  JS中类的多态性
+ */
+//重载： JS中并没有重载这一说，不过可以在函数内部通过判断参数类型来执行不同的脚本
+   //同一个名字的函数（注意这里包括函数）或方法可以有多个实现，他们依靠参数的类型和（或）参数的个数来区分识别。
+
+//继承： 继承中的方法覆盖，并有访问基类方法的接口 
+var SupClass = function () {
+	this.type = function () {
+		console.log("print from sup.");
+	};
+};
+var SubClass = function () {
+	var type = this.type; //用内部的变量引用基类的方法，是引用关系
+	this.type = function () {
+		type.call(this);
+		console.log("print from sub.");
+	};
+};
+SubClass.prototype = new SupClass();
+SubClass.prototype.constructor = SubClass;
+(new SubClass()).type();
+
+
 /*
 *@form: 《JavaScript高级程序设计》(en) #173
 */
@@ -127,7 +151,7 @@ sasa.sayHi();
 
 
 /*
-*@form: 《JavaScript语言精粹》 #51
+*@from: 《JavaScript语言精粹》 #51
 */
 /*函数化*/ //保护私有数据
 var Mamal = function (spec) {
