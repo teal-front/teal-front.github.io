@@ -1,4 +1,0 @@
- Function.prototype.bind = functionn () {
-	
- };
- 

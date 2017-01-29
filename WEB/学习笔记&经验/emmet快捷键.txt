@@ -1,8 +1,0 @@
-emmet:
-1.:dd是属性的，内容是div{xxx}
-2.filter BEM（aka block/element/modieit);
-3.fuzy css
-4.cc:ie6
-5.link:css
-6.input:s
-7.lorem5

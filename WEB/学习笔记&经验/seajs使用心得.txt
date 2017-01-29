@@ -1,8 +1,0 @@
-seajs使用心得
-1.define里面的deps参数可以不写。如果写，得写全，不然里面的require的Moduleid就返回Null；
-2.seajs.use里的alias 的moduleid如果是相对路径，在页面上，则相对于页面位置。moduleid放在define里面则是相对于config里的base路径；
-3.seajs_config里面的alias路径开始不需要"/"。
- alias: {
-   "$": "tools/jquery"
-},
-base: "http://123.com/scriptes/"
