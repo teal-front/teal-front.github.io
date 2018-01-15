@@ -1,1 +1,0 @@
-{"version":3,"sources":["huodong/index.js"],"names":["document","querySelector","onclick","console","log","this","id"],"mappings":"AAAAA,SAASC,cAAc,OAAOC,QAAU,WACvCC,QAAQC,IAAIC,KAAKC","file":"huodong/index.js","sourcesContent":["document.querySelector('#h1').onclick = function () {\n\tconsole.log(this.id)\n}"],"sourceRoot":"/source/"}
